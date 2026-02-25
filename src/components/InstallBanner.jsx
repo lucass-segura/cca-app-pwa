@@ -50,59 +50,125 @@ function ShareIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="1" fill="currentColor" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+      <circle cx="12" cy="19" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
 /* ── iOS Wizard ── */
 
-function WizardStep({ step, onNext, onBack, onClose }) {
-  const steps = [
-    {
-      content: (
-        <>
-          <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
-            Toca el icono de <strong className="text-white">Compartir</strong> en la barra de Safari
-          </p>
-          <div className="flex justify-center mb-4">
-            <div className="glass-tile rounded-2xl p-5 text-white/70">
-              <ShareIcon />
-            </div>
+const iosSteps = [
+  {
+    content: (ShareIcon) => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Toca el icono de <strong className="text-white">Compartir</strong> en la barra de Safari
+        </p>
+        <div className="flex justify-center mb-4">
+          <div className="glass-tile rounded-2xl p-5 text-white/70">
+            <ShareIcon />
           </div>
-          <p className="text-base font-himn text-white/35 text-center">
-            Está en la parte inferior de la pantalla
-          </p>
-        </>
-      ),
-    },
-    {
-      content: (
-        <>
-          <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
-            Desplázate y selecciona:
-          </p>
-          <div className="glass-tile rounded-2xl px-5 py-4 flex items-center gap-4">
-            <span className="text-2xl text-white/60">+</span>
-            <span className="text-xl font-himn text-white font-medium">Agregar a inicio</span>
+        </div>
+        <p className="text-base font-himn text-white/35 text-center">
+          Está en la parte inferior de la pantalla
+        </p>
+      </>
+    ),
+  },
+  {
+    content: () => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Desplázate y selecciona:
+        </p>
+        <div className="glass-tile rounded-2xl px-5 py-4 flex items-center gap-4">
+          <span className="text-2xl text-white/60">+</span>
+          <span className="text-xl font-himn text-white font-medium">Agregar a inicio</span>
+        </div>
+      </>
+    ),
+  },
+  {
+    content: () => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Confirma tocando <strong className="text-white">"Agregar"</strong> arriba a la derecha
+        </p>
+        <div className="flex justify-center mb-4">
+          <div className="glass-tile rounded-2xl px-8 py-4">
+            <span className="text-xl font-himn text-white font-semibold">Agregar</span>
           </div>
-        </>
-      ),
-    },
-    {
-      content: (
-        <>
-          <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
-            Confirma tocando <strong className="text-white">"Agregar"</strong> arriba a la derecha
-          </p>
-          <div className="flex justify-center mb-4">
-            <div className="glass-tile rounded-2xl px-8 py-4">
-              <span className="text-xl font-himn text-white font-semibold">Agregar</span>
-            </div>
-          </div>
-          <p className="text-base font-himn text-white/35 text-center mt-2">
-            Aparecerá en tu pantalla de inicio
-          </p>
-        </>
-      ),
-    },
-  ];
+        </div>
+        <p className="text-base font-himn text-white/35 text-center mt-2">
+          Aparecerá en tu pantalla de inicio
+        </p>
+      </>
+    ),
+  },
+];
 
+/* ── Android Wizard ── */
+
+const androidSteps = [
+  {
+    content: (_, MenuIcon) => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Toca el menú <strong className="text-white">⋮</strong> en la esquina superior derecha
+        </p>
+        <div className="flex justify-center mb-4">
+          <div className="glass-tile rounded-2xl p-5 text-white/70">
+            <MenuIcon />
+          </div>
+        </div>
+        <p className="text-base font-himn text-white/35 text-center">
+          Los tres puntos verticales
+        </p>
+      </>
+    ),
+  },
+  {
+    content: () => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Selecciona la opción:
+        </p>
+        <div className="glass-tile rounded-2xl px-5 py-4 flex items-center gap-4">
+          <span className="text-2xl text-white/60">+</span>
+          <span className="text-xl font-himn text-white font-medium">Instalar aplicación</span>
+        </div>
+        <p className="text-base font-himn text-white/35 text-center mt-4">
+          o "Agregar a pantalla de inicio"
+        </p>
+      </>
+    ),
+  },
+  {
+    content: () => (
+      <>
+        <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
+          Confirma tocando <strong className="text-white">"Instalar"</strong>
+        </p>
+        <div className="flex justify-center mb-4">
+          <div className="glass-tile rounded-2xl px-8 py-4">
+            <span className="text-xl font-himn text-white font-semibold">Instalar</span>
+          </div>
+        </div>
+        <p className="text-base font-himn text-white/35 text-center mt-2">
+          Aparecerá en tu pantalla de inicio
+        </p>
+      </>
+    ),
+  },
+];
+
+function WizardStep({ step, onNext, onBack, onClose, os }) {
+  const steps = os === 'ios' ? iosSteps : androidSteps;
   const current = steps[step];
 
   return (
@@ -116,7 +182,7 @@ function WizardStep({ step, onNext, onBack, onClose }) {
 
         <div className="glass-panel rounded-3xl p-8 min-h-[260px] flex flex-col justify-center">
           <div className="animate-fade-in" key={step}>
-            {current.content}
+            {current.content(ShareIcon, MenuIcon)}
           </div>
         </div>
 
@@ -162,10 +228,16 @@ export function InstallScreen({ os, install, canInstall }) {
 
   const handleInstall = () => {
     if (os === 'ios') {
+      // iOS siempre muestra el wizard porque no soporta beforeinstallprompt
       setWizardStep(0);
       setShowWizard(true);
-    } else {
+    } else if (canInstall) {
+      // Android con prompt nativo disponible
       install();
+    } else {
+      // Android sin prompt nativo - mostrar wizard manual
+      setWizardStep(0);
+      setShowWizard(true);
     }
   };
 
@@ -237,10 +309,11 @@ export function InstallScreen({ os, install, canInstall }) {
         <p className="mt-8 text-xs text-white/20">v1.0</p>
       </main>
 
-      {/* iOS Wizard */}
+      {/* Install Wizard */}
       {showWizard && (
         <WizardStep
           step={wizardStep}
+          os={os}
           onNext={() => setWizardStep(s => s + 1)}
           onBack={() => setWizardStep(s => s - 1)}
           onClose={() => setShowWizard(false)}

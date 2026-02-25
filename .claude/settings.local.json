@@ -3,7 +3,8 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(cd:*)",
-      "Bash(gh repo:*)"
+      "Bash(gh repo:*)",
+      "Bash(head:*)"
     ]
   }
 }
