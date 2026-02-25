@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "MarkaziText";
+  src: url("/fonts/MarkaziText-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MarkaziText";
+  src: url("/fonts/MarkaziText-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MarkaziText";
+  src: url("/fonts/MarkaziText-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MarkaziText";
+  src: url("/fonts/MarkaziText-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #2563EB;
+  --color-primaryDark: #3B82F6;
+  --color-bgLight: #F8FAFC;
+  --color-bgDark: #0B1121;
+  --color-surfaceDark: #151e32;
+  --color-borderLight: #E2E8F0;
+  --color-textPrimary: #1E293B;
+  --color-textPrimaryDark: #F1F5F9;
+  --color-textSecondary: #64748B;
+  --color-textSecondaryDark: #94A3B8;
+
+  /* Legacy colors for detail pages */
+  --color-letters: #1E1E1E;
+  --color-bgLightGrey: #F5F5F5;
+  --color-bgGray: #E8E8E8;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-himn: "MarkaziText", serif;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-slide-up: slide-up 0.35s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Card entrance animation */
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-enter {
+  opacity: 0;
+  animation: card-enter 0.35s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-card-enter {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+}
+
+/* Glass effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-tile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.glass-tile:active {
+  transform: scale(0.98);
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "MarkaziText", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
