@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import HimnoDetail from './pages/HimnoDetail';
 import CoritoDetail from './pages/CoritoDetail';
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/configuracion" element={<Configuracion />} />
       </Routes>
       <UpdateToast />
+      <Analytics />
     </BrowserRouter>
   );
 }
