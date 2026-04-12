@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useHimnos } from '../hooks/useHimnos';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { formatTitle } from '../utils/utils';
+import { useFontSize } from '../hooks/useFontSize';
 
 export default function CoritoDetail() {
   const { id } = useParams();
+  useEffect(() => { window.scrollTo(0, 0); }, [id]);
   const { coritos } = useHimnos();
   const corito = coritos.find((c) => c.corito.toString() === id);
-
-  const [fontSize, setFontSize] = useState(22);
-  const aumentarLetra = () => setFontSize((prev) => Math.min(prev + 2, 40));
-  const reducirLetra = () => setFontSize((prev) => Math.max(prev - 2, 20));
+  const { fontSize, aumentarLetra, reducirLetra } = useFontSize();
 
   if (!corito) {
     return (
@@ -32,7 +31,7 @@ export default function CoritoDetail() {
           >
             <span className="material-icons-round text-2xl">arrow_back</span>
           </Link>
-          <h1 className="flex-1 font-serif font-bold text-lg truncate text-primary dark:text-primaryDark">
+          <h1 className="flex-1 font-serif font-bold text-lg truncate text-primary/85 dark:text-primaryDark">
             {corito.corito}. {formatTitle(corito.titulo)}
           </h1>
           <ThemeToggle />
@@ -44,13 +43,13 @@ export default function CoritoDetail() {
         <div className="flex gap-2">
           <button
             onClick={reducirLetra}
-            className="px-3 py-1.5 rounded-lg bg-primary dark:bg-primaryDark/20 text-white dark:text-primaryDark text-sm font-medium border border-transparent dark:border-primaryDark/30 hover:opacity-90 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
             A-
           </button>
           <button
             onClick={aumentarLetra}
-            className="px-3 py-1.5 rounded-lg bg-primary dark:bg-primaryDark/20 text-white dark:text-primaryDark text-sm font-medium border border-transparent dark:border-primaryDark/30 hover:opacity-90 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
             A+
           </button>

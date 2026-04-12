@@ -2,7 +2,6 @@ import { useState, useCallback } from 'react';
 
 let isSweeping = false;
 
-/* ── Sun SVG (playful glass style) ─────────────────── */
 const SUN_SVG = `<svg viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="_ts_sun" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -25,7 +24,6 @@ const SUN_SVG = `<svg viewBox="0 0 200 200" width="100%" height="100%">
   <circle cx="130" cy="95" r="5" fill="white" fill-opacity="0.2"/>
 </svg>`;
 
-/* ── Cloud SVG (light version) ─────────────────────── */
 const CLOUD_LIGHT = `<svg viewBox="0 0 240 200" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
   <defs>
     <linearGradient id="_ts_cloudL" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -39,7 +37,6 @@ const CLOUD_LIGHT = `<svg viewBox="0 0 240 200" width="100%" preserveAspectRatio
   <path d="M80 85 Q110 75 140 85" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
 </svg>`;
 
-/* ── Cloud SVG (dark version) ──────────────────────── */
 const CLOUD_DARK = `<svg viewBox="0 0 240 200" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
   <defs>
     <linearGradient id="_ts_cloudD" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -64,16 +61,15 @@ export function useDarkMode() {
 
     const html = document.documentElement;
     const goingDark = !html.classList.contains('dark');
-    const DUR = 2000;
+    const DUR = 700;
 
-    /* ── Scene ──────────────────────────────── */
+    /* ── Build overlay scene ── */
     const scene = document.createElement('div');
     Object.assign(scene.style, {
-      position: 'fixed', inset: '0', zIndex: '9999',
+      position: 'fixed', inset: '0', zIndex: '9998',
       pointerEvents: 'none', overflow: 'hidden',
     });
 
-    /* ── Stars ──────────────────────────────── */
     const stars = document.createElement('div');
     Object.assign(stars.style, { position: 'absolute', inset: '0' });
     [[8,10],[25,5],[48,16],[72,8],[90,20],[12,35],[38,28],[62,40],
@@ -90,95 +86,94 @@ export function useDarkMode() {
     });
     scene.appendChild(stars);
 
-    /* ── Sun ─────────────────────────────────── */
     const sun = document.createElement('div');
     Object.assign(sun.style, {
-      position: 'absolute', left: '50%', width: '110px', height: '110px',
-      marginLeft: '-55px', zIndex: '2',
+      position: 'absolute', left: '50%', width: '90px', height: '90px',
+      marginLeft: '-45px', zIndex: '2',
     });
     sun.innerHTML = SUN_SVG;
     scene.appendChild(sun);
 
-    /* ── Cloud (light + dark layers) ─────────── */
     const cloudWrap = document.createElement('div');
     Object.assign(cloudWrap.style, {
       position: 'absolute', left: '50%', top: '46%',
       transform: 'translate(-50%,-50%)',
-      width: 'min(70vw, 280px)', zIndex: '3',
+      width: 'min(65vw, 260px)', zIndex: '3',
     });
-
     const cLight = document.createElement('div');
     cLight.innerHTML = CLOUD_LIGHT;
-
     const cDark = document.createElement('div');
     cDark.innerHTML = CLOUD_DARK;
     Object.assign(cDark.style, { position: 'absolute', inset: '0' });
-
     cloudWrap.appendChild(cLight);
     cloudWrap.appendChild(cDark);
     scene.appendChild(cloudWrap);
 
     document.body.appendChild(scene);
 
-    /* ── Animate ─────────────────────────────── */
+    /* ── Animate overlay ── */
     const bg0 = goingDark ? '#F8FAFC' : '#0B1121';
     const bg1 = goingDark ? '#0B1121' : '#F8FAFC';
 
-    // Scene: slide in → hold → slide out
     scene.animate([
-      { transform: 'translateX(-100%)', backgroundColor: bg0, offset: 0, easing: 'cubic-bezier(0,0,0.2,1)' },
-      { transform: 'translateX(0)',     backgroundColor: bg0, offset: 0.20, easing: 'ease-in-out' },
-      { transform: 'translateX(0)',     backgroundColor: bg1, offset: 0.80, easing: 'cubic-bezier(0.4,0,1,1)' },
+      { transform: 'translateX(-100%)', backgroundColor: bg0, offset: 0,    easing: 'cubic-bezier(0,0,0.2,1)' },
+      { transform: 'translateX(0)',     backgroundColor: bg0, offset: 0.22,  easing: 'ease-in-out' },
+      { transform: 'translateX(0)',     backgroundColor: bg1, offset: 0.78,  easing: 'cubic-bezier(0.4,0,1,1)' },
       { transform: 'translateX(100%)',  backgroundColor: bg1, offset: 1 },
     ], { duration: DUR, fill: 'forwards' });
 
-    // Sun: descend behind cloud (going dark) / rise above (going light)
     sun.animate(goingDark ? [
       { top: '15%', opacity: 1, offset: 0 },
-      { top: '15%', opacity: 1, offset: 0.22, easing: 'ease-in' },
-      { top: '40%', opacity: 0, offset: 0.58 },
-      { top: '40%', opacity: 0, offset: 1 },
+      { top: '15%', opacity: 1, offset: 0.24, easing: 'ease-in' },
+      { top: '38%', opacity: 0, offset: 0.55 },
+      { top: '38%', opacity: 0, offset: 1 },
     ] : [
-      { top: '40%', opacity: 0, offset: 0 },
-      { top: '40%', opacity: 0, offset: 0.30, easing: 'ease-out' },
+      { top: '38%', opacity: 0, offset: 0 },
+      { top: '38%', opacity: 0, offset: 0.32, easing: 'ease-out' },
       { top: '15%', opacity: 1, offset: 0.65 },
       { top: '15%', opacity: 1, offset: 1 },
     ], { duration: DUR, fill: 'forwards' });
 
-    // Stars
     stars.animate(goingDark ? [
       { opacity: 0, offset: 0 },
-      { opacity: 0, offset: 0.45 },
-      { opacity: 1, offset: 0.68 },
+      { opacity: 0, offset: 0.42 },
+      { opacity: 1, offset: 0.65 },
       { opacity: 1, offset: 1 },
     ] : [
       { opacity: 1, offset: 0 },
-      { opacity: 1, offset: 0.22 },
-      { opacity: 0, offset: 0.45 },
+      { opacity: 1, offset: 0.20 },
+      { opacity: 0, offset: 0.42 },
       { opacity: 0, offset: 1 },
     ], { duration: DUR, fill: 'forwards' });
 
-    // Cloud dark layer cross-fade
     cDark.animate([
       { opacity: goingDark ? 0 : 1, offset: 0 },
       { opacity: goingDark ? 0 : 1, offset: 0.22, easing: 'ease-in-out' },
-      { opacity: goingDark ? 1 : 0, offset: 0.68 },
+      { opacity: goingDark ? 1 : 0, offset: 0.65 },
       { opacity: goingDark ? 1 : 0, offset: 1 },
     ], { duration: DUR, fill: 'forwards' });
 
-    /* ── Toggle at 50% (overlay fully covers screen) ── */
-    setTimeout(() => {
+    /* ── Switch theme at midpoint via startViewTransition ── */
+    const switchTheme = () => {
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
       setIsDark(dark);
-    }, DUR * 0.50);
+    };
 
-    /* ── Cleanup ─────────────────────────────── */
+    setTimeout(() => {
+      if (!document.startViewTransition) {
+        switchTheme();
+      } else {
+        document.startViewTransition(switchTheme);
+      }
+    }, DUR * 0.5);
+
+    /* ── Cleanup ── */
     setTimeout(() => {
       scene.remove();
       isSweeping = false;
-    }, DUR + 50);
+    }, DUR + 100);
   }, []);
 
   return { isDark, toggle };

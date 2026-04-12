@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { AnimatedHimnoPreview } from '../components/HimnoPreview';
 import { BottomNav } from '../components/BottomNav';
 import { ThemeToggle } from '../components/ThemeToggle';
@@ -17,6 +17,15 @@ export default function Home() {
   const { himnos, coritos } = useHimnos();
   const [searchQuery, setSearchQuery] = useState('');
   const { favorites, toggleFavorite } = useFavorites();
+
+  // Restaurar posición de scroll al volver desde un himno/corito
+  useEffect(() => {
+    const savedY = sessionStorage.getItem('home_scroll');
+    if (savedY) {
+      window.scrollTo(0, parseInt(savedY));
+      sessionStorage.removeItem('home_scroll');
+    }
+  }, []);
 
   const sections = useMemo(() => {
     const allSections = [
@@ -55,7 +64,7 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary dark:text-primaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary/85 dark:text-primaryDark">
             Himnos
           </h1>
           <ThemeToggle />
@@ -69,7 +78,7 @@ export default function Home() {
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-10 py-3 border border-borderLight dark:border-primaryDark/30 rounded-xl leading-5 bg-white dark:bg-surfaceDark placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-all shadow-sm"
+              className="block w-full pl-10 pr-10 py-3 border border-borderLight dark:border-white/[0.08] rounded-md leading-5 bg-white dark:bg-surfaceDark placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-all"
               placeholder="Buscar himno o corito..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -101,7 +110,7 @@ export default function Home() {
           sections.map((section) => (
             <div key={section.title} className="mb-6">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold font-serif text-primary dark:text-primaryDark">
+                <h2 className="text-xl font-bold font-serif text-primary/85 dark:text-primaryDark">
                   {section.title}
                 </h2>
               </div>

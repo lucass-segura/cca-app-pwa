@@ -12,30 +12,31 @@ export function ThemeToggle() {
                  active:scale-90 transition-transform duration-150
                  focus:outline-none"
     >
-      <svg viewBox="0 0 100 100" className="w-7 h-7">
-        {/* Sun */}
-        <g style={{ opacity: isDark ? 0 : 1, transition: 'opacity 0.3s ease' }}>
-          <circle cx="50" cy="50" r="16" fill="#FDB813" />
-          <g stroke="#FDB813" strokeWidth="3" strokeLinecap="round">
-            <line x1="50" y1="22" x2="50" y2="12" />
-            <line x1="50" y1="78" x2="50" y2="88" />
-            <line x1="22" y1="50" x2="12" y2="50" />
-            <line x1="78" y1="50" x2="88" y2="50" />
-            <line x1="30" y1="30" x2="23" y2="23" />
-            <line x1="70" y1="30" x2="77" y2="23" />
-            <line x1="30" y1="70" x2="23" y2="77" />
-            <line x1="70" y1="70" x2="77" y2="77" />
-          </g>
-        </g>
+      {/* Sol — light mode */}
+      <svg
+        viewBox="0 0 24 24"
+        className="w-[22px] h-[22px] absolute"
+        style={{ opacity: isDark ? 0 : 1, transition: 'opacity 0.25s ease' }}
+        fill="#93C5FD"
+      >
+        <circle cx="12" cy="12" r="5" />
+        <rect x="11" y="1"  width="2" height="3" rx="1" />
+        <rect x="11" y="20" width="2" height="3" rx="1" />
+        <rect x="1"  y="11" width="3" height="2" rx="1" />
+        <rect x="20" y="11" width="3" height="2" rx="1" />
+        <rect x="4.2"  y="4.2"  width="2" height="3" rx="1" transform="rotate(-45 4.2 4.2)" />
+        <rect x="17.8" y="4.2"  width="2" height="3" rx="1" transform="rotate(45 17.8 4.2)" />
+        <rect x="4.2"  y="17.8" width="2" height="3" rx="1" transform="rotate(45 4.2 17.8)" />
+        <rect x="17.8" y="17.8" width="2" height="3" rx="1" transform="rotate(-45 17.8 17.8)" />
+      </svg>
 
-        {/* Moon + stars */}
-        <g style={{ opacity: isDark ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-          <path d="M48 30 A18 18 0 1 0 68 50 A13 13 0 0 1 48 30" fill="#F0E68C" />
-          <circle cx="32" cy="34" r="1.5" fill="#F0E68C" opacity="0.7" />
-          <circle cx="76" cy="40" r="1" fill="#F0E68C" opacity="0.5" />
-          <circle cx="28" cy="62" r="1" fill="#F0E68C" opacity="0.4" />
-          <circle cx="72" cy="70" r="1.3" fill="#F0E68C" opacity="0.6" />
-        </g>
+      {/* Luna — dark mode */}
+      <svg
+        viewBox="0 0 24 24"
+        className="w-[22px] h-[22px] absolute"
+        style={{ opacity: isDark ? 1 : 0, transition: 'opacity 0.25s ease' }}
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#93C5FD" />
       </svg>
     </button>
   );
