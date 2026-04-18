@@ -4,7 +4,24 @@
       "Bash(ls:*)",
       "Bash(cd:*)",
       "Bash(gh repo:*)",
-      "Bash(head:*)"
+      "Bash(head:*)",
+      "WebFetch(domain:theme-toggle.rdsx.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx degit:*)",
+      "Read(//tmp/theme-toggle-ref/**)",
+      "Read(//private/tmp/theme-toggle-ref/**)",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:fonts.googleapis.com)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://fonts.googleapis.com/icon?family=Material+Icons+Round\")",
+      "Bash(curl -s \"https://fonts.gstatic.com/s/materialiconsround/v109/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmPq_HTTw.woff2\" -o /Users/lucassegura/CCA/cca-app-pwa/public/fonts/material-icons-round.woff2)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Inter:wght@400;500;600&display=swap\")",
+      "Bash(node -e \"const c = require\\('./src/data/coritos.json'\\); console.log\\('coritos:', c.length, 'last:', c[c.length-1]?.corito\\)\")",
+      "Bash(node -e \"const c = require\\('/Users/lucassegura/CCA/cca-app-pwa/src/data/coritos.json'\\); console.log\\('total:', c.length, 'last id:', c[c.length-1]?.corito\\)\")",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(xargs kill:*)"
     ]
   }
 }

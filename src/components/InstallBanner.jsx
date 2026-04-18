@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function BookIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
     </svg>
@@ -13,7 +13,7 @@ function BookIcon() {
 
 function WifiOffIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12.55a11 11 0 0 1 14.08 0" />
       <path d="M1.42 9a16 16 0 0 1 21.16 0" />
       <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
@@ -24,7 +24,7 @@ function WifiOffIcon() {
 
 function BoltIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
   );
@@ -32,7 +32,7 @@ function BoltIcon() {
 
 function DownloadIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="7 10 12 15 17 10" />
       <line x1="12" y1="15" x2="12" y2="3" />
@@ -42,7 +42,7 @@ function DownloadIcon() {
 
 function ShareIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
       <polyline points="16 6 12 2 8 6" />
       <line x1="12" y1="2" x2="12" y2="15" />
@@ -52,7 +52,7 @@ function ShareIcon() {
 
 function MenuIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="5" r="1" fill="currentColor" />
       <circle cx="12" cy="12" r="1" fill="currentColor" />
       <circle cx="12" cy="19" r="1" fill="currentColor" />
@@ -64,13 +64,13 @@ function MenuIcon() {
 
 const iosSteps = [
   {
-    content: (ShareIcon) => (
+    content: () => (
       <>
         <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
           Toca el icono de <strong className="text-white">Compartir</strong> en la barra de Safari
         </p>
         <div className="flex justify-center mb-4">
-          <div className="glass-tile rounded-2xl p-5 text-white/70">
+          <div className="glass-tile rounded-md p-5 text-white/70">
             <ShareIcon />
           </div>
         </div>
@@ -86,7 +86,7 @@ const iosSteps = [
         <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
           Desplázate y selecciona:
         </p>
-        <div className="glass-tile rounded-2xl px-5 py-4 flex items-center gap-4">
+        <div className="glass-tile rounded-md px-5 py-4 flex items-center gap-4">
           <span className="text-2xl text-white/60">+</span>
           <span className="text-xl font-himn text-white font-medium">Agregar a inicio</span>
         </div>
@@ -100,7 +100,7 @@ const iosSteps = [
           Confirma tocando <strong className="text-white">"Agregar"</strong> arriba a la derecha
         </p>
         <div className="flex justify-center mb-4">
-          <div className="glass-tile rounded-2xl px-8 py-4">
+          <div className="glass-tile rounded-md px-8 py-4">
             <span className="text-xl font-himn text-white font-semibold">Agregar</span>
           </div>
         </div>
@@ -116,13 +116,13 @@ const iosSteps = [
 
 const androidSteps = [
   {
-    content: (_, MenuIcon) => (
+    content: () => (
       <>
         <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
           Toca el menú <strong className="text-white">⋮</strong> en la esquina superior derecha
         </p>
         <div className="flex justify-center mb-4">
-          <div className="glass-tile rounded-2xl p-5 text-white/70">
+          <div className="glass-tile rounded-md p-5 text-white/70">
             <MenuIcon />
           </div>
         </div>
@@ -138,7 +138,7 @@ const androidSteps = [
         <p className="text-[22px] font-himn text-white/80 text-center leading-snug mb-6">
           Selecciona la opción:
         </p>
-        <div className="glass-tile rounded-2xl px-5 py-4 flex items-center gap-4">
+        <div className="glass-tile rounded-md px-5 py-4 flex items-center gap-4">
           <span className="text-2xl text-white/60">+</span>
           <span className="text-xl font-himn text-white font-medium">Instalar aplicación</span>
         </div>
@@ -155,7 +155,7 @@ const androidSteps = [
           Confirma tocando <strong className="text-white">"Instalar"</strong>
         </p>
         <div className="flex justify-center mb-4">
-          <div className="glass-tile rounded-2xl px-8 py-4">
+          <div className="glass-tile rounded-md px-8 py-4">
             <span className="text-xl font-himn text-white font-semibold">Instalar</span>
           </div>
         </div>
@@ -173,16 +173,16 @@ function WizardStep({ step, onNext, onBack, onClose, os }) {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center px-6 animate-fade-in">
-      <div className="absolute inset-0 bg-[#0c1929]/90 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-[#0c1929]/92 backdrop-blur-sm" onClick={onClose} />
 
       <div className="relative z-10 w-full max-w-sm">
-        <p className="text-xs font-himn text-white/30 text-center mb-3 tracking-widest uppercase">
+        <p className="text-xs font-sans text-white/30 text-center mb-3 tracking-widest uppercase">
           Paso {step + 1} de {steps.length}
         </p>
 
-        <div className="glass-panel rounded-3xl p-8 min-h-[260px] flex flex-col justify-center">
+        <div className="glass-panel rounded-t-lg rounded-b-lg p-8 min-h-[260px] flex flex-col justify-center">
           <div className="animate-fade-in" key={step}>
-            {current.content(ShareIcon, MenuIcon)}
+            {current.content()}
           </div>
         </div>
 
@@ -222,91 +222,113 @@ function WizardStep({ step, onNext, onBack, onClose, os }) {
 
 /* ── Install Screen ── */
 
+const features = [
+  {
+    icon: BookIcon,
+    bg: 'bg-blue-50',
+    color: 'text-blue-500',
+    title: '480 Himnos',
+    desc: 'Colección completa y coritos',
+  },
+  {
+    icon: WifiOffIcon,
+    bg: 'bg-emerald-50',
+    color: 'text-emerald-600',
+    title: 'Sin Conexión',
+    desc: 'Disponible en cualquier lugar',
+  },
+  {
+    icon: BoltIcon,
+    bg: 'bg-amber-50',
+    color: 'text-amber-500',
+    title: 'Rápida y Ligera',
+    desc: 'Optimizada para tu dispositivo',
+  },
+];
+
 export function InstallScreen({ os, install, canInstall }) {
   const [showWizard, setShowWizard] = useState(false);
   const [wizardStep, setWizardStep] = useState(0);
 
   const handleInstall = () => {
     if (os === 'ios') {
-      // iOS siempre muestra el wizard porque no soporta beforeinstallprompt
       setWizardStep(0);
       setShowWizard(true);
     } else if (canInstall) {
-      // Android con prompt nativo disponible
       install();
     } else {
-      // Android sin prompt nativo - mostrar wizard manual
       setWizardStep(0);
       setShowWizard(true);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0c1929] via-[#132d4a] to-[#0c1929] flex items-center justify-center font-himn text-white overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-[#EEF2FF] via-[#FBF8FF] to-[#E0F2FE] flex items-center justify-center overflow-hidden relative">
 
-      <main className="relative z-10 w-full max-w-md px-6 py-10 flex flex-col items-center">
+      {/* Decorative blobs */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-16 -right-16 w-72 h-72 bg-blue-200/50 rounded-full blur-3xl pointer-events-none"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-12 -left-12 w-60 h-60 bg-violet-200/40 rounded-full blur-3xl pointer-events-none"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute top-1/3 -left-20 w-44 h-44 bg-sky-200/30 rounded-full blur-2xl pointer-events-none"
+      />
+
+      <main className="relative z-10 w-full max-w-sm px-6 py-12 flex flex-col items-center animate-fade-in">
+
         {/* App icon */}
-        <div className="mb-8">
+        <div className="mb-8 relative">
+          <div className="absolute inset-0 rounded-[26px] bg-blue-400/25 blur-xl scale-125 pointer-events-none" />
           <img
             src="/icon-192.png"
-            alt="Himnos"
-            className="w-24 h-24 rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+            alt="Himnos CCA"
+            className="relative w-24 h-24 rounded-[22px] shadow-[0_6px_28px_rgba(37,99,235,0.20)]"
           />
         </div>
 
-        {/* Title */}
+        {/* Title block */}
         <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold tracking-tight text-white mb-1">
-            Himnos
+          <h1 className="text-5xl font-bold font-himn tracking-tight text-textPrimary mb-1">
+            Himnos CCA
           </h1>
-          <p className="text-lg text-white/40 font-medium">
-            Himnario de Música
+          <p className="text-base font-sans text-textSecondary">
+            Himnario de Música Cristiana
           </p>
         </div>
 
-        {/* Glass panel */}
-        <div className="glass-panel w-full rounded-3xl p-5 space-y-3 mb-8">
-          <div className="glass-tile rounded-2xl p-4 flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center text-[#7eb8e0] shrink-0">
-              <BookIcon />
+        {/* Feature list */}
+        <div className="w-full bg-white/75 border border-borderLight rounded-lg divide-y divide-borderLight mb-8 backdrop-blur-sm">
+          {features.map(({ icon, bg, color, title, desc }) => {
+            const FeatureIcon = icon;
+            return (
+            <div key={title} className="flex items-center gap-4 p-4">
+              <div className={`w-10 h-10 rounded flex items-center justify-center shrink-0 ${bg} ${color}`}>
+                <FeatureIcon />
+              </div>
+              <div>
+                <p className="font-semibold font-himn text-xl text-textPrimary leading-tight">{title}</p>
+                <p className="text-sm font-sans text-textSecondary">{desc}</p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-white text-xl leading-snug">480 Himnos</p>
-              <p className="text-base text-[#7eb8e0]">Colección completa y coritos</p>
-            </div>
-          </div>
-
-          <div className="glass-tile rounded-2xl p-4 flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center text-[#7eb8e0] shrink-0">
-              <WifiOffIcon />
-            </div>
-            <div>
-              <p className="font-bold text-white text-xl leading-snug">Sin Conexión</p>
-              <p className="text-base text-[#7eb8e0]">Disponible en cualquier lugar</p>
-            </div>
-          </div>
-
-          <div className="glass-tile rounded-2xl p-4 flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center text-[#7eb8e0] shrink-0">
-              <BoltIcon />
-            </div>
-            <div>
-              <p className="font-bold text-white text-xl leading-snug">Rápida y Ligera</p>
-              <p className="text-base text-[#7eb8e0]">Optimizada para tu dispositivo</p>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Install button */}
+        {/* Install CTA */}
         <button
           onClick={handleInstall}
-          className="w-full py-4 bg-white/12 border border-white/15 rounded-full text-white font-semibold text-xl cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 backdrop-blur-sm"
+          className="w-full py-4 bg-primary text-white font-semibold font-sans text-base rounded-full cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,99,235,0.30)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <DownloadIcon />
-          <span>Instalar</span>
+          <span>Instalar aplicación</span>
         </button>
 
-        <p className="mt-8 text-xs text-white/20">v1.0</p>
+        <p className="mt-6 text-xs font-sans text-textSecondary/40">v1.0</p>
       </main>
 
       {/* Install Wizard */}
