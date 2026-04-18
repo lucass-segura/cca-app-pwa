@@ -115,12 +115,24 @@ export default function Home() {
                 </h2>
               </div>
               <div className="space-y-3">
-                {section.data.map((item, index) => {
+                {section.data.flatMap((item, index) => {
                   const key =
                     item.type === 'corito'
                       ? `c_${item.corito}`
                       : `h_${item.himno}`;
-                  return (
+                  const elements = [];
+                  if (item.type === 'himno' && item.himno === 431) {
+                    elements.push(
+                      <div key="sep-jovenes" className="relative flex items-center py-2">
+                        <div className="flex-1 border-t border-borderLight dark:border-white/10" />
+                        <span className="px-3 text-xs font-sans font-medium text-textSecondary dark:text-textSecondaryDark uppercase tracking-wider text-center">
+                          Reuniones de Jóvenes y Niños
+                        </span>
+                        <div className="flex-1 border-t border-borderLight dark:border-white/10" />
+                      </div>
+                    );
+                  }
+                  elements.push(
                     <AnimatedHimnoPreview
                       key={key}
                       himno={item}
@@ -129,6 +141,7 @@ export default function Home() {
                       onToggleFavorite={() => toggleFavorite(key)}
                     />
                   );
+                  return elements;
                 })}
               </div>
             </div>
