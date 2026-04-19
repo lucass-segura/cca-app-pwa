@@ -60,7 +60,7 @@ export default function Home() {
   const noResults = searchQuery && sections.length === 0;
 
   return (
-    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-20">
+    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
@@ -107,9 +107,12 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          sections.map((section) => (
+          sections.map((section, sectionIndex) => (
             <div key={section.title} className="mb-6">
-              <div className="flex items-center justify-between mb-4">
+              <div
+                className="animate-card-enter flex items-center justify-between mb-4"
+                style={{ animationDelay: `${sectionIndex * 120}ms` }}
+              >
                 <h2 className="text-xl font-bold font-serif text-primary/85 dark:text-primaryDark">
                   {section.title}
                 </h2>

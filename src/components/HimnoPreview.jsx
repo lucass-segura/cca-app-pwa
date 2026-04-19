@@ -8,6 +8,9 @@ const TAG_TEXT = {
   oracion:      'text-violet-600/80 dark:text-violet-400/70',
   palabra:      'text-sky-600/80 dark:text-sky-400/70',
   finalizacion: 'text-emerald-600/80 dark:text-emerald-400/70',
+  bautismo:     'text-blue-600/80 dark:text-blue-400/70',
+  santacena:    'text-rose-600/80 dark:text-rose-400/70',
+  funeral:      'text-slate-500/80 dark:text-slate-400/70',
 };
 
 const TAG_DOT = {
@@ -15,17 +18,23 @@ const TAG_DOT = {
   oracion:      'bg-violet-500/55 dark:bg-violet-400/55',
   palabra:      'bg-sky-500/55 dark:bg-sky-400/55',
   finalizacion: 'bg-emerald-500/55 dark:bg-emerald-400/55',
+  bautismo:     'bg-blue-500/55 dark:bg-blue-400/55',
+  santacena:    'bg-rose-500/55 dark:bg-rose-400/55',
+  funeral:      'bg-slate-400/55 dark:bg-slate-400/55',
 };
 
 const TAG_LABELS = {
-  apertura: 'Apertura',
-  oracion: 'Oración',
-  palabra: 'Palabra',
+  apertura:     'Apertura',
+  oracion:      'Oración',
+  palabra:      'Palabra',
   finalizacion: 'Finalización',
+  bautismo:     'Bautismo',
+  santacena:    'Santa Cena',
+  funeral:      'Funeral',
 };
 
 export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
-  const isHimno = himno.hasOwnProperty('himno');
+  const isHimno = Object.hasOwn(himno, 'himno');
   const id = isHimno ? himno.himno : himno.corito;
   const href = isHimno ? `/himno/${id}` : `/corito/${id}`;
   const tags = isHimno ? (himnoTagsMap.get(id) ?? []) : [];
@@ -69,7 +78,7 @@ export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
             {formatTitle(himno.titulo)}
           </h3>
           {tags.length > 0 && (
-            <div className="flex gap-3 mt-1">
+            <div className="flex gap-3 mt-2">
               {tags.map(tag => (
                 <span key={tag} className={`inline-flex items-center gap-1.5 ${TAG_TEXT[tag]}`}>
                   <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${TAG_DOT[tag]}`} />

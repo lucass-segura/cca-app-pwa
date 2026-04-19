@@ -7,10 +7,13 @@ export function UpdateToast() {
     updateServiceWorker,
   } = useRegisterSW();
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(needRefresh);
 
   useEffect(() => {
-    if (needRefresh) setShow(true);
+    if (needRefresh) {
+      const t = setTimeout(() => setShow(true), 0);
+      return () => clearTimeout(t);
+    }
   }, [needRefresh]);
 
   if (!show) return null;

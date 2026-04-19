@@ -16,6 +16,9 @@
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     }
+    if (localStorage.dark_theme === 'black') {
+      document.documentElement.classList.add('dark-black');
+    }
   </script>
 </head>
 
