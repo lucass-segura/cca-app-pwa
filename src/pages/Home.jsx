@@ -121,7 +121,11 @@ export default function Home() {
                       ? `c_${item.corito}`
                       : `h_${item.himno}`;
                   const elements = [];
-                  if (item.type === 'himno' && item.himno === 431) {
+                  const isFirstJovenes =
+                    item.type === 'himno' &&
+                    item.himno >= 431 &&
+                    !section.data.slice(0, index).some((i) => i.type === 'himno' && i.himno >= 431);
+                  if (isFirstJovenes) {
                     elements.push(
                       <div key="sep-jovenes" className="relative flex items-center py-2">
                         <div className="flex-1 border-t border-borderLight dark:border-white/10" />
