@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { AnimatedHimnoPreview } from '../components/HimnoPreview';
-import { BottomNav } from '../components/BottomNav';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { useHimnos } from '../hooks/useHimnos';
 import { useFavorites } from '../hooks/useFavorites';
@@ -63,7 +62,6 @@ export default function Favoritos() {
         )}
       </main>
 
-      <BottomNav />
     </div>
   );
 }

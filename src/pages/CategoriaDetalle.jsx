@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
 import { AnimatedHimnoPreview } from '../components/HimnoPreview';
-import { BottomNav } from '../components/BottomNav';
 import { useHimnos } from '../hooks/useHimnos';
 import { useFavorites } from '../hooks/useFavorites';
 import { getCategoriaById } from '../data/categorias';
@@ -71,7 +70,6 @@ export default function CategoriaDetalle() {
         </div>
       </main>
 
-      <BottomNav />
     </div>
   );
 }

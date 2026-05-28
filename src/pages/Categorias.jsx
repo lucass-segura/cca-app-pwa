@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { BottomNav } from '../components/BottomNav';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { CATEGORIAS_GROUPS } from '../data/categorias';
 
@@ -79,7 +78,6 @@ export default function Categorias() {
         ))}
       </main>
 
-      <BottomNav />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { BottomNav } from '../components/BottomNav';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useDarkTheme } from '../hooks/useDarkTheme';
 
@@ -100,7 +99,6 @@ export default function Configuracion() {
 
       </main>
 
-      <BottomNav />
     </div>
   );
 }

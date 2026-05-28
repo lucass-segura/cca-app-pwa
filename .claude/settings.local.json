@@ -11,7 +11,7 @@
       "Bash(npx degit:*)",
       "Read(//tmp/theme-toggle-ref/**)",
       "Read(//private/tmp/theme-toggle-ref/**)",
-      "Bash(npm run:*)",
+      "Bash(pnpm run:*)",
       "mcp__Claude_Preview__preview_start",
       "WebFetch(domain:fonts.googleapis.com)",
       "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://fonts.googleapis.com/icon?family=Material+Icons+Round\")",
