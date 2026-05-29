@@ -1,10 +1,10 @@
 export const formatTitle = (title) => {
     const specialWords = ['Jesús', 'Cordero', 'Dios', 'Maestro', 'Pastor', 'Cristo', 'Señor', 'Espíritu', 'Santo', 'Creador', 'Redentor', 'Salvador', 'Rey', 'Padre', 'Aleluya', 'Gloria', 'Roca'];
-    const punctuation = ['?', '¿', '¡', '!', ',', '.', ':', ';'];
+    const punctuation = new Set(['?', '¿', '¡', '!', ',', '.', ':', ';']);
   
     const capitalize = (word) => {
       let index = 0;
-      while (index < word.length && punctuation.includes(word[index])) {
+      while (index < word.length && punctuation.has(word[index])) {
         index++;
       }
       if (index < word.length) {

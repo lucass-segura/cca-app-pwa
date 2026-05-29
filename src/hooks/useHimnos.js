@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import fallbackHimnos from '../data/himnos.json';
 import fallbackCoritos from '../data/coritos.json';
 
@@ -8,6 +8,7 @@ const VERSION_KEY = 'data_version';
 
 function getFromCache(key) {
   try {
+    if (typeof localStorage === 'undefined') return null;
     const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : null;
   } catch {
@@ -17,63 +18,83 @@ function getFromCache(key) {
 
 function saveToCache(key, data) {
   try {
+    if (typeof localStorage === 'undefined') return;
     localStorage.setItem(key, JSON.stringify(data));
   } catch {
     // localStorage full — ignore
   }
 }
 
-export function useHimnos() {
-  const [himnos, setHimnos] = useState(() => {
-    return getFromCache(HIMNOS_KEY) || fallbackHimnos;
-  });
+let snapshot = {
+  himnos: getFromCache(HIMNOS_KEY) || fallbackHimnos,
+  coritos: getFromCache(CORITOS_KEY) || fallbackCoritos,
+  loading: true,
+};
 
-  const [coritos, setCoritos] = useState(() => {
-    return getFromCache(CORITOS_KEY) || fallbackCoritos;
-  });
+const listeners = new Set();
+let updateStarted = false;
 
-  const [loading, setLoading] = useState(true);
+function emitChange() {
+  for (const listener of listeners) {
+    listener();
+  }
+}
 
-  useEffect(() => {
-    let cancelled = false;
+async function checkForUpdates() {
+  try {
+    const res = await fetch('/data/version.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const { version: remoteVersion } = await res.json();
+    const localVersion = getFromCache(VERSION_KEY) || 0;
 
-    async function checkForUpdates() {
-      try {
-        const res = await fetch('/data/version.json', { cache: 'no-cache' });
-        if (!res.ok) return;
-        const { version: remoteVersion } = await res.json();
-        const localVersion = getFromCache(VERSION_KEY) || 0;
+    if (remoteVersion > localVersion) {
+      const [himnosRes, coritosRes] = await Promise.all([
+        fetch('/data/himnos.json', { cache: 'no-cache' }),
+        fetch('/data/coritos.json', { cache: 'no-cache' }),
+      ]);
 
-        if (remoteVersion > localVersion) {
-          const [himnosRes, coritosRes] = await Promise.all([
-            fetch('/data/himnos.json', { cache: 'no-cache' }),
-            fetch('/data/coritos.json', { cache: 'no-cache' }),
-          ]);
+      if (!himnosRes.ok || !coritosRes.ok) return;
 
-          if (!himnosRes.ok || !coritosRes.ok) return;
+      const newHimnos = await himnosRes.json();
+      const newCoritos = await coritosRes.json();
 
-          const newHimnos = await himnosRes.json();
-          const newCoritos = await coritosRes.json();
+      saveToCache(HIMNOS_KEY, newHimnos);
+      saveToCache(CORITOS_KEY, newCoritos);
+      saveToCache(VERSION_KEY, remoteVersion);
 
-          if (cancelled) return;
-
-          saveToCache(HIMNOS_KEY, newHimnos);
-          saveToCache(CORITOS_KEY, newCoritos);
-          saveToCache(VERSION_KEY, remoteVersion);
-
-          setHimnos(newHimnos);
-          setCoritos(newCoritos);
-        }
-      } catch {
-        // Offline or network error — use cached/fallback data
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
+      snapshot = {
+        himnos: newHimnos,
+        coritos: newCoritos,
+        loading: snapshot.loading,
+      };
+      emitChange();
     }
+  } catch {
+    // Offline or network error — use cached/fallback data
+  } finally {
+    if (snapshot.loading) {
+      snapshot = { ...snapshot, loading: false };
+      emitChange();
+    }
+  }
+}
 
-    checkForUpdates();
-    return () => { cancelled = true; };
-  }, []);
+function ensureUpdateStarted() {
+  if (updateStarted || typeof fetch === 'undefined') return;
+  updateStarted = true;
+  checkForUpdates();
+}
 
-  return { himnos, coritos, loading };
+function subscribe(listener) {
+  listeners.add(listener);
+  ensureUpdateStarted();
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot() {
+  return snapshot;
+}
+
+export function useHimnos() {
+  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 }

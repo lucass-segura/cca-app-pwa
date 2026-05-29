@@ -162,11 +162,7 @@ export function useDarkMode() {
     };
 
     setTimeout(() => {
-      if (!document.startViewTransition) {
-        switchTheme();
-      } else {
-        document.startViewTransition(switchTheme);
-      }
+      switchTheme();
     }, DUR * 0.5);
 
     /* ── Cleanup ── */

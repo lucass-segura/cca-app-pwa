@@ -33,7 +33,7 @@ const TAG_LABELS = {
   funeral:      'Funeral',
 };
 
-export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
+function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
   const isHimno = Object.hasOwn(himno, 'himno');
   const id = isHimno ? himno.himno : himno.corito;
   const href = isHimno ? `/himno/${id}` : `/corito/${id}`;
@@ -66,7 +66,7 @@ export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
       <article className="group relative flex items-center p-4 bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
 
         {/* Número sin fondo */}
-        <div className="shrink-0 w-12 h-12 flex items-center justify-center mr-4">
+        <div className="shrink-0 size-12 flex items-center justify-center mr-4">
           <span className="font-serif font-bold text-xl text-primary/85 dark:text-primaryDark/70 group-hover:text-primary dark:group-hover:text-primaryDark transition-colors leading-none">
             {id}
           </span>
@@ -81,7 +81,7 @@ export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
             <div className="flex gap-3 mt-2">
               {tags.map(tag => (
                 <span key={tag} className={`inline-flex items-center gap-1.5 ${TAG_TEXT[tag]}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${TAG_DOT[tag]}`} />
+                  <span className={`size-1.5 rounded-full shrink-0 ${TAG_DOT[tag]}`} />
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] leading-none">
                     {TAG_LABELS[tag]}
                   </span>
@@ -93,13 +93,14 @@ export function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
 
         {/* Favorito */}
         <button
+          type="button"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
             handleToggleFavorite();
           }}
           aria-label={isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
-          className={`shrink-0 w-9 h-9 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${isFavorite || animState === 'adding' || animState === 'removing'
+          className={`shrink-0 size-9 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${isFavorite || animState === 'adding' || animState === 'removing'
             ? 'text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20'
             : 'text-textSecondary/50 dark:text-textSecondaryDark/50 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20'
           }`}

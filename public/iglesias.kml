@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>MAPA DE IGLESIAS CCA</name>
+    <description/>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>1</name>
+      <Placemark>
+        <name>Villa Lynch</name>
+        <description>Espora 4745</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.533274,-34.594813,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sarandí</name>
+        <description>San Pedro 243</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.339493,-34.682373,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bella Vista</name>
+        <description>Francisco Bourel 98</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.671351,-34.555592,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Carlos Spegazzini</name>
+        <description>Nicaragua 1236</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.574837,-34.913997,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Caseros</name>
+        <description>Martín de Alzaga 2678</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.574573,-34.606117,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capital Federal</name>
+        <description>Chile 2176, Balvanera</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.397133,-34.617365,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Claypole</name>
+        <description>Ricardo Rojas 2966</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.36111,-34.810986,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Domselaar</name>
+        <description>Laprida 67</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.28282,-35.068198,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>General Pacheco</name>
+        <description>Monteagudo 958</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.611099,-34.452874,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gregorio Laferrere</name>
+        <description>Icalma 4463</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.615798,-34.742916,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Guernica</name>
+        <description>Entre Ríos 175</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.38586,-34.919241,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lomas de Guernica</name>
+        <description>Florencio Varela 2913</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.347643,-34.91422,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>José Clemente Paz</name>
+        <description>Matheu 4282</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.78395,-34.525055,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Merlo</name>
+        <description>Salguero y Cabrera, 2520</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.728374,-34.654558,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alto de Merlo</name>
+        <description>Ernesto de la Carcova, 2006</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.74794,-34.687914,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Moreno</name>
+        <description>Posadas, 6276</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.78152,-34.618787,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa Toro</name>
+        <description>Nicaragua, 433</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.852919,-34.492651,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Brigida</name>
+        <description>Salerno, 5567</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.761117,-34.564892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zárate</name>
+        <description>Rawson, 1880</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -59.022201,-34.114258,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>2</name>
+      <Placemark>
+        <name>Dolores</name>
+        <description>Doctor Manuel Belgrano, 757</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.670752,-36.314176,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coronel Vidal</name>
+        <description>Inocencio Mariani, 328</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.731546,-37.453216,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>General Juan Madariaga</name>
+        <description>Calle 2, 330</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.126772,-36.99499,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Maipú</name>
+        <description>Ramos Mejía, 1223</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.881657,-36.859232,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Nicolás de los Arroyos - Central</name>
+        <description>Avenida Doctor Mariano Moreno, 276</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.229056,-33.331761,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Nicolás de los Arroyos - Plastiversal</name>
+        <description>7 de Septiembre,488 - Plastiversal</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.181826,-33.366203,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Emilia</name>
+        <description>Fray Luis Beltrán, 189</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.314928,-33.349627,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa Campi</name>
+        <description>Sánchez de Loria, 1032</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.299793,-33.358403,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mar del Plata</name>
+        <description>Juan de Garay, 4741</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.575532,-37.997211,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Clotilde</name>
+        <description>Calle 13, 230</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.630355,-27.177792,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colonia Carlos Pellegrini</name>
+        <description>Mburucuya entre Ruta Provincial 40 y Calle Panamby</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.173188,-28.531952,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paso de los Libres</name>
+        <description>Bartolomé Mitre, 2030</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.097056,-29.719921,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>3</name>
+      <Placemark>
+        <name>Gualeguaychú</name>
+        <description>Luis Clavarino, 1380</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.525722,-33.002068,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Concordia</name>
+        <description>Avenida General Juan Lamadrid, 1269</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.004948,-31.387851,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gualeguay</name>
+        <description>Sarmiento, 548</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -59.312352,-33.155025,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ñancay</name>
+        <description>A dos cuadras de la sala de 1º auxilios</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.678315,-33.457092,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ubajay</name>
+        <description>Las Calandrias, s/nº, entre Los Pinos y Algarrobal</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.314233,-31.794141,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>El Bolsón</name>
+        <description>Amador Inostrosa, 3840</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -71.543038,-41.955091,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coronel Juan José Gómez</name>
+        <description>Félix Heredia, 1200</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -67.635445,-39.024912,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fray Luis Beltran</name>
+        <description>Cristóbal Colón, 859</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -65.757545,-39.311641,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Salta</name>
+        <description>Teniente Benjamín Matienzo, 1405</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -65.43965,-24.803088,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Luis</name>
+        <description>Belgrano, 585</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -66.31212,-33.294481,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa Larca</name>
+        <description>Manzana 115</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.98254,-32.617878,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rosario - Triángulo</name>
+        <description>Juan Larrea, 344</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.696143,-32.968655,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rosario - Matheu</name>
+        <description>Balcarce, 4350</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.696143,-32.968655,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arroyo Seco</name>
+        <description>Urquiza, 206</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.498825,-33.154205,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Carolina</name>
+        <description>Ruta Nacional 18 km 6 N° 4045</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.696145,-33.077944,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Las Rosas</name>
+        <description>Córdoba, 957</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -61.583968,-32.473565,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villa Constitución</name>
+        <description>Luzuriaga, 1694</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -60.307833,-33.261259,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>4</name>
+      <Placemark>
+        <name>Formosa</name>
+        <description>A 100 mts de la Avenida Néstor Kirchner y Circunvalación Gendarmería Naciona</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.217162,-26.188764,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>El Palomar</name>
+        <description>Laureano Maradona y 3º, s/nº</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.145831,-26.146669,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Clorinda</name>
+        <description>Velez Sarsfield, s/nº</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -57.73106,-25.289888,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colonia Primavera</name>
+        <description>Ruta 86 - Escuela Provincial nº 308</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -61.26667,-23.549999,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Espinillo</name>
+        <description>Chaco y Ruta 40</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.560846,-24.98238,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>General Belgrano</name>
+        <description>Fortin Lugones y Abelardo Zamparo</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -59.022525,-24.938054,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Laguna Blanca</name>
+        <description>Bernardino Rivadavia, 852</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.24031,-25.128585,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Misión Tacaagle</name>
+        <description>Granadero Baigorria, s/nº</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -58.830381,-24.981351,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pozo de Navagan</name>
+        <description>Reducción Indígena Pilagá</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -59.873056,-24.131944,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Córdoba</name>
+        <description>Junín, 5481</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.116032,-31.429495,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Anisacate</name>
+        <description>Gualeguaychú S/N</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.387946,-31.694119,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monte Buey</name>
+        <description>Almirante Brown, 820</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -62.456396,-32.921967,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Pedro de Jujuy</name>
+        <description>Avenida Formosa, 530</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.866053,-24.22153,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fraile Pintado</name>
+        <description>Joaquín Carrillo, 79</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.805966,-23.940125,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Libertador General San Martín</name>
+        <description>Manzana 389, Lote 17</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -64.782867,-23.796682,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Maipú</name>
+        <description>Barcala, 426</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -68.78252,-32.980122,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jesús Nazareno</name>
+        <description>Niñas de Ayohuma, 1492</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -68.788253,-32.922796,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>5</name>
+      <Placemark>
+        <name>Cutral Co</name>
+        <description>Presidente Roque Sáenz Peña, 599</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -69.231869,-38.93633,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Neuquén</name>
+        <description>Automóvil Club Argentino, 53</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -68.104496,-38.954305,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Picún Leufú</name>
+        <description>Buenos Aires, s/n</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -69.292371,-39.515341,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Plaza Huincul</name>
+        <description>Francisco Adobatti, 254</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -69.199129,-38.938127,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Plottier</name>
+        <description>Avenida Doctor A. Plottier, 313</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -68.233182,-38.959126,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zapala</name>
+        <description>Almirante Brown, 1557</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -70.055209,-38.89703,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puerto Iguazú - Villa Alta</name>
+        <description>Julio Silveira, 312</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.571469,-25.611214,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puerto Iguazú - 1° de Mayo</name>
+        <description>Almafuerte, s/nº y Victoria Ocampo</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.586784,-25.625458,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puerto Iguazú - Las Orquideas</name>
+        <description>Flor de Lapacho, s/nº, Manzana M, Lote 14</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.556828,-25.626642,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Comandante Andresito</name>
+        <description>Colombia, entre Perú y Estados Unidos</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.049421,-25.672465,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puerto Esperanza</name>
+        <description>Costa Rica entre Uruguay y Haití</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.604624,-26.016782,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leandro Nicéforo Alem</name>
+        <description>José A. Ferradas, 167</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -55.319809,-27.598312,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Posadas</name>
+        <description>Calle 166, nº 2331</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -55.900422,-27.425436,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Campo Grande</name>
+        <description>Sección Novena, Lote 391</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.957438,-27.297938,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wanda</name>
+        <description>Latinoamericano esquina Las Malvinas</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.591186,-25.96933,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Vicente</name>
+        <description>Enrique Stelter y Entre Ríos</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.493627,-26.99361,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Garupa</name>
+        <description>Saltos del Moconá y Guembé</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -55.86827,-27.44271,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Eldorado</name>
+        <description>Calle sin nombre - Ruta 17 - Avenida San Martín Oeste - Altura 1.400 a 20 mts de la plaza</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.612794,-26.406242,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>El Soberbio</name>
+        <description>Ruta 2, Km 6</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.198139,-27.296582,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Delicia</name>
+        <description>Ruta 12, Km 1568</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.598858,-26.239904,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aristóbulo del Valle</name>
+        <description>A dos cuadras de la estación de servicio YPF Monchoclos</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.897013,-27.097276,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alba Posse</name>
+        <description>Provincia de Buenos Aires, entre Rivadavia y 25 de Mayo</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -54.680954,-27.570294,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>San Antonio</name>
+        <description>Juan Bautista Ambrosetti, Manzana 26 - Lote 7</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -53.737197,-26.062543,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paraje Pedro Giachino</name>
+        <description>Ruta 101 - Lote 30 - Picada San Jorge</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -53.89434,-25.974719,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

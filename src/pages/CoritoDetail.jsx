@@ -42,12 +42,14 @@ export default function CoritoDetail() {
       <div className="max-w-md mx-auto flex justify-end px-4 pt-4">
         <div className="flex gap-2">
           <button
+            type="button"
             onClick={reducirLetra}
             className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
             A-
           </button>
           <button
+            type="button"
             onClick={aumentarLetra}
             className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
@@ -60,7 +62,7 @@ export default function CoritoDetail() {
       <div className="max-w-md mx-auto p-4">
         {corito.coro.split('\n').map((line, i) => (
           <span
-            key={i}
+            key={`${i}-${line}`}
             style={{ fontSize, lineHeight: `${fontSize * 1.5}px` }}
             className="block font-himn font-normal"
           >

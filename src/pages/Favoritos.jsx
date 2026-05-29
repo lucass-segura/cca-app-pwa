@@ -9,15 +9,18 @@ export default function Favoritos() {
   const { favorites, toggleFavorite } = useFavorites();
 
   const favoriteItems = useMemo(() => {
+    const coritosById = new Map(coritos.map((corito) => [corito.corito, corito]));
+    const himnosById = new Map(himnos.map((himno) => [himno.himno, himno]));
     const items = [];
+
     for (const key of favorites) {
       if (key.startsWith('c_')) {
         const id = parseInt(key.substring(2));
-        const corito = coritos.find((c) => c.corito === id);
+        const corito = coritosById.get(id);
         if (corito) items.push({ ...corito, type: 'corito', _key: key });
       } else if (key.startsWith('h_')) {
         const id = parseInt(key.substring(2));
-        const himno = himnos.find((h) => h.himno === id);
+        const himno = himnosById.get(id);
         if (himno) items.push({ ...himno, type: 'himno', _key: key });
       }
     }

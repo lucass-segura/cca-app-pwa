@@ -33,10 +33,10 @@ export const CATEGORIAS_GROUPS = [
   },
 ];
 
+const CATEGORIAS_BY_ID = new Map(
+  CATEGORIAS_GROUPS.flatMap((group) => group.items.map((item) => [item.id, item]))
+);
+
 export function getCategoriaById(id) {
-  for (const group of CATEGORIAS_GROUPS) {
-    const found = group.items.find((c) => c.id === id);
-    if (found) return found;
-  }
-  return null;
+  return CATEGORIAS_BY_ID.get(id) ?? null;
 }

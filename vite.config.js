@@ -4,6 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  server: {
+    allowedHosts: ['51a7-186-143-198-45.ngrok-free.app'],
+  },
   build: {
     rollupOptions: {
       output: {

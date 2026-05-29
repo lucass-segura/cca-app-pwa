@@ -173,7 +173,12 @@ function WizardStep({ step, onNext, onBack, onClose, os }) {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center px-6 animate-fade-in">
-      <div className="absolute inset-0 bg-[#0c1929]/92 backdrop-blur-sm" onClick={onClose} />
+      <button
+        type="button"
+        aria-label="Cerrar instrucciones de instalación"
+        className="absolute inset-0 bg-[#0c1929]/92 backdrop-blur-sm"
+        onClick={onClose}
+      />
 
       <div className="relative z-10 w-full max-w-sm">
         <p className="text-xs font-sans text-white/30 text-center mb-3 tracking-widest uppercase">
@@ -202,6 +207,7 @@ function WizardStep({ step, onNext, onBack, onClose, os }) {
         <div className="flex gap-3">
           {step > 0 && (
             <button
+              type="button"
               onClick={onBack}
               className="flex-1 py-3.5 glass-tile rounded-full text-white/70 text-lg font-himn cursor-pointer"
             >
@@ -209,6 +215,7 @@ function WizardStep({ step, onNext, onBack, onClose, os }) {
             </button>
           )}
           <button
+            type="button"
             onClick={step < steps.length - 1 ? onNext : onClose}
             className="flex-1 py-3.5 bg-white/15 border border-white/20 rounded-full text-white text-lg font-himn font-semibold cursor-pointer active:scale-[0.97] transition-transform"
           >
@@ -268,15 +275,15 @@ export function InstallScreen({ os, install, canInstall }) {
       {/* Decorative blobs */}
       <div
         aria-hidden="true"
-        className="absolute -top-16 -right-16 w-72 h-72 bg-blue-200/50 rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-16 -right-16 size-72 bg-blue-200/50 rounded-full blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-12 -left-12 w-60 h-60 bg-violet-200/40 rounded-full blur-3xl pointer-events-none"
+        className="absolute -bottom-12 -left-12 size-60 bg-violet-200/40 rounded-full blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute top-1/3 -left-20 w-44 h-44 bg-sky-200/30 rounded-full blur-2xl pointer-events-none"
+        className="absolute top-1/3 -left-20 size-44 bg-sky-200/30 rounded-full blur-2xl pointer-events-none"
       />
 
       <main className="relative z-10 w-full max-w-sm px-6 py-12 flex flex-col items-center animate-fade-in">
@@ -287,7 +294,7 @@ export function InstallScreen({ os, install, canInstall }) {
           <img
             src="/icon-192.png"
             alt="Himnos CCA"
-            className="relative w-24 h-24 rounded-[22px] shadow-[0_6px_28px_rgba(37,99,235,0.20)]"
+            className="relative size-24 rounded-[22px] shadow-[0_6px_28px_rgba(37,99,235,0.20)]"
           />
         </div>
 
@@ -307,7 +314,7 @@ export function InstallScreen({ os, install, canInstall }) {
             const FeatureIcon = icon;
             return (
             <div key={title} className="flex items-center gap-4 p-4">
-              <div className={`w-10 h-10 rounded flex items-center justify-center shrink-0 ${bg} ${color}`}>
+              <div className={`size-10 rounded flex items-center justify-center shrink-0 ${bg} ${color}`}>
                 <FeatureIcon />
               </div>
               <div>
@@ -321,6 +328,7 @@ export function InstallScreen({ os, install, canInstall }) {
 
         {/* Install CTA */}
         <button
+          type="button"
           onClick={handleInstall}
           className="w-full py-4 bg-primary text-white font-semibold font-sans text-base rounded-full cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,99,235,0.30)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >

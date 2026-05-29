@@ -23,12 +23,14 @@ export function UpdateToast() {
       <div className="bg-primary text-white px-5 py-3 rounded-xl shadow-lg flex items-center gap-3 font-himn text-xl">
         <span>Nueva versión disponible</span>
         <button
+          type="button"
           onClick={() => updateServiceWorker(true)}
           className="bg-white text-primary px-3 py-1 rounded-lg font-himn font-semibold text-lg cursor-pointer"
         >
           Actualizar
         </button>
         <button
+          type="button"
           onClick={() => setShow(false)}
           className="text-white/70 hover:text-white text-lg cursor-pointer"
         >

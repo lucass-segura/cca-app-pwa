@@ -34,14 +34,14 @@ export default function CategoriaDetalle() {
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
           <Link
             to="/categorias"
-            className="flex items-center justify-center w-8 h-8 -ml-1 rounded text-textSecondary dark:text-textSecondaryDark hover:text-textPrimary dark:hover:text-textPrimaryDark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="flex items-center justify-center size-8 -ml-1 rounded text-textSecondary dark:text-textSecondaryDark hover:text-textPrimary dark:hover:text-textPrimaryDark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="Volver a categorías"
           >
             <span className="material-icons-round text-xl">arrow_back</span>
           </Link>
 
           {/* Accent dot */}
-          <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${categoria.accent}`} />
+          <div className={`size-2.5 rounded-full shrink-0 ${categoria.accent}`} />
 
           <h1 className="font-serif font-bold text-xl tracking-tight text-textPrimary dark:text-textPrimaryDark flex-1">
             {categoria.label}

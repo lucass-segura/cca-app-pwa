@@ -5,9 +5,10 @@ export function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggle}
       aria-label="Cambiar tema"
-      className="relative w-10 h-10 shrink-0 rounded-full flex items-center justify-center
+      className="relative size-10 shrink-0 rounded-full flex items-center justify-center
                  hover:bg-black/5 dark:hover:bg-white/10
                  active:scale-90 transition-transform duration-150
                  focus:outline-none"
@@ -15,7 +16,7 @@ export function ThemeToggle() {
       {/* Sol — light mode */}
       <svg
         viewBox="0 0 24 24"
-        className="w-[22px] h-[22px] absolute"
+        className="size-[22px] absolute"
         style={{ opacity: isDark ? 0 : 1, transition: 'opacity 0.25s ease' }}
         fill="#93C5FD"
       >
@@ -33,7 +34,7 @@ export function ThemeToggle() {
       {/* Luna — dark mode */}
       <svg
         viewBox="0 0 24 24"
-        className="w-[22px] h-[22px] absolute"
+        className="size-[22px] absolute"
         style={{ opacity: isDark ? 1 : 0, transition: 'opacity 0.25s ease' }}
       >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#93C5FD" />

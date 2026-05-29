@@ -1,13 +1,3 @@
-export const TAGS = [
-  { id: 'apertura',     label: 'Apertura'     },
-  { id: 'oracion',      label: 'Oración'      },
-  { id: 'palabra',      label: 'Palabra'      },
-  { id: 'finalizacion', label: 'Finalización' },
-  { id: 'bautismo',     label: 'Bautismo'     },
-  { id: 'santacena',    label: 'Santa Cena'   },
-  { id: 'funeral',      label: 'Funeral'      },
-];
-
 export const HIMNO_TAGS = {
   apertura:     [84, 96, 101, 113, 116, 122, 147, 148, 152, 217, 258],
   oracion:      [4, 14, 49, 62, 63, 79, 88, 106, 110, 132, 142, 169, 177, 260, 282, 297, 351, 363, 371, 402, 469],

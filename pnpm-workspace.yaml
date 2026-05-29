@@ -1,0 +1,8 @@
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@babel/core'
+  - 'terser'
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - '@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1'
+  - 'semver@6.3.1'

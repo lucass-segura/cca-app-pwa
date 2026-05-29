@@ -8,6 +8,7 @@ import Favoritos from './pages/Favoritos';
 import Configuracion from './pages/Configuracion';
 import Categorias from './pages/Categorias';
 import CategoriaDetalle from './pages/CategoriaDetalle';
+import Novedades from './pages/Novedades';
 import { UpdateToast } from './components/UpdateToast';
 import { InstallScreen } from './components/InstallBanner';
 import { BottomNav } from './components/BottomNav';
@@ -19,6 +20,7 @@ function AppLayout() {
     pathname === '/' ||
     pathname === '/categorias' ||
     pathname === '/favoritos' ||
+    pathname === '/novedades' ||
     pathname === '/configuracion' ||
     pathname.startsWith('/categorias/');
 
@@ -32,6 +34,7 @@ function AppLayout() {
         <Route path="/configuracion" element={<Configuracion />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/categorias/:id" element={<CategoriaDetalle />} />
+        <Route path="/novedades" element={<Novedades />} />
       </Routes>
       {showBottomNav && <BottomNav />}
       <UpdateToast />

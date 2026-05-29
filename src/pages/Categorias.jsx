@@ -14,8 +14,8 @@ function CategoryCard({ cat, index }) {
         <article className="group relative flex items-center p-4 bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
 
           {/* Acento de color — mismo espacio que el número en HimnoPreview */}
-          <div className="shrink-0 w-12 h-12 flex items-center justify-center mr-4">
-            <span className={`w-3 h-3 rounded-full ${cat.accent} opacity-80`} />
+          <div className="shrink-0 size-12 flex items-center justify-center mr-4">
+            <span className={`size-3 rounded-full ${cat.accent} opacity-80`} />
           </div>
 
           {/* Nombre + conteo */}
@@ -29,7 +29,7 @@ function CategoryCard({ cat, index }) {
           </div>
 
           {/* Flecha — mismo espacio que el favorito en HimnoPreview */}
-          <div className="shrink-0 w-9 h-9 flex items-center justify-center">
+          <div className="shrink-0 size-9 flex items-center justify-center">
             <span className="material-icons-round text-textSecondary/30 dark:text-textSecondaryDark/30 text-xl group-hover:text-textSecondary/60 dark:group-hover:text-textSecondaryDark/60 transition-colors">
               chevron_right
             </span>

@@ -12,6 +12,8 @@ const normalizeText = (text) => {
     .toLowerCase();
 };
 
+const textMatchesQuery = (text, query) => normalizeText(text).indexOf(query) !== -1;
+
 export default function Home() {
   const { himnos, coritos } = useHimnos();
   const [searchQuery, setSearchQuery] = useState('');
@@ -35,25 +37,30 @@ export default function Home() {
     if (!searchQuery) return allSections;
 
     const q = normalizeText(searchQuery);
-    return allSections
-      .map((section) => ({
-        ...section,
-        data: section.data.filter((item) => {
+    const filteredSections = [];
+
+    for (const section of allSections) {
+      const data = section.data.filter((item) => {
           if (item.type === 'corito') {
             return (
-              normalizeText(item.corito.toString()).includes(q) ||
-              normalizeText(item.titulo).includes(q) ||
-              normalizeText(item.coro).includes(q)
+              textMatchesQuery(item.corito.toString(), q) ||
+              textMatchesQuery(item.titulo, q) ||
+              textMatchesQuery(item.coro, q)
             );
           }
           return (
-            normalizeText(item.himno.toString()).includes(q) ||
-            normalizeText(item.titulo).includes(q) ||
-            Object.values(item.letra).some((v) => normalizeText(v).includes(q))
+            textMatchesQuery(item.himno.toString(), q) ||
+            textMatchesQuery(item.titulo, q) ||
+            Object.values(item.letra).some((v) => textMatchesQuery(v, q))
           );
-        }),
-      }))
-      .filter((section) => section.data.length > 0);
+      });
+
+      if (data.length > 0) {
+        filteredSections.push({ ...section, data });
+      }
+    }
+
+    return filteredSections;
   }, [searchQuery, himnos, coritos]);
 
   const noResults = searchQuery && sections.length === 0;
@@ -77,6 +84,7 @@ export default function Home() {
             </div>
             <input
               type="text"
+              aria-label="Buscar himno o corito"
               className="block w-full pl-10 pr-10 py-3 border border-borderLight dark:border-white/[0.08] rounded-md leading-5 bg-white dark:bg-surfaceDark placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-all"
               placeholder="Buscar himno o corito..."
               value={searchQuery}
@@ -84,6 +92,8 @@ export default function Home() {
             />
             {searchQuery && (
               <button
+                type="button"
+                aria-label="Limpiar búsqueda"
                 onClick={() => setSearchQuery('')}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center text-textSecondary dark:text-textSecondaryDark"
               >

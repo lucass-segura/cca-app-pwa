@@ -42,6 +42,7 @@ export default function Configuracion() {
 
             {/* Toggle modo oscuro */}
             <button
+              type="button"
               onClick={toggle}
               className="w-full flex items-center justify-between p-4 hover:bg-bgLight dark:hover:bg-white/[0.03] transition-colors"
             >
@@ -68,6 +69,7 @@ export default function Configuracion() {
                   const isActive = darkTheme === theme.id;
                   return (
                     <button
+                      type="button"
                       key={theme.id}
                       onClick={() => setDarkTheme(theme.id)}
                       className={`flex-1 flex items-center gap-2.5 px-3 py-2.5 rounded border transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
@@ -77,7 +79,7 @@ export default function Configuracion() {
                       }`}
                     >
                       <span
-                        className="shrink-0 w-5 h-5 rounded-sm border border-black/10"
+                        className="shrink-0 size-5 rounded-sm border border-black/10"
                         style={{ background: theme.bg }}
                       />
                       <span className={`font-sans text-xs font-medium ${isActive ? 'text-primary dark:text-primaryDark' : 'text-textSecondary dark:text-textSecondaryDark'}`}>
