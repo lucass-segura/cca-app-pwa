@@ -1,7 +1,7 @@
-import { useCallback, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, ZoomControl } from 'react-leaflet';
 import { kml } from '@mapbox/togeojson';
 
 const DEFAULT_CENTER = [-34.6037, -58.3816];
@@ -348,11 +348,81 @@ function ChurchList({ churches, selectedChurchId, onSelectChurch }) {
   );
 }
 
+function ChurchSearch({
+  inputId,
+  searchQuery,
+  searchSuggestions,
+  isSearchOpen,
+  onSearchChange,
+  onSearchFocus,
+  onSearchKeyDown,
+  onClearSearch,
+  onSelectChurch,
+}) {
+  return (
+    <div className="relative block w-full min-w-0">
+      <label htmlFor={inputId} className="sr-only">Buscar iglesia</label>
+      <span className="material-icons-round pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[21px] text-textSecondary/70 dark:text-textSecondaryDark/70">
+        search
+      </span>
+      <input
+        id={inputId}
+        type="search"
+        value={searchQuery}
+        onChange={onSearchChange}
+        onFocus={onSearchFocus}
+        onKeyDown={onSearchKeyDown}
+        placeholder="Buscar iglesia…"
+        className="h-12 w-full rounded-2xl border border-borderLight bg-white pl-12 pr-12 font-sans text-sm text-textPrimary shadow-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10 dark:border-white/[0.07] dark:bg-surfaceDark dark:text-textPrimaryDark dark:focus:border-primaryDark dark:focus:ring-primaryDark/15"
+      />
+      {searchQuery && (
+        <button
+          type="button"
+          onClick={onClearSearch}
+          className="absolute right-3 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-textSecondary transition-colors hover:bg-bgLight hover:text-textPrimary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-textSecondaryDark dark:hover:bg-white/[0.06] dark:hover:text-textPrimaryDark"
+          aria-label="Borrar busqueda"
+        >
+          <span className="material-icons-round text-[18px]" aria-hidden>
+            close
+          </span>
+        </button>
+      )}
+      {isSearchOpen && searchSuggestions.length > 0 && (
+        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[3200] max-h-72 overflow-y-auto rounded-2xl border border-borderLight bg-white shadow-xl dark:border-white/[0.07] dark:bg-surfaceDark">
+          {searchSuggestions.map((church) => (
+            <button
+              key={church.id}
+              type="button"
+              onClick={() => onSelectChurch(church.id)}
+              className="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-bgLight focus:outline-none focus-visible:bg-bgLight dark:hover:bg-white/[0.04] dark:focus-visible:bg-white/[0.04]"
+            >
+              <span className="material-icons-round mt-0.5 text-[20px] text-primary dark:text-primaryDark" aria-hidden>
+                home
+              </span>
+              <span className="min-w-0">
+                <span className="block truncate font-sans text-sm font-semibold text-textPrimary dark:text-textPrimaryDark">
+                  {church.name}
+                </span>
+                {church.description && (
+                  <span className="mt-0.5 block truncate font-sans text-xs text-textSecondary dark:text-textSecondaryDark">
+                    {church.description}
+                  </span>
+                )}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function ChurchMap({ kmlUrl = '/iglesias.kml' }) {
   const { churches, loading, error } = useChurchesFromKml(kmlUrl);
   const isDarkTheme = useIsDarkTheme();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMapFullscreen, setIsMapFullscreen] = useState(false);
   const [selectedChurchId, setSelectedChurchId] = useState('');
   const markerRefs = useRef({});
   const mapRef = useRef(null);
@@ -378,6 +448,23 @@ export function ChurchMap({ kmlUrl = '/iglesias.kml' }) {
 
   const churchIndex = useMemo(() => buildChurchIndex(churches), [churches]);
   const mapBounds = useMemo(() => getChurchBounds(churches), [churches]);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      mapRef.current?.invalidateSize();
+    }, 260);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isMapFullscreen]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMapFullscreen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMapFullscreen]);
+
   const handleSelectChurch = useCallback((churchId) => {
     const church = churchIndex.get(churchId);
     setSelectedChurchId(churchId);
@@ -404,6 +491,17 @@ export function ChurchMap({ kmlUrl = '/iglesias.kml' }) {
     handleSelectChurch(searchSuggestions[0].id);
   };
 
+  const searchProps = {
+    searchQuery,
+    searchSuggestions,
+    isSearchOpen,
+    onSearchChange: handleSearchChange,
+    onSearchFocus: () => setIsSearchOpen(searchQuery.trim().length > 0),
+    onSearchKeyDown: handleSearchKeyDown,
+    onClearSearch: handleClearSearch,
+    onSelectChurch: handleSelectChurch,
+  };
+
   return (
     <section className="w-full min-w-0 max-w-full space-y-5">
       <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -416,65 +514,62 @@ export function ChurchMap({ kmlUrl = '/iglesias.kml' }) {
           </h2>
         </div>
 
-        <div className="relative block w-full min-w-0 sm:max-w-sm">
-          <label htmlFor="church-search" className="sr-only">Buscar iglesia</label>
-          <span className="material-icons-round pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[21px] text-textSecondary/70 dark:text-textSecondaryDark/70">
-            search
-          </span>
-          <input
-            id="church-search"
-            type="search"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            onFocus={() => setIsSearchOpen(searchQuery.trim().length > 0)}
-            onKeyDown={handleSearchKeyDown}
-            placeholder="Buscar iglesia…"
-            className="h-12 w-full rounded-2xl border border-borderLight bg-white pl-12 pr-12 font-sans text-sm text-textPrimary shadow-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10 dark:border-white/[0.07] dark:bg-surfaceDark dark:text-textPrimaryDark dark:focus:border-primaryDark dark:focus:ring-primaryDark/15"
-          />
-          {searchQuery && (
-            <button
-              type="button"
-              onClick={handleClearSearch}
-              className="absolute right-3 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-textSecondary transition-colors hover:bg-bgLight hover:text-textPrimary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-textSecondaryDark dark:hover:bg-white/[0.06] dark:hover:text-textPrimaryDark"
-              aria-label="Borrar busqueda"
-            >
-              <span className="material-icons-round text-[18px]" aria-hidden>
-                close
-              </span>
-            </button>
-          )}
-          {isSearchOpen && searchSuggestions.length > 0 && (
-            <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[1001] max-h-72 overflow-y-auto rounded-2xl border border-borderLight bg-white shadow-xl dark:border-white/[0.07] dark:bg-surfaceDark">
-              {searchSuggestions.map((church) => (
-                <button
-                  key={church.id}
-                  type="button"
-                  onClick={() => handleSelectChurch(church.id)}
-                  className="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-bgLight focus:outline-none focus-visible:bg-bgLight dark:hover:bg-white/[0.04] dark:focus-visible:bg-white/[0.04]"
-                >
-                  <span className="material-icons-round mt-0.5 text-[20px] text-primary dark:text-primaryDark" aria-hidden>
-                    home
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block truncate font-sans text-sm font-semibold text-textPrimary dark:text-textPrimaryDark">
-                      {church.name}
-                    </span>
-                    {church.description && (
-                      <span className="mt-0.5 block truncate font-sans text-xs text-textSecondary dark:text-textSecondaryDark">
-                        {church.description}
-                      </span>
-                    )}
-                  </span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+        {!isMapFullscreen && (
+          <div className="w-full min-w-0 sm:max-w-sm">
+            <ChurchSearch inputId="church-search" {...searchProps} />
+          </div>
+        )}
       </div>
 
       <div className="grid w-full min-w-0 max-w-full gap-5 xl:grid-cols-[minmax(0,0.41fr)_380px] xl:items-start">
-        <div className="relative z-0 w-full min-w-0 max-w-full rounded-3xl border border-white/70 bg-white p-1 shadow-xl dark:border-white/[0.07] dark:bg-surfaceDark">
-          <div className="map-viewport aspect-[4/5] min-h-[200px] min-w-0 w-full sm:aspect-[16/10] md:aspect-[16/9] xl:aspect-auto xl:h-[520px]">
+        <div
+          className={`${
+            isMapFullscreen
+              ? 'fixed inset-0 z-[3000] rounded-none border-0 bg-bgLight p-0 dark:bg-bgDark'
+              : 'relative z-0 w-full min-w-0 max-w-full rounded-3xl border border-white/70 bg-white p-1 shadow-xl dark:border-white/[0.07] dark:bg-surfaceDark'
+          }`}
+        >
+          <div className={`${isMapFullscreen ? 'fixed left-3 right-3 top-4 z-[3100] mx-auto max-w-md' : 'hidden'}`}>
+            <ChurchSearch inputId="church-search-fullscreen" {...searchProps} />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMapFullscreen((expanded) => !expanded)}
+            className={`absolute right-3 z-[3150] flex size-11 items-center justify-center rounded-2xl border border-white/70 bg-white/90 text-textPrimary shadow-lg backdrop-blur-xl transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-white/[0.10] dark:bg-surfaceDark/90 dark:text-textPrimaryDark dark:hover:bg-surfaceDark ${
+              isMapFullscreen ? 'top-[76px] sm:top-4' : 'top-3'
+            }`}
+            aria-label={isMapFullscreen ? 'Achicar mapa' : 'Agrandar mapa'}
+            aria-pressed={isMapFullscreen}
+          >
+            <span className="material-icons-round text-[23px]" aria-hidden>
+              {isMapFullscreen ? 'fullscreen_exit' : 'fullscreen'}
+            </span>
+          </button>
+
+          {isMapFullscreen && (
+            <div className="absolute bottom-20 left-5 z-[3150] overflow-hidden rounded-2xl border border-white/70 bg-white/90 shadow-lg backdrop-blur-xl dark:border-white/[0.10] dark:bg-surfaceDark/90">
+              <button
+                type="button"
+                onClick={() => mapRef.current?.zoomIn()}
+                className="flex size-11 items-center justify-center text-2xl font-semibold text-textPrimary transition hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-textPrimaryDark dark:hover:bg-white/[0.07]"
+                aria-label="Acercar mapa"
+              >
+                +
+              </button>
+              <div className="h-px bg-borderLight dark:bg-white/[0.08]" />
+              <button
+                type="button"
+                onClick={() => mapRef.current?.zoomOut()}
+                className="flex size-11 items-center justify-center text-3xl font-light leading-none text-textPrimary transition hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-textPrimaryDark dark:hover:bg-white/[0.07]"
+                aria-label="Alejar mapa"
+              >
+                -
+              </button>
+            </div>
+          )}
+
+          <div className={`map-viewport min-w-0 w-full ${isMapFullscreen ? 'map-viewport-fullscreen h-screen rounded-none' : 'aspect-[5/5.7] min-h-[180px] sm:aspect-[16/9] md:aspect-[2/1] xl:aspect-auto xl:h-[480px]'}`}>
             {loading ? (
               <div className="flex h-full items-center justify-center bg-bgLight font-sans text-sm text-textSecondary dark:bg-bgDark dark:text-textSecondaryDark">
                 Cargando mapa de iglesias…
@@ -498,9 +593,11 @@ export function ChurchMap({ kmlUrl = '/iglesias.kml' }) {
                 boundsOptions={{ padding: [36, 36], maxZoom: 13 }}
                 center={DEFAULT_CENTER}
                 zoom={10}
+                zoomControl={false}
                 scrollWheelZoom
                 className="h-full w-full max-w-full"
               >
+                {!isMapFullscreen && <ZoomControl position="topleft" />}
                 <TileLayer
                   key={tileLayer.url}
                   attribution={tileLayer.attribution}

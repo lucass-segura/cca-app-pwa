@@ -236,6 +236,11 @@ body {
   contain: layout paint;
 }
 
+.map-viewport-fullscreen,
+.map-viewport-fullscreen .leaflet-container {
+  border-radius: 0;
+}
+
 .leaflet-control-container {
   max-width: 100%;
   position: relative;

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { useLocation } from 'react-router-dom';
 import Home from './pages/Home';
@@ -21,6 +21,7 @@ function AppLayout() {
     pathname === '/categorias' ||
     pathname === '/favoritos' ||
     pathname === '/novedades' ||
+    pathname.startsWith('/novedades/') ||
     pathname === '/configuracion' ||
     pathname.startsWith('/categorias/');
 
@@ -34,7 +35,8 @@ function AppLayout() {
         <Route path="/configuracion" element={<Configuracion />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/categorias/:id" element={<CategoriaDetalle />} />
-        <Route path="/novedades" element={<Novedades />} />
+        <Route path="/novedades" element={<Navigate to="/novedades/reuniones" replace />} />
+        <Route path="/novedades/:sectionId" element={<Novedades />} />
       </Routes>
       {showBottomNav && <BottomNav />}
       <UpdateToast />
