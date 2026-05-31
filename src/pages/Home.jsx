@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimatedHimnoPreview } from '../components/HimnoPreview';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { useHimnos } from '../hooks/useHimnos';
@@ -73,7 +74,22 @@ export default function Home() {
           <h1 className="font-serif font-bold text-2xl tracking-tight text-primary/85 dark:text-primaryDark">
             Himnos
           </h1>
-          <ThemeToggle />
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <Link
+              to="/configuracion"
+              aria-label="Configuración"
+              className="relative size-10 shrink-0 rounded-full flex items-center justify-center
+                         text-textSecondary dark:text-textSecondaryDark
+                         hover:bg-black/5 dark:hover:bg-white/10
+                         active:scale-90 transition-transform duration-150
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <span className="material-icons-round text-[22px]" aria-hidden>
+                settings
+              </span>
+            </Link>
+          </div>
         </div>
         <div className="max-w-md mx-auto px-4 pb-4">
           <div className="relative">
