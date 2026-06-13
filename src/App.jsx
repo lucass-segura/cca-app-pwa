@@ -9,7 +9,7 @@ import Configuracion from './pages/Configuracion';
 import Categorias from './pages/Categorias';
 import CategoriaDetalle from './pages/CategoriaDetalle';
 import Novedades from './pages/Novedades';
-import { UpdateToast } from './components/UpdateToast';
+import { NewsModal } from './components/NewsModal';
 import { InstallScreen } from './components/InstallBanner';
 import { BottomNav } from './components/BottomNav';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
@@ -39,7 +39,7 @@ function AppLayout() {
         <Route path="/novedades/:sectionId" element={<Novedades />} />
       </Routes>
       {showBottomNav && <BottomNav />}
-      <UpdateToast />
+      {pathname === '/' && <NewsModal />}
       <Analytics />
     </>
   );

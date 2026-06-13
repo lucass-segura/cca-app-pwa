@@ -20,7 +20,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       includeAssets: ['fonts/*.ttf', 'fonts/*.woff2', 'icon.png', 'icon-192.png', 'icon-512.png'],
       manifest: {
         name: 'Himnos',
@@ -52,10 +52,23 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,woff2,ttf,png,svg,ico}'],
+        globPatterns: ['**/*.{js,css,html,woff2,ttf,png,svg,ico,kml}'],
         navigateFallback: 'index.html',
-        navigateFallbackDenylist: [/^\/api\//, /^\/data\//],
         runtimeCaching: [
+          {
+            // Tiles del mapa de iglesias (CARTO basemaps): se guardan al
+            // visitarlos para que las zonas ya vistas funcionen sin conexión.
+            urlPattern: /^https:\/\/[a-z0-9-]+\.basemaps\.cartocdn\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'map-tiles',
+              expiration: {
+                maxEntries: 400,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             handler: 'StaleWhileRevalidate',
@@ -71,18 +84,6 @@ export default defineConfig({
               cacheName: 'google-fonts-webfonts',
               expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 },
               cacheableResponse: { statuses: [0, 200] },
-            },
-          },
-          {
-            urlPattern: /\/data\/.+\.json$/,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'himnos-data',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365,
-              },
-              networkTimeoutSeconds: 3,
             },
           },
         ],

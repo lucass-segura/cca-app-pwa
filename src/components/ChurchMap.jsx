@@ -91,7 +91,7 @@ function createKmlStore(kmlUrl) {
 
   const loadKml = async () => {
     try {
-      const response = await fetch(kmlUrl, { cache: 'no-cache' });
+      const response = await fetch(kmlUrl);
 
       if (!response.ok) {
         throw new Error(`No se pudo cargar ${kmlUrl}`);
