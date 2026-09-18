@@ -37,4 +37,15 @@ Dos trabajos en una sola entrega sobre `develop`:
       (delegado a `gentle-ai-worker`; el parent agregó `alsoMatch: ['/coros']`
       para que la pestaña Categorías quede activa en la ruta de coros)
 - [x] 5. Verificar: `pnpm lint` + `pnpm build`
-- [ ] 6. Commit y push a `develop`
+- [x] 6. Commit y push a `develop` (`3b3ca7b`)
+
+## Hallazgo de revisión (bloqueante, corregido)
+
+`coros-avulsos.json` traía el coro 16 con `titulo: null`. `slugify` llama a
+`normalize`, que tira excepción con `null`, y `useHimnos` ejecuta ese map al
+importarse: el fallo no rompía sólo la vista de coros, rompía toda la app.
+Se completó el título faltante y se filtran las entradas sin título válido.
+
+Pendiente informativo (no bloqueante): `src/pages/CoroDetail.jsx:25-27` asume
+claves de verso numéricas; las claves no numéricas (`marcaCoro`, etc.) quedan
+fuera del orden esperado.
