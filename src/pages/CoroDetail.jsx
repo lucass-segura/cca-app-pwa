@@ -33,7 +33,7 @@ export default function CoroDetail() {
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-2">
           <Link
             to="/coros"
-            aria-label="Volver a coros"
+            aria-label="Volver a coros avulsos"
             className="p-1.5 -ml-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-textSecondary dark:text-textSecondaryDark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <span className="material-icons-round text-2xl">arrow_back</span>

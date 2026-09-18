@@ -46,7 +46,7 @@ export default function Coros() {
             <span className="material-icons-round text-2xl">arrow_back</span>
           </Link>
           <h1 className="flex-1 font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
-            Coros
+            Coros avulsos
           </h1>
           <ThemeToggle />
         </div>
@@ -60,9 +60,9 @@ export default function Coros() {
             </div>
             <input
               type="text"
-              aria-label="Buscar coro"
+              aria-label="Buscar coro avulso"
               className="block w-full pl-10 pr-10 py-3 border border-white/90 dark:border-white/[0.09] rounded-md leading-5 bg-white/75 dark:bg-surfaceDark/70 backdrop-blur-md placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-[border-color,background-color,box-shadow]"
-              placeholder="Buscar coro..."
+              placeholder="Buscar coro avulso..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

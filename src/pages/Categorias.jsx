@@ -60,7 +60,7 @@ function CorosCard({ total }) {
 
           <div className="flex-1 min-w-0 pr-2">
             <h3 className="font-serif font-semibold text-base text-textPrimary dark:text-textPrimaryDark leading-snug group-hover:text-primary dark:group-hover:text-primaryDark transition-colors">
-              Coros
+              Coros avulsos
             </h3>
             <p className="font-sans text-xs text-textSecondary dark:text-textSecondaryDark mt-0.5">
               {total} coros sueltos, sin numeración
@@ -101,7 +101,7 @@ export default function Categorias() {
         <div className="mb-6">
           <div className="animate-card-enter flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold font-serif text-textPrimary dark:text-textPrimaryDark">
-              Coros
+              Coros avulsos
             </h2>
           </div>
           <CorosCard total={coros.length} />
