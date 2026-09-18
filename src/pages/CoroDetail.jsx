@@ -5,22 +5,22 @@ import { ThemeToggle } from '../components/ThemeToggle';
 import { formatTitle } from '../utils/utils';
 import { useFontSize } from '../hooks/useFontSize';
 
-export default function HimnoDetail() {
-  const { id } = useParams();
-  useEffect(() => { window.scrollTo(0, 0); }, [id]);
-  const { himnos } = useHimnos();
-  const himno = himnos.find((h) => h.himno.toString() === id);
+export default function CoroDetail() {
+  const { slug } = useParams();
+  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
+  const { coros } = useHimnos();
+  const coro = coros.find((c) => c.slug === slug);
   const { fontSize, aumentarLetra, reducirLetra } = useFontSize();
 
-  if (!himno) {
+  if (!coro) {
     return (
       <div className="flex-1 flex justify-center items-center min-h-screen bg-bgLight dark:bg-bgDark">
-        <span className="text-red-500 dark:text-red-400 text-xl font-medium">Himno no encontrado</span>
+        <span className="text-red-500 dark:text-red-400 text-xl font-medium">Coro no encontrado</span>
       </div>
     );
   }
 
-  const { letra } = himno;
+  const { letra } = coro;
 
   const versos = Object.entries(letra)
     .filter(([key]) => key !== 'coro' && key !== 'final')
@@ -32,14 +32,14 @@ export default function HimnoDetail() {
       <header className="app-header sticky top-0 z-10 border-b">
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-2">
           <Link
-            to="/"
-            aria-label="Volver a himnos"
+            to="/coros"
+            aria-label="Volver a coros"
             className="p-1.5 -ml-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-textSecondary dark:text-textSecondaryDark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <span className="material-icons-round text-2xl">arrow_back</span>
           </Link>
           <h1 className="flex-1 font-serif font-bold text-lg truncate text-primary/85 dark:text-primaryDark">
-            {himno.himno}. {formatTitle(himno.titulo)}
+            {formatTitle(coro.titulo)}
           </h1>
           <ThemeToggle />
         </div>
@@ -67,7 +67,7 @@ export default function HimnoDetail() {
         </div>
       </div>
 
-      {/* Himno content */}
+      {/* Coro content */}
       <div className="max-w-md mx-auto p-4">
         {versos.map(([key, verso], index) => (
           <div key={key} className="flex items-start mt-3">

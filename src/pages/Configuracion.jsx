@@ -21,10 +21,10 @@ export default function Configuracion() {
   const { darkTheme, setDarkTheme } = useDarkTheme();
 
   return (
-    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
-      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
+    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+      <header className="app-header sticky top-0 z-10 border-b">
         <div className="max-w-md mx-auto px-4 py-3">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary dark:text-primaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
             Configuración
           </h1>
         </div>
@@ -38,7 +38,7 @@ export default function Configuracion() {
             Apariencia
           </p>
 
-          <div className="bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] overflow-hidden divide-y divide-borderLight dark:divide-white/[0.06]">
+          <div className="bg-white/95 dark:bg-surfaceDark rounded border border-borderLight dark:border-white/[0.07] overflow-hidden divide-y divide-borderLight dark:divide-white/[0.06]">
 
             {/* Toggle modo oscuro */}
             <button

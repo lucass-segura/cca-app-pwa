@@ -27,10 +27,10 @@ export default function CategoriaDetalle() {
     .map((h) => ({ ...h, type: 'himno' }));
 
   return (
-    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
 
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
+      <header className="app-header sticky top-0 z-10 border-b">
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
           <Link
             to="/categorias"
@@ -54,7 +54,7 @@ export default function CategoriaDetalle() {
       </header>
 
       <main className="max-w-md mx-auto px-4 pt-6">
-        <div className="space-y-3">
+        <div className="space-y-2">
           {items.map((item, index) => {
             const key = `h_${item.himno}`;
             return (

@@ -33,10 +33,16 @@ const TAG_LABELS = {
   funeral:      'Funeral',
 };
 
-function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
-  const isHimno = Object.hasOwn(himno, 'himno');
-  const id = isHimno ? himno.himno : himno.corito;
-  const href = isHimno ? `/himno/${id}` : `/corito/${id}`;
+function HimnoPreview({ himno, isFavorite, onToggleFavorite, scrollKey = 'home_scroll' }) {
+  // Los coros avulsos no tienen número: se identifican por slug.
+  const isCoro = Object.hasOwn(himno, 'slug');
+  const isHimno = !isCoro && Object.hasOwn(himno, 'himno');
+  const id = isCoro ? null : isHimno ? himno.himno : himno.corito;
+  const href = isCoro
+    ? `/coro/${himno.slug}`
+    : isHimno
+      ? `/himno/${id}`
+      : `/corito/${id}`;
   const tags = isHimno ? (himnoTagsMap.get(id) ?? []) : [];
 
   const [animState, setAnimState] = useState(null); // null | 'adding' | 'removing'
@@ -61,20 +67,22 @@ function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
     <Link
       to={href}
       className="block no-underline text-inherit"
-      onClick={() => sessionStorage.setItem('home_scroll', window.scrollY)}
+      onClick={() => sessionStorage.setItem(scrollKey, window.scrollY)}
     >
-      <article className="group relative flex items-center p-4 bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
+      <article className="group relative flex items-center p-3 bg-white/95 dark:bg-surfaceDark rounded border border-borderLight/90 dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
 
-        {/* Número sin fondo */}
-        <div className="shrink-0 size-12 flex items-center justify-center mr-4">
-          <span className="font-serif font-bold text-xl text-primary/85 dark:text-primaryDark/70 group-hover:text-primary dark:group-hover:text-primaryDark transition-colors leading-none">
-            {id}
-          </span>
-        </div>
+        {/* Número sin fondo — los coros avulsos no lo tienen */}
+        {!isCoro && (
+          <div className="shrink-0 size-11 flex items-center justify-center mr-3">
+            <span className="min-w-8 px-1.5 py-1 rounded-sm bg-primary/[0.07] dark:bg-primaryDark/10 font-serif font-bold text-lg text-primary/85 dark:text-primaryDark/80 text-center group-hover:text-primary dark:group-hover:text-primaryDark transition-colors leading-none">
+              {id}
+            </span>
+          </div>
+        )}
 
         {/* Contenido */}
-        <div className="flex-1 min-w-0 pr-2">
-          <h3 className="font-serif font-semibold text-base text-textPrimary dark:text-textPrimaryDark truncate leading-snug group-hover:text-primary dark:group-hover:text-primaryDark transition-colors">
+        <div className={`flex-1 min-w-0 pr-2${isCoro ? ' pl-1' : ''}`}>
+          <h3 className="font-serif font-semibold text-base text-textPrimary dark:text-textPrimaryDark truncate leading-snug">
             {formatTitle(himno.titulo)}
           </h3>
           {tags.length > 0 && (
@@ -124,7 +132,7 @@ function HimnoPreview({ himno, isFavorite, onToggleFavorite }) {
   );
 }
 
-export function AnimatedHimnoPreview({ himno, index, isFavorite, onToggleFavorite }) {
+export function AnimatedHimnoPreview({ himno, index, isFavorite, onToggleFavorite, scrollKey }) {
   const shouldAnimate = index < 15;
 
   return (
@@ -132,7 +140,7 @@ export function AnimatedHimnoPreview({ himno, index, isFavorite, onToggleFavorit
       className={shouldAnimate ? 'animate-card-enter' : undefined}
       style={shouldAnimate ? { animationDelay: `${index * 30}ms` } : undefined}
     >
-      <HimnoPreview himno={himno} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+      <HimnoPreview himno={himno} isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} scrollKey={scrollKey} />
     </div>
   );
 }

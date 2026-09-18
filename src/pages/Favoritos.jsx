@@ -5,16 +5,20 @@ import { useHimnos } from '../hooks/useHimnos';
 import { useFavorites } from '../hooks/useFavorites';
 
 export default function Favoritos() {
-  const { himnos, coritos } = useHimnos();
+  const { himnos, coritos, coros } = useHimnos();
   const { favorites, toggleFavorite } = useFavorites();
 
   const favoriteItems = useMemo(() => {
     const coritosById = new Map(coritos.map((corito) => [corito.corito, corito]));
     const himnosById = new Map(himnos.map((himno) => [himno.himno, himno]));
+    const corosBySlug = new Map(coros.map((coro) => [coro.slug, coro]));
     const items = [];
 
     for (const key of favorites) {
-      if (key.startsWith('c_')) {
+      if (key.startsWith('a_')) {
+        const coro = corosBySlug.get(key.substring(2));
+        if (coro) items.push({ ...coro, type: 'coro', _key: key });
+      } else if (key.startsWith('c_')) {
         const id = parseInt(key.substring(2));
         const corito = coritosById.get(id);
         if (corito) items.push({ ...corito, type: 'corito', _key: key });
@@ -24,19 +28,23 @@ export default function Favoritos() {
         if (himno) items.push({ ...himno, type: 'himno', _key: key });
       }
     }
+    // Coritos primero, después himnos, y los coros sueltos al final: el mismo
+    // orden que ve el usuario al navegar.
+    const ORDER = { corito: 0, himno: 1, coro: 2 };
     return items.sort((a, b) => {
-      if (a.type !== b.type) return a.type === 'corito' ? -1 : 1;
+      if (a.type !== b.type) return ORDER[a.type] - ORDER[b.type];
+      if (a.type === 'coro') return a.titulo.localeCompare(b.titulo);
       const aNum = a.type === 'corito' ? a.corito : a.himno;
       const bNum = b.type === 'corito' ? b.corito : b.himno;
       return aNum - bNum;
     });
-  }, [favorites, himnos, coritos]);
+  }, [favorites, himnos, coritos, coros]);
 
   return (
-    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
-      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
+    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+      <header className="app-header sticky top-0 z-10 border-b">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary dark:text-primaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
             Favoritos
           </h1>
           <ThemeToggle />
@@ -51,7 +59,7 @@ export default function Favoritos() {
             <p className="text-sm mt-1 opacity-70">Toca el corazón en un himno para guardarlo</p>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {favoriteItems.map((item, index) => (
               <AnimatedHimnoPreview
                 key={item._key}

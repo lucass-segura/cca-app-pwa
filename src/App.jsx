@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import HimnoDetail from './pages/HimnoDetail';
 import CoritoDetail from './pages/CoritoDetail';
+import Coros from './pages/Coros';
+import CoroDetail from './pages/CoroDetail';
 import Favoritos from './pages/Favoritos';
 import Configuracion from './pages/Configuracion';
 import Categorias from './pages/Categorias';
@@ -19,6 +21,7 @@ function AppLayout() {
   const showBottomNav =
     pathname === '/' ||
     pathname === '/categorias' ||
+    pathname === '/coros' ||
     pathname === '/favoritos' ||
     pathname === '/novedades' ||
     pathname.startsWith('/novedades/') ||
@@ -31,6 +34,8 @@ function AppLayout() {
         <Route path="/" element={<Home />} />
         <Route path="/himno/:id" element={<HimnoDetail />} />
         <Route path="/corito/:id" element={<CoritoDetail />} />
+        <Route path="/coros" element={<Coros />} />
+        <Route path="/coro/:slug" element={<CoroDetail />} />
         <Route path="/favoritos" element={<Favoritos />} />
         <Route path="/configuracion" element={<Configuracion />} />
         <Route path="/categorias" element={<Categorias />} />

@@ -63,9 +63,9 @@
 @theme {
   --color-primary: #2563EB;
   --color-primaryDark: #3B82F6;
-  --color-bgLight: #F8FAFC;
+  --color-bgLight: #F7F8F6;
   --color-bgDark: #0B1121;
-  --color-surfaceDark: #1a2540;
+  --color-surfaceDark: #151E32;
   --color-borderLight: #E2E8F0;
   --color-textPrimary: #1E293B;
   --color-textPrimaryDark: #F1F5F9;
@@ -142,7 +142,7 @@
   border-radius: 20px;
 }
 
-/* Glass effects */
+/* Glass effects — reserved for floating UI and overlays */
 .glass-panel {
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px);
@@ -160,6 +160,48 @@
   transform: scale(0.98);
 }
 
+/* Shared visual language: quiet paper-like content with selective glass chrome. */
+.app-shell {
+  background-color: var(--color-bgLight);
+  background-image:
+    radial-gradient(circle at 12% -8%, rgb(37 99 235 / 0.055), transparent 28rem),
+    radial-gradient(circle at 92% 22%, rgb(148 163 184 / 0.06), transparent 24rem);
+  background-attachment: fixed;
+}
+
+.dark .app-shell {
+  background-color: var(--color-bgDark);
+  background-image:
+    radial-gradient(circle at 10% -6%, rgb(59 130 246 / 0.09), transparent 26rem),
+    radial-gradient(circle at 95% 24%, rgb(51 65 85 / 0.16), transparent 24rem);
+}
+
+.app-header {
+  background: rgb(247 248 246 / 0.84);
+  border-color: rgb(203 213 225 / 0.78);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.dark .app-header {
+  background: rgb(11 17 33 / 0.82);
+  border-color: rgb(255 255 255 / 0.08);
+}
+
+.floating-glass {
+  background: rgb(255 255 255 / 0.76);
+  border: 1px solid rgb(255 255 255 / 0.88);
+  box-shadow: 0 10px 30px rgb(15 23 42 / 0.10);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+.dark .floating-glass {
+  background: rgb(21 30 50 / 0.76);
+  border-color: rgb(255 255 255 / 0.10);
+  box-shadow: 0 12px 34px rgb(0 0 0 / 0.28);
+}
+
 html {
   color-scheme: light;
 }
@@ -171,6 +213,14 @@ html.dark {
 html.dark.dark-black {
   --color-bgDark: #000000;
   --color-surfaceDark: #0d0d0d;
+}
+
+html.dark.dark-black .app-header {
+  background: rgb(0 0 0 / 0.84);
+}
+
+html.dark.dark-black .floating-glass {
+  background: rgb(13 13 13 / 0.78);
 }
 
 /* ── Favorito: animaciones ── */

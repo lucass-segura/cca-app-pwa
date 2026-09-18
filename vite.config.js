@@ -5,6 +5,12 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   server: {
+    // Puerto propio y fijo: los service workers se registran por origen
+    // (host:puerto), así que compartir el 5173 con otros proyectos deja SW
+    // ajenos interceptando esta app. strictPort evita que Vite se corra solo
+    // a otro puerto y reintroduzca el problema.
+    port: 5180,
+    strictPort: true,
     allowedHosts: ['51a7-186-143-198-45.ngrok-free.app'],
   },
   build: {
