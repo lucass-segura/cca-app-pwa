@@ -28,7 +28,7 @@ export default function Favoritos() {
         if (himno) items.push({ ...himno, type: 'himno', _key: key });
       }
     }
-    // Coritos primero, después himnos, y los coros sueltos al final: el mismo
+    // Coritos primero, después himnos, y los coros avulsos al final: el mismo
     // orden que ve el usuario al navegar.
     const ORDER = { corito: 0, himno: 1, coro: 2 };
     return items.sort((a, b) => {
@@ -41,10 +41,10 @@ export default function Favoritos() {
   }, [favorites, himnos, coritos, coros]);
 
   return (
-    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
-      <header className="app-header sticky top-0 z-10 border-b">
+    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary dark:text-primaryDark">
             Favoritos
           </h1>
           <ThemeToggle />
@@ -59,7 +59,7 @@ export default function Favoritos() {
             <p className="text-sm mt-1 opacity-70">Toca el corazón en un himno para guardarlo</p>
           </div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-3">
             {favoriteItems.map((item, index) => (
               <AnimatedHimnoPreview
                 key={item._key}

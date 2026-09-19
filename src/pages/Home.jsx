@@ -4,7 +4,16 @@ import { AnimatedHimnoPreview } from '../components/HimnoPreview';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { useHimnos } from '../hooks/useHimnos';
 import { useFavorites } from '../hooks/useFavorites';
-import { normalizeText, textMatchesQuery } from '../utils/utils';
+
+const normalizeText = (text) => {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/,/g, '')
+    .toLowerCase();
+};
+
+const textMatchesQuery = (text, query) => normalizeText(text).indexOf(query) !== -1;
 
 export default function Home() {
   const { himnos, coritos } = useHimnos();
@@ -58,11 +67,11 @@ export default function Home() {
   const noResults = searchQuery && sections.length === 0;
 
   return (
-    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
       {/* Header */}
-      <header className="app-header sticky top-0 z-10 border-b">
+      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary/85 dark:text-primaryDark">
             Himnos
           </h1>
           <div className="flex items-center gap-1">
@@ -92,7 +101,7 @@ export default function Home() {
             <input
               type="text"
               aria-label="Buscar himno o corito"
-              className="block w-full pl-10 pr-10 py-3 border border-white/90 dark:border-white/[0.09] rounded-md leading-5 bg-white/75 dark:bg-surfaceDark/70 backdrop-blur-md placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-[border-color,background-color,box-shadow]"
+              className="block w-full pl-10 pr-10 py-3 border border-borderLight dark:border-white/[0.08] rounded-md leading-5 bg-white dark:bg-surfaceDark placeholder-textSecondary dark:placeholder-textSecondaryDark/50 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark text-sm transition-all"
               placeholder="Buscar himno o corito..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -115,9 +124,9 @@ export default function Home() {
       <main className="max-w-md mx-auto px-4 pt-6">
         {noResults ? (
           <div className="flex items-start justify-center p-4">
-            <div className="flex items-center gap-3 border border-borderLight dark:border-white/10 bg-white/70 dark:bg-surfaceDark/65 px-4 py-3 rounded-md backdrop-blur-md">
-              <span className="material-icons-round text-textSecondary dark:text-textSecondaryDark" aria-hidden>search_off</span>
-              <span className="text-sm text-textSecondary dark:text-textSecondaryDark font-medium">
+            <div className="flex items-center bg-red-100 dark:bg-red-900/30 p-4 rounded-xl shadow-sm">
+              <span className="text-2xl mr-2">😞</span>
+              <span className="text-base text-red-600 dark:text-red-400 font-medium">
                 No se encontraron resultados
               </span>
             </div>
@@ -129,11 +138,11 @@ export default function Home() {
                 className="animate-card-enter flex items-center justify-between mb-4"
                 style={{ animationDelay: `${sectionIndex * 120}ms` }}
               >
-                <h2 className="text-xl font-bold font-serif text-textPrimary dark:text-textPrimaryDark">
+                <h2 className="text-xl font-bold font-serif text-primary/85 dark:text-primaryDark">
                   {section.title}
                 </h2>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {section.data.flatMap((item, index) => {
                   const key =
                     item.type === 'corito'
@@ -170,7 +179,6 @@ export default function Home() {
             </div>
           ))
         )}
-
       </main>
 
     </div>

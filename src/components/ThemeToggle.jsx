@@ -11,7 +11,7 @@ export function ThemeToggle() {
       className="relative size-10 shrink-0 rounded-full flex items-center justify-center
                  hover:bg-black/5 dark:hover:bg-white/10
                  active:scale-90 transition-transform duration-150
-                 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                 focus:outline-none"
     >
       {/* Sol — light mode */}
       <svg

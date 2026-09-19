@@ -23,12 +23,11 @@ export default function CoritoDetail() {
   return (
     <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased">
       {/* Header */}
-      <header className="app-header sticky top-0 z-10 border-b">
+      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-2">
           <Link
             to="/"
-            aria-label="Volver a himnos"
-            className="p-1.5 -ml-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-textSecondary dark:text-textSecondaryDark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="p-1.5 -ml-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-textSecondary dark:text-textSecondaryDark"
           >
             <span className="material-icons-round text-2xl">arrow_back</span>
           </Link>
@@ -45,16 +44,14 @@ export default function CoritoDetail() {
           <button
             type="button"
             onClick={reducirLetra}
-            aria-label="Reducir tamaño de letra"
-            className="px-3 py-1.5 rounded bg-transparent text-primary dark:text-primaryDark text-sm font-medium border border-primary/25 dark:border-primaryDark/25 hover:bg-primary/5 dark:hover:bg-primaryDark/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
             A-
           </button>
           <button
             type="button"
             onClick={aumentarLetra}
-            aria-label="Aumentar tamaño de letra"
-            className="px-3 py-1.5 rounded bg-transparent text-primary dark:text-primaryDark text-sm font-medium border border-primary/25 dark:border-primaryDark/25 hover:bg-primary/5 dark:hover:bg-primaryDark/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark text-sm font-medium border border-primary/20 dark:border-primaryDark/25 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
           >
             A+
           </button>

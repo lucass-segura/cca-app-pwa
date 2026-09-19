@@ -12,10 +12,10 @@ function CategoryCard({ cat, index }) {
       style={shouldAnimate ? { animationDelay: `${index * 40}ms` } : undefined}
     >
       <Link to={`/categorias/${cat.id}`} className="block no-underline text-inherit">
-        <article className="group relative flex items-center p-3 bg-white/95 dark:bg-surfaceDark rounded border border-borderLight/90 dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
+        <article className="group relative flex items-center p-4 bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
 
           {/* Acento de color — mismo espacio que el número en HimnoPreview */}
-          <div className="shrink-0 size-11 flex items-center justify-center mr-3">
+          <div className="shrink-0 size-12 flex items-center justify-center mr-4">
             <span className={`size-3 rounded-full ${cat.accent} opacity-80`} />
           </div>
 
@@ -46,10 +46,10 @@ function CorosCard({ total }) {
   return (
     <div className="animate-card-enter">
       <Link to="/coros" className="block no-underline text-inherit">
-        <article className="group relative flex items-center p-3 bg-white/95 dark:bg-surfaceDark rounded border border-borderLight/90 dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
+        <article className="group relative flex items-center p-4 bg-white dark:bg-surfaceDark rounded-xl border border-borderLight dark:border-white/[0.07] hover:border-primary/30 dark:hover:border-white/[0.15] transition-[border-color,transform] duration-200 active:scale-[0.99] cursor-pointer">
 
           {/* Mismo espacio que el acento de color en CategoryCard */}
-          <div className="shrink-0 size-11 flex items-center justify-center mr-3">
+          <div className="shrink-0 size-12 flex items-center justify-center mr-4">
             <span
               className="material-icons-round text-[22px] text-primary/80 dark:text-primaryDark/80"
               aria-hidden
@@ -84,11 +84,11 @@ export default function Categorias() {
   let globalIndex = 0;
 
   return (
-    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
 
-      <header className="app-header sticky top-0 z-10 border-b">
+      <header className="sticky top-0 z-10 bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
+          <h1 className="font-serif font-bold text-2xl tracking-tight text-primary/85 dark:text-primaryDark">
             Categorías
           </h1>
           <ThemeToggle />
@@ -96,11 +96,11 @@ export default function Categorias() {
       </header>
 
       <main className="max-w-md mx-auto px-4 pt-6">
-        {/* Los coros no son una categoría de himnario: no tienen número ni tags,
-            por eso van en su propia sección y no dentro de CATEGORIAS_GROUPS. */}
+        {/* Los coros avulsos no son una categoría de himnario: no tienen número
+            ni tags, por eso van en su propia sección y no en CATEGORIAS_GROUPS. */}
         <div className="mb-6">
           <div className="animate-card-enter flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold font-serif text-textPrimary dark:text-textPrimaryDark">
+            <h2 className="text-xl font-bold font-serif text-primary/85 dark:text-primaryDark">
               Coros avulsos
             </h2>
           </div>
@@ -114,11 +114,11 @@ export default function Categorias() {
               className="animate-card-enter flex items-center justify-between mb-4"
               style={{ animationDelay: `${(groupIndex + 1) * 120}ms` }}
             >
-              <h2 className="text-xl font-bold font-serif text-textPrimary dark:text-textPrimaryDark">
+              <h2 className="text-xl font-bold font-serif text-primary/85 dark:text-primaryDark">
                 {group.group}
               </h2>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-3">
               {group.items.map((cat) => {
                 const idx = globalIndex++;
                 return <CategoryCard key={cat.id} cat={cat} index={idx} />;

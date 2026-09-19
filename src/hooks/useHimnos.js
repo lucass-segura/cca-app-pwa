@@ -13,8 +13,8 @@ import { slugify } from '../utils/utils';
 // sólo el orden del archivo. Lo descartamos acá para que ningún componente lo
 // confunda con un himno y para que la identidad sea el slug del título, que
 // sobrevive a un reordenamiento del archivo.
-// Un título ausente rompía `slugify` (llama a `normalize`) y, como este hook lo
-// ejecuta al importarse, el fallo tumbaba toda la app y no sólo la vista de
+// Un título ausente rompía `slugify` (llama a `normalize`) y, como este módulo
+// lo ejecuta al importarse, el fallo tumbaba toda la app y no sólo la vista de
 // coros. Descartamos la entrada inválida en vez de propagar la excepción.
 const coros = corosAvulsos
   .filter(({ titulo }) => typeof titulo === 'string' && titulo.trim() !== '')

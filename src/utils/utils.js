@@ -9,18 +9,6 @@ export const slugify = (text) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-// Búsqueda tolerante: sin acentos, sin comas, minúsculas. Compartida por la
-// búsqueda de Home y la de Coros para que ambas se comporten igual.
-export const normalizeText = (text) =>
-  text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/,/g, '')
-    .toLowerCase();
-
-export const textMatchesQuery = (text, query) =>
-  normalizeText(text).indexOf(query) !== -1;
-
 export const formatTitle = (title) => {
     const specialWords = ['Jesús', 'Cordero', 'Dios', 'Maestro', 'Pastor', 'Cristo', 'Señor', 'Espíritu', 'Santo', 'Creador', 'Redentor', 'Salvador', 'Rey', 'Padre', 'Aleluya', 'Gloria', 'Roca'];
     const punctuation = new Set(['?', '¿', '¡', '!', ',', '.', ':', ';']);

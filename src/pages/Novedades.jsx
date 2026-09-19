@@ -33,8 +33,8 @@ export default function Novedades() {
   const activeSectionLabel = sections.find((section) => section.id === activeSection)?.label;
 
   return (
-    <div className="app-shell min-h-screen text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
-      <header className="app-header sticky top-0 z-[1500] border-b">
+    <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased pb-28">
+      <header className="sticky top-0 z-[1500] bg-bgLight/95 dark:bg-bgDark/95 backdrop-blur-md border-b border-borderLight dark:border-gray-800">
         <div className="max-w-md mx-auto px-4 py-3 flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
             <button
@@ -47,7 +47,7 @@ export default function Novedades() {
                 arrow_back
               </span>
             </button>
-            <h1 className="truncate font-serif font-bold text-2xl tracking-tight text-textPrimary dark:text-textPrimaryDark">
+            <h1 className="truncate font-serif font-bold text-2xl tracking-tight text-primary dark:text-primaryDark">
               {activeSectionLabel}
             </h1>
           </div>
@@ -57,12 +57,12 @@ export default function Novedades() {
 
       <main className={`${activeSection === 'ubicaciones' ? 'max-w-7xl' : 'max-w-md'} mx-auto w-full px-3 pt-6 space-y-5 sm:px-4`}>
         {activeSection === 'reuniones' && (
-          <section className="rounded bg-white/95 dark:bg-surfaceDark border border-borderLight dark:border-white/[0.07] p-5">
+          <section className="rounded-xl bg-white dark:bg-surfaceDark border border-borderLight dark:border-white/[0.07] p-5">
             <div className="flex items-center gap-3 mb-3">
               <span className="material-icons-round text-primary dark:text-primaryDark">
                 groups
               </span>
-              <h2 className="font-serif text-2xl font-bold text-textPrimary dark:text-textPrimaryDark">
+              <h2 className="font-serif text-2xl font-bold text-primary dark:text-primaryDark">
                 Reuniones
               </h2>
             </div>
@@ -85,12 +85,12 @@ export default function Novedades() {
         )}
 
         {activeSection === 'relatorio' && (
-          <section className="rounded bg-white/95 dark:bg-surfaceDark border border-borderLight dark:border-white/[0.07] p-5">
+          <section className="rounded-xl bg-white dark:bg-surfaceDark border border-borderLight dark:border-white/[0.07] p-5">
             <div className="flex items-center gap-3 mb-3">
               <span className="material-icons-round text-primary dark:text-primaryDark">
                 article
               </span>
-              <h2 className="font-serif text-2xl font-bold text-textPrimary dark:text-textPrimaryDark">
+              <h2 className="font-serif text-2xl font-bold text-primary dark:text-primaryDark">
                 Relatorio
               </h2>
             </div>

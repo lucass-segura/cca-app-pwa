@@ -1,12 +1,13 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import { motion as Motion, useReducedMotion } from "framer-motion";
+"use client";
+
+import { useState } from "react";
+import { motion as Motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 
 const navItems = [
   { label: "Himnos", icon: "home", path: "/" },
-  // Los coros viven dentro de Categorías: /coros mantiene esa pestaña activa.
-  { label: "Categorias", icon: "bookmarks", path: "/categorias", alsoMatch: ["/coros"] },
+  { label: "Categorias", icon: "bookmarks", path: "/categorias" },
   { label: "Favoritos", icon: "favorite", path: "/favoritos" },
   { label: "Novedades", icon: "campaign", path: "/novedades", menu: "novedades" },
 ];
@@ -17,64 +18,21 @@ const novedadesItems = [
   { label: "Relatorio", icon: "article", path: "/novedades/relatorio" },
 ];
 
+const MOBILE_LABEL_WIDTH = 92;
+
 export function BottomNavBar({ className, stickyBottom = true }) {
   const { pathname } = useLocation();
-  const prefersReducedMotion = useReducedMotion();
   const [novedadesMenuPath, setNovedadesMenuPath] = useState(null);
-  const [indicator, setIndicator] = useState(null);
-  const navItemsContainerRef = useRef(null);
-  const navItemRefs = useRef([]);
   const isNovedadesOpen = novedadesMenuPath === pathname;
 
-  const activeIndex = navItems.findIndex((item) => {
-    if (item.path === "/") return pathname === "/";
-    const paths = [item.path, ...(item.alsoMatch ?? [])];
-    return paths.some(
-      (path) => pathname === path || pathname.startsWith(path + "/")
-    );
-  });
+  const activeIndex = navItems.findIndex((item) =>
+    item.path === "/"
+      ? pathname === "/"
+      : pathname === item.path || pathname.startsWith(item.path + "/")
+  );
   const visualActiveIndex = isNovedadesOpen
     ? navItems.findIndex((item) => item.menu === "novedades")
     : activeIndex;
-
-  useLayoutEffect(() => {
-    const updateIndicator = () => {
-      const activeItem = navItemRefs.current[visualActiveIndex];
-      const container = navItemsContainerRef.current;
-
-      if (visualActiveIndex === -1 || !activeItem || !container) {
-        setIndicator(null);
-        return;
-      }
-
-      const nextIndicator = {
-        left: activeItem.offsetLeft,
-        width: activeItem.offsetWidth,
-      };
-
-      setIndicator((currentIndicator) =>
-        currentIndicator?.left === nextIndicator.left &&
-        currentIndicator.width === nextIndicator.width
-          ? currentIndicator
-          : nextIndicator
-      );
-    };
-
-    updateIndicator();
-    window.addEventListener("resize", updateIndicator);
-
-    return () => window.removeEventListener("resize", updateIndicator);
-  }, [visualActiveIndex]);
-
-  const menuTransition = prefersReducedMotion
-    ? { duration: 0 }
-    : { type: "spring", stiffness: 520, damping: 34, mass: 0.8 };
-  const barTransition = prefersReducedMotion
-    ? { duration: 0 }
-    : { type: "spring", stiffness: 300, damping: 26 };
-  const indicatorTransition = prefersReducedMotion
-    ? { duration: 0 }
-    : { type: "spring", stiffness: 500, damping: 36, mass: 0.7 };
 
   return (
     <div
@@ -90,9 +48,9 @@ export function BottomNavBar({ className, stickyBottom = true }) {
             id="novedades-menu"
             initial={{ opacity: 0, y: 18, scale: 0.88, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-            transition={menuTransition}
+            transition={{ type: "spring", stiffness: 520, damping: 34, mass: 0.8 }}
             style={{ transformOrigin: "85% 100%" }}
-            className="floating-glass overflow-hidden rounded-lg p-1.5"
+            className="overflow-hidden rounded-[22px] border border-white/70 bg-white/85 p-1.5 shadow-[0_18px_55px_rgba(15,23,42,0.22)] backdrop-blur-2xl dark:border-white/[0.10] dark:bg-surfaceDark/85 dark:shadow-[0_18px_60px_rgba(0,0,0,0.48)]"
           >
             <div className="flex flex-col">
               {novedadesItems.map((item) => {
@@ -104,7 +62,7 @@ export function BottomNavBar({ className, stickyBottom = true }) {
                     to={item.path}
                     onClick={() => setNovedadesMenuPath(null)}
                     className={cn(
-                      "group flex min-h-[58px] items-center gap-3.5 rounded-md px-3.5 py-3 text-[17px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                      "group flex min-h-[58px] items-center gap-3.5 rounded-[17px] px-3.5 py-3 text-[17px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                       isActive
                         ? "bg-primary/12 text-primary dark:bg-primaryDark/18 dark:text-primaryDark"
                         : "text-textPrimary hover:bg-black/[0.05] dark:text-textPrimaryDark dark:hover:bg-white/[0.07]"
@@ -135,94 +93,90 @@ export function BottomNavBar({ className, stickyBottom = true }) {
       <Motion.nav
         initial={{ scale: 0.97, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={barTransition}
+        transition={{ type: "spring", stiffness: 300, damping: 26 }}
         role="navigation"
         aria-label="Bottom Navigation"
         className={cn(
-          "floating-glass relative mx-auto w-full max-w-lg overflow-hidden rounded-lg sm:max-w-md",
+          "relative w-full max-w-lg sm:max-w-md mx-auto bg-white/90 dark:bg-surfaceDark/90 backdrop-blur-xl border border-borderLight dark:border-white/[0.07] rounded-2xl shadow-sm overflow-hidden",
           className
         )}
       >
-        <div
-          ref={navItemsContainerRef}
-          className="relative flex h-[66px] items-center px-0.5 sm:h-[58px] sm:px-2"
-        >
-          <Motion.div
-            aria-hidden="true"
-            initial={false}
-            animate={
-              indicator
-                ? { left: indicator.left, width: indicator.width, opacity: 1 }
-                : { opacity: 0 }
-            }
-            transition={indicatorTransition}
-            className="pointer-events-none absolute inset-y-1 rounded-full bg-primary/10 dark:bg-primaryDark/15"
-          />
+        <div className="flex items-center justify-center h-[66px] px-0.5 sm:h-[58px] sm:px-2">
           {navItems.map((item, idx) => {
             const isActive = visualActiveIndex === idx;
             const itemClassName = cn(
-              "relative z-10 flex min-h-[52px] min-w-0 flex-1 flex-col items-center justify-center gap-0.5 overflow-hidden rounded-md px-1 py-1 font-sans text-[11px] font-medium leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:min-h-[48px]",
+              "flex items-center gap-0 px-2.5 py-2.5 rounded-full transition-colors duration-200 relative h-[50px] min-w-[52px] min-h-[48px] max-h-[52px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:h-11 sm:min-w-[50px] sm:min-h-[44px] sm:max-h-[48px] sm:px-3.5",
               isActive
-                ? "text-primary dark:text-primaryDark"
-                : "text-textSecondary hover:text-textPrimary dark:text-textSecondaryDark dark:hover:text-textPrimaryDark"
+                ? "bg-primary/10 dark:bg-primaryDark/15 text-primary dark:text-primaryDark"
+                : "bg-transparent text-textSecondary dark:text-textSecondaryDark hover:bg-black/5 dark:hover:bg-white/5"
             );
             const content = (
               <>
                 <span
-                  aria-hidden="true"
+                  aria-hidden
                   className={cn(
-                    "material-icons-round text-[29px] leading-none sm:text-[25px]",
+                    "material-icons-round text-[29px] transition-colors duration-200 leading-none sm:text-[25px]",
                     isActive
                       ? "text-primary dark:text-primaryDark"
-                      : "text-textSecondary/70 dark:text-textSecondaryDark/70"
+                      : "text-textSecondary/40 dark:text-textSecondaryDark/35"
                   )}
                 >
                   {item.icon}
                 </span>
-                <span
-                  aria-hidden="true"
-                  className={cn(
-                    "max-w-full truncate whitespace-nowrap",
-                    isActive ? "opacity-100" : "opacity-0"
-                  )}
-                  title={isActive ? item.label : undefined}
+
+                <Motion.div
+                  initial={false}
+                  animate={{
+                    width: isActive ? `${MOBILE_LABEL_WIDTH}px` : "0px",
+                    opacity: isActive ? 1 : 0,
+                    marginLeft: isActive ? "8px" : "0px",
+                  }}
+                  transition={{
+                    width: { type: "spring", stiffness: 350, damping: 32 },
+                    opacity: { duration: 0.19 },
+                    marginLeft: { duration: 0.19 },
+                  }}
+                  className="overflow-hidden flex items-center max-w-[92px] sm:max-w-[104px]"
                 >
-                  {item.label}
-                </span>
+                  <span
+                    className={cn(
+                      "font-sans font-medium text-[15px] whitespace-nowrap select-none transition-opacity duration-200 overflow-hidden text-ellipsis sm:text-sm",
+                      isActive
+                        ? "text-primary dark:text-primaryDark"
+                        : "opacity-0"
+                    )}
+                    title={item.label}
+                  >
+                    {item.label}
+                  </span>
+                </Motion.div>
               </>
             );
 
-            return item.menu === "novedades" ? (
-              <button
-                key={item.label}
-                ref={(node) => {
-                  navItemRefs.current[idx] = node;
-                }}
-                type="button"
-                className={itemClassName}
-                aria-label="Abrir novedades"
-                aria-controls="novedades-menu"
-                aria-expanded={isNovedadesOpen}
-                onClick={() =>
-                  setNovedadesMenuPath(isNovedadesOpen ? null : pathname)
-                }
-              >
-                {content}
-              </button>
-            ) : (
-              <Link
-                key={item.label}
-                ref={(node) => {
-                  navItemRefs.current[idx] = node;
-                }}
-                to={item.path}
-                className={itemClassName}
-                aria-label={item.label}
-                aria-current={isActive ? "page" : undefined}
-                onClick={() => setNovedadesMenuPath(null)}
-              >
-                {content}
-              </Link>
+            return (
+              <Motion.div key={item.label} whileTap={{ scale: 0.97 }}>
+                {item.menu === "novedades" ? (
+                  <button
+                    type="button"
+                    className={itemClassName}
+                    aria-label="Abrir novedades"
+                    aria-controls="novedades-menu"
+                    aria-expanded={isNovedadesOpen}
+                    onClick={() => setNovedadesMenuPath(isNovedadesOpen ? null : pathname)}
+                  >
+                    {content}
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={itemClassName}
+                    aria-label={item.label}
+                    onClick={() => setNovedadesMenuPath(null)}
+                  >
+                    {content}
+                  </Link>
+                )}
+              </Motion.div>
             );
           })}
         </div>

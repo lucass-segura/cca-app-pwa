@@ -1,51 +1,62 @@
-# Feature: Coros en Categorías + mejora de UI del bottom nav
+# Feature: Coros avulsos en Categorías
 
-Dos trabajos en una sola entrega sobre `develop`:
+Los coros avulsos (`src/data/coros-avulsos.json`) viven en la pestaña
+**Categorías**, como primera sección, con buscador propio en `/coros`.
 
-1. Los coros avulsos (`src/data/coros-avulsos.json`) dejan de colgar de Home y pasan
-   a vivir en la pestaña **Categorías** del bottom nav, como primera categoría,
-   con buscador dentro de la lista.
-2. Rediseño del indicador activo del bottom nav tomando el patrón de
-   `floating-nav` (indicador deslizante medido por refs), adaptado al stack real.
+## Revert de UI (decisión del usuario)
+
+El trabajo original de esta feature incluía un rediseño de UI que el usuario
+pidió deshacer. Todos los archivos de UI volvieron a `master`:
+
+`src/index.css`, `src/components/HimnoPreview.jsx`, `ThemeToggle.jsx`,
+`NewsModal.jsx`, `ui/bottom-nav-bar.jsx`, `pages/Novedades.jsx`,
+`Configuracion.jsx`, `CategoriaDetalle.jsx`, `HimnoDetail.jsx`,
+`CoritoDetail.jsx`, `Favoritos.jsx`, `Home.jsx`, `Categorias.jsx`, `App.jsx`.
+
+Sobre esa base se re-cableó **sólo** la feature de coros, usando el lenguaje
+visual de master (`rounded-xl`, `p-4`, `size-12`, headers `bg-bgLight/95`,
+`space-y-3`), no el del rediseño descartado.
+
+### Error a no repetir
+
+En el commit `3b3ca7b` se hizo `git add -A` sobre un working tree que ya tenía
+cambios de UI previos del usuario sin commitear, y quedaron arrastrados dentro
+del commit de esta feature. Commitear sólo los archivos efectivamente tocados.
 
 ## Decisions
 
 - **No se crea una categoría sintética en `CATEGORIAS_GROUPS`.** Ese array mapea
   tags de himnos numerados (`HIMNO_TAGS`) y `CategoriaDetalle` filtra por número.
-  Los coros no tienen número. Se agrega una sección propia arriba de los grupos,
-  enlazando a la ruta `/coros` que ya existe.
-- **Un solo punto de entrada.** Se quita la fila "Coros" del final de Home: ahora
-  vive en Categorías. Evita dos caminos a la misma lista.
-- **Back de `/coros` apunta a `/categorias`**, no a `/`.
-- **Buscador de coros**: mismo patrón que Home (normalización sin acentos),
-  busca por título y por letra.
-- **No se instala `lucide-react`.** El proyecto usa Material Icons Round en todo
-  el chrome; mezclar dos sets de iconos rompe la consistencia visual. Del
-  componente `floating-nav` se toma la idea (indicador deslizante con `motion`,
-  refs y recálculo en resize), no las dependencias.
-- **No se adopta estructura shadcn/TS.** El proyecto es JS + Tailwind v4 sin
-  config file; `src/components/ui/` ya cumple el rol de `/components/ui`.
+  Los coros no tienen número: van en su propia sección, sobre los grupos.
+- **Identidad por slug del título**, no por el campo `himno` del JSON, que es
+  sólo el orden del archivo.
+- **Clave de favoritos `a_<slug>`**, tercer namespace junto a `h_` y `c_`.
+- **Back de `/coros` apunta a `/categorias`.**
+- El navbar queda exactamente como en master: no se agregó `alsoMatch`, así que
+  ninguna pestaña se marca activa en `/coros`.
+- Sin `lucide-react` ni migración a shadcn/TS: el proyecto es JS + Tailwind v4
+  sin config file y usa Material Icons Round.
 
-## Tasks
+## Estado
 
-- [x] 1. Sección "Coros" como primera entrada en `src/pages/Categorias.jsx`
-- [x] 2. Buscador dentro de `src/pages/Coros.jsx` + back a `/categorias`
-- [x] 3. Quitar la fila de entrada a Coros de `src/pages/Home.jsx`
-      (`normalizeText`/`textMatchesQuery` se extrajeron a `src/utils/utils.js`
-      para que Home y Coros compartan la misma búsqueda)
-- [x] 4. Rediseño del indicador activo en `src/components/ui/bottom-nav-bar.jsx`
-      (delegado a `gentle-ai-worker`; el parent agregó `alsoMatch: ['/coros']`
-      para que la pestaña Categorías quede activa en la ruta de coros)
-- [x] 5. Verificar: `pnpm lint` + `pnpm build`
-- [x] 6. Commit y push a `develop` (`3b3ca7b`)
+- [x] `slugify` en `src/utils/utils.js`
+- [x] `coros` normalizados en `useHimnos` (descarta títulos inválidos)
+- [x] Variante sin número en `HimnoPreview` + `scrollKey`
+- [x] `src/pages/Coros.jsx` con buscador
+- [x] `src/pages/CoroDetail.jsx`
+- [x] Rutas y visibilidad del nav en `src/App.jsx`
+- [x] Sección "Coros avulsos" en `src/pages/Categorias.jsx`
+- [x] Claves `a_` en `src/pages/Favoritos.jsx`
+- [x] `news.js`: `NEWS_VERSION` 2 + entrada de coros avulsos
+- [x] Verificado: `pnpm lint` + `pnpm build`
 
-## Hallazgo de revisión (bloqueante, corregido)
+## Hallazgos de revisión
 
-`coros-avulsos.json` traía el coro 16 con `titulo: null`. `slugify` llama a
-`normalize`, que tira excepción con `null`, y `useHimnos` ejecuta ese map al
-importarse: el fallo no rompía sólo la vista de coros, rompía toda la app.
-Se completó el título faltante y se filtran las entradas sin título válido.
+**Bloqueante, corregido**: `coros-avulsos.json` traía el coro 16 con
+`titulo: null`. `slugify` llama a `normalize`, que tira excepción con `null`, y
+`useHimnos` ejecuta ese map al importarse: rompía toda la app, no sólo la vista
+de coros. Se completó el título y se filtran entradas sin título válido.
 
-Pendiente informativo (no bloqueante): `src/pages/CoroDetail.jsx:25-27` asume
-claves de verso numéricas; las claves no numéricas (`marcaCoro`, etc.) quedan
-fuera del orden esperado.
+**Informativo, corregido en el re-cableado**: `CoroDetail` ordenaba versos
+asumiendo claves numéricas. Ahora filtra con `/^\d+$/`, así que `marcaCoro`,
+`marcaCoro1` y similares no se cuelan como versos.
