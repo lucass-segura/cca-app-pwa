@@ -51,10 +51,18 @@ function AppLayout() {
 }
 
 export default function App() {
-  const { shouldBlock, os, install, canInstall } = useInstallPrompt();
+  const { shouldBlock, os, install, canInstall, samsungInternet, installState } = useInstallPrompt();
 
   if (shouldBlock) {
-    return <InstallScreen os={os} install={install} canInstall={canInstall} />;
+    return (
+      <InstallScreen
+        os={os}
+        install={install}
+        canInstall={canInstall}
+        samsungInternet={samsungInternet}
+        installState={installState}
+      />
+    );
   }
 
   return (

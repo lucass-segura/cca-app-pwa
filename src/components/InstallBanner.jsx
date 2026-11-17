@@ -253,7 +253,45 @@ const features = [
   },
 ];
 
-export function InstallScreen({ os, install, canInstall }) {
+// Abre la página actual en Chrome mediante un intent de Android. Si Chrome no
+// está instalado, Android ofrece su ficha en la tienda.
+function chromeIntentUrl() {
+  const { protocol, host, pathname, search } = window.location;
+  return `intent://${host}${pathname}${search}#Intent;scheme=${protocol.replace(':', '')};package=com.android.chrome;end`;
+}
+
+function InstallStatus({ installState }) {
+  const installed = installState === 'installed';
+
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="w-full rounded-lg border border-borderLight bg-white/75 p-5 text-center backdrop-blur-sm"
+    >
+      {installed ? (
+        <span className="material-icons-round text-3xl text-emerald-600" aria-hidden>
+          check_circle
+        </span>
+      ) : (
+        <span
+          aria-hidden
+          className="mx-auto block size-7 rounded-full border-2 border-primary/25 border-t-primary animate-spin motion-reduce:animate-none"
+        />
+      )}
+      <p className="mt-3 font-himn text-2xl font-semibold leading-tight text-textPrimary">
+        {installed ? 'La aplicación ya está instalada' : 'La aplicación se está descargando'}
+      </p>
+      <p className="mt-1 font-sans text-sm text-textSecondary">
+        {installed
+          ? 'Búscala en la pantalla de inicio de tu teléfono con el nombre Himnos. Ya puedes cerrar esta página.'
+          : 'Puede tardar unos segundos. Cuando termine, la vas a encontrar en la pantalla de inicio de tu teléfono con el nombre Himnos.'}
+      </p>
+    </div>
+  );
+}
+
+export function InstallScreen({ os, install, canInstall, samsungInternet = false, installState = null }) {
   const [showWizard, setShowWizard] = useState(false);
   const [wizardStep, setWizardStep] = useState(0);
 
@@ -327,14 +365,38 @@ export function InstallScreen({ os, install, canInstall }) {
         </div>
 
         {/* Install CTA */}
-        <button
-          type="button"
-          onClick={handleInstall}
-          className="w-full py-4 bg-primary text-white font-semibold font-sans text-base rounded-full cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,99,235,0.30)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-        >
-          <DownloadIcon />
-          <span>Instalar aplicación</span>
-        </button>
+        {installState ? (
+          <InstallStatus installState={installState} />
+        ) : samsungInternet ? (
+          <>
+            <a
+              href={chromeIntentUrl()}
+              className="w-full py-4 bg-primary text-white font-semibold font-sans text-base rounded-full cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,99,235,0.30)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 no-underline"
+            >
+              <span>Abrir en Chrome</span>
+            </a>
+            <p className="mt-4 text-sm font-sans text-textSecondary text-center">
+              En Samsung Internet la instalación puede mostrar un aviso de aplicación no segura.
+              Instálala desde Chrome para evitarlo.
+            </p>
+            <button
+              type="button"
+              onClick={handleInstall}
+              className="mt-3 rounded font-sans text-sm text-textSecondary underline underline-offset-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              Instalar desde este navegador
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            onClick={handleInstall}
+            className="w-full py-4 bg-primary text-white font-semibold font-sans text-base rounded-full cursor-pointer active:scale-[0.97] transition-transform duration-150 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,99,235,0.30)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            <DownloadIcon />
+            <span>Instalar aplicación</span>
+          </button>
+        )}
 
         <p className="mt-6 text-xs font-sans text-textSecondary/40">v1.0</p>
       </main>
