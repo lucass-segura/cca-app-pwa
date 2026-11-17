@@ -2,7 +2,7 @@
 // Subí NEWS_VERSION cada vez que quieras volver a mostrar el modal con
 // novedades nuevas; los usuarios que ya aceptaron una versión anterior
 // lo verán de nuevo solo cuando este número cambie.
-export const NEWS_VERSION = 2;
+export const NEWS_VERSION = 3;
 
 export const NEWS_ITEMS = [
   {

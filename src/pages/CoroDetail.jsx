@@ -22,11 +22,13 @@ export default function CoroDetail() {
 
   const { letra } = coro;
 
-  // Sólo las claves numéricas son versos. `coro`, `final` y las marcas de coro
-  // (`marcaCoro`, `marcaCoro1`, …) se renderizan aparte o no se renderizan.
-  const versos = Object.entries(letra)
-    .filter(([key]) => /^\d+$/.test(key))
-    .sort(([a], [b]) => Number(a) - Number(b));
+  // `letra` es una lista ordenada de bloques: se muestran en el mismo orden que
+  // en el cuadernillo. Sólo los versos llevan número; el coro va sangrado.
+  let versoCount = 0;
+  const bloques = letra.map((bloque) => ({
+    ...bloque,
+    numero: bloque.tipo === 'coro' ? null : ++versoCount,
+  }));
 
   return (
     <div className="min-h-screen bg-bgLight dark:bg-bgDark text-textPrimary dark:text-textPrimaryDark font-sans antialiased">
@@ -71,42 +73,31 @@ export default function CoroDetail() {
 
       {/* Coro content */}
       <div className="max-w-md mx-auto p-4">
-        {versos.map(([key, verso], index) => (
-          <div key={key} className="flex items-start mt-3">
-            <span
-              style={{ fontSize, lineHeight: `${fontSize * 1.5}px` }}
-              className="mr-2 font-himn font-medium text-primary dark:text-primaryDark shrink-0"
+        {bloques.map((bloque, index) =>
+          bloque.tipo === 'coro' ? (
+            <p
+              key={index}
+              style={{ fontSize: fontSize + 2, lineHeight: `${(fontSize + 2) * 1.5}px` }}
+              className="ml-8 mt-4 font-himn font-bold whitespace-pre-line"
             >
-              {index + 1}.
-            </span>
-            <div className="flex-1">
-              {verso.split('\n').map((line, i) => (
-                <span
-                  key={`${key}-${i}-${line}`}
-                  style={{ fontSize, lineHeight: `${fontSize * 1.5}px` }}
-                  className="block font-himn font-normal"
-                >
-                  {line}
-                </span>
-              ))}
-              {index === 0 && letra.coro && (
-                <p
-                  style={{ fontSize: fontSize + 2, lineHeight: `${(fontSize + 2) * 1.5}px` }}
-                  className="ml-4 mt-4 font-himn font-bold whitespace-pre-line"
-                >
-                  {letra.coro}
-                </p>
-              )}
+              {bloque.texto}
+            </p>
+          ) : (
+            <div key={index} className="flex items-start mt-3">
+              <span
+                style={{ fontSize, lineHeight: `${fontSize * 1.5}px` }}
+                className="mr-2 font-himn font-medium text-primary dark:text-primaryDark shrink-0"
+              >
+                {bloque.numero}.
+              </span>
+              <p
+                style={{ fontSize, lineHeight: `${fontSize * 1.5}px` }}
+                className="flex-1 font-himn font-normal whitespace-pre-line"
+              >
+                {bloque.texto}
+              </p>
             </div>
-          </div>
-        ))}
-        {letra.final && (
-          <p
-            style={{ fontSize: fontSize + 2, lineHeight: `${(fontSize + 2) * 1.5}px` }}
-            className="ml-8 mt-4 font-himn font-bold whitespace-pre-line"
-          >
-            {letra.final}
-          </p>
+          )
         )}
         <div className="h-10" />
       </div>

@@ -36,7 +36,7 @@ export default function Coros() {
     return coros.filter(
       (coro) =>
         textMatchesQuery(coro.titulo, q) ||
-        Object.values(coro.letra).some((v) => textMatchesQuery(v, q))
+        coro.letra.some((bloque) => textMatchesQuery(bloque.texto, q))
     );
   }, [coros, searchQuery]);
 
