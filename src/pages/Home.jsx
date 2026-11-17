@@ -35,7 +35,17 @@ export default function Home() {
       { title: 'Himnos', data: himnos.map((h) => ({ ...h, type: 'himno' })) },
     ];
 
-    if (!searchQuery) return allSections;
+    // El separador de "Jóvenes y Niños" va antes del primer himno >= 431. Se
+    // calcula una vez por sección: buscarlo dentro del render de cada card
+    // recorría la lista entera por cada uno de los ~480 himnos.
+    const withJovenesIndex = (section) => ({
+      ...section,
+      firstJovenesIndex: section.data.findIndex(
+        (item) => item.type === 'himno' && item.himno >= 431
+      ),
+    });
+
+    if (!searchQuery) return allSections.map(withJovenesIndex);
 
     const q = normalizeText(searchQuery);
     const filteredSections = [];
@@ -57,7 +67,7 @@ export default function Home() {
       });
 
       if (data.length > 0) {
-        filteredSections.push({ ...section, data });
+        filteredSections.push(withJovenesIndex({ ...section, data }));
       }
     }
 
@@ -149,10 +159,7 @@ export default function Home() {
                       ? `c_${item.corito}`
                       : `h_${item.himno}`;
                   const elements = [];
-                  const isFirstJovenes =
-                    item.type === 'himno' &&
-                    item.himno >= 431 &&
-                    !section.data.slice(0, index).some((i) => i.type === 'himno' && i.himno >= 431);
+                  const isFirstJovenes = index === section.firstJovenesIndex;
                   if (isFirstJovenes) {
                     elements.push(
                       <div key="sep-jovenes" className="relative flex items-center py-2">

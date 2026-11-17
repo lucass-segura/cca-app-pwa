@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: "MarkaziText";
-  src: url("/fonts/MarkaziText-Regular.ttf") format("truetype");
+  src: url("/fonts/MarkaziText-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -38,7 +38,7 @@
 
 @font-face {
   font-family: "MarkaziText";
-  src: url("/fonts/MarkaziText-Medium.ttf") format("truetype");
+  src: url("/fonts/MarkaziText-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,7 @@
 
 @font-face {
   font-family: "MarkaziText";
-  src: url("/fonts/MarkaziText-SemiBold.ttf") format("truetype");
+  src: url("/fonts/MarkaziText-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@
 
 @font-face {
   font-family: "MarkaziText";
-  src: url("/fonts/MarkaziText-Bold.ttf") format("truetype");
+  src: url("/fonts/MarkaziText-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;

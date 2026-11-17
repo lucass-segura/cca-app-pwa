@@ -27,7 +27,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['fonts/*.ttf', 'fonts/*.woff2', 'icon.png', 'icon-192.png', 'icon-512.png'],
+      includeAssets: ['fonts/*.woff2', 'icon.png', 'icon-192.png', 'icon-512.png'],
       manifest: {
         name: 'Himnos',
         short_name: 'Himnos',
@@ -58,7 +58,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,woff2,ttf,png,svg,ico,kml}'],
+        globPatterns: ['**/*.{js,css,html,woff2,png,svg,ico,kml}'],
         navigateFallback: 'index.html',
         runtimeCaching: [
           {
