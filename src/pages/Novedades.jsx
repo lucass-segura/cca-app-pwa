@@ -6,6 +6,10 @@ const ChurchMap = lazy(() => import('../components/ChurchMap').then((module) => 
   default: module.ChurchMap,
 })));
 
+const Relatorio = lazy(() => import('../components/Relatorio').then((module) => ({
+  default: module.Relatorio,
+})));
+
 const sections = [
   {
     id: 'reuniones',
@@ -85,19 +89,15 @@ export default function Novedades() {
         )}
 
         {activeSection === 'relatorio' && (
-          <section className="rounded-xl bg-white dark:bg-surfaceDark border border-borderLight dark:border-white/[0.07] p-5">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="material-icons-round text-primary dark:text-primaryDark">
-                article
-              </span>
-              <h2 className="font-serif text-2xl font-bold text-primary dark:text-primaryDark">
-                Relatorio
-              </h2>
-            </div>
-            <p className="text-sm leading-6 text-textSecondary dark:text-textSecondaryDark">
-              Próximamente se publicará el relatorio.
-            </p>
-          </section>
+          <Suspense
+            fallback={(
+              <p className="font-sans text-sm text-textSecondary dark:text-textSecondaryDark">
+                Cargando relatorio…
+              </p>
+            )}
+          >
+            <Relatorio />
+          </Suspense>
         )}
       </main>
     </div>

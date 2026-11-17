@@ -1,0 +1,3273 @@
+{
+  "edition": "2026",
+  "revision": "2026-05-09",
+  "source": "scripts/relatorio/source/relatorio-2026.pdf",
+  "scheduleNote": "Cuando se indican dos horarios con una barra (por ejemplo 16:00/17:00 hs.) se está indicando que el primero es el de invierno y el segundo de verano. Invierno: 1° de abril al 30 de septiembre. Verano: 1° de octubre al 31 de marzo.",
+  "regions": [
+    {
+      "id": "central",
+      "name": "Central Administrativa",
+      "province": "Buenos Aires"
+    },
+    {
+      "id": "capital-federal",
+      "name": "Capital Federal",
+      "province": "Buenos Aires"
+    },
+    {
+      "id": "gran-buenos-aires",
+      "name": "Gran Buenos Aires",
+      "province": "Buenos Aires"
+    },
+    {
+      "id": "buenos-aires-interior",
+      "name": "Interior",
+      "province": "Buenos Aires"
+    },
+    {
+      "id": "chaco",
+      "name": "Chaco",
+      "province": "Chaco"
+    },
+    {
+      "id": "cordoba",
+      "name": "Córdoba",
+      "province": "Córdoba"
+    },
+    {
+      "id": "corrientes",
+      "name": "Corrientes",
+      "province": "Corrientes"
+    },
+    {
+      "id": "entre-rios",
+      "name": "Entre Ríos",
+      "province": "Entre Ríos"
+    },
+    {
+      "id": "formosa",
+      "name": "Formosa",
+      "province": "Formosa"
+    },
+    {
+      "id": "jujuy",
+      "name": "Jujuy",
+      "province": "Jujuy"
+    },
+    {
+      "id": "mendoza",
+      "name": "Mendoza",
+      "province": "Mendoza"
+    },
+    {
+      "id": "misiones",
+      "name": "Misiones",
+      "province": "Misiones"
+    },
+    {
+      "id": "neuquen",
+      "name": "Neuquén",
+      "province": "Neuquén"
+    },
+    {
+      "id": "rio-negro",
+      "name": "Río Negro",
+      "province": "Río Negro"
+    },
+    {
+      "id": "salta",
+      "name": "Salta",
+      "province": "Salta"
+    },
+    {
+      "id": "san-luis",
+      "name": "San Luis",
+      "province": "San Luis"
+    },
+    {
+      "id": "santa-fe",
+      "name": "Santa Fe",
+      "province": "Santa Fe"
+    }
+  ],
+  "congregations": [
+    {
+      "id": "villa-lynch",
+      "name": "Villa Lynch",
+      "nameRaw": "VILLA LYNCH",
+      "regionId": "central",
+      "isCentral": true,
+      "address": {
+        "street": "Teniente General Espora 4745",
+        "neighborhood": "Figueroa Alcorta",
+        "complement": "Estación Fernández Moreno – Ferrocarril General Urquiza",
+        "postalCode": "B1672WAA"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Daniel Aníbal Maciel",
+            "Cristian Alejandro Cerracchio"
+          ]
+        },
+        {
+          "role": "Diáconos",
+          "names": [
+            "Carlos Daniel Medina",
+            "Carlos Alberto Sandoval"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Adrián Natanael Cerracchio"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Cesar Abrao Latuf Rangel"
+          ]
+        }
+      ],
+      "schedule": "Miércoles-Sábados 19:30 (RJN 2° 4º 5° Sábados 17:00)",
+      "phone": "+54 9 11 4712-9200",
+      "page": 3,
+      "location": {
+        "lat": -34.594813,
+        "lng": -58.533274,
+        "mapName": "Villa Lynch",
+        "mapAddress": "Espora 4745"
+      }
+    },
+    {
+      "id": "capital-federal-centro",
+      "name": "Capital Federal Centro",
+      "nameRaw": "CAPITAL FEDERAL CENTRO",
+      "regionId": "capital-federal",
+      "isCentral": false,
+      "address": {
+        "street": "Rivadavia n°1141/45",
+        "neighborhood": "San Nicolás",
+        "postalCode": "C1414 AAB"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "José Pedro Britez Romero"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Marciel da Silva"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Rafael Gomes Zacarias"
+          ]
+        }
+      ],
+      "schedule": "Viernes 20:00 – Domingos 18:30 (RJN Domingos 16:00)",
+      "page": 4
+    },
+    {
+      "id": "bella-vista",
+      "name": "Bella Vista",
+      "nameRaw": "BELLA VISTA",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Francisco Bourel, 98",
+        "neighborhood": "Puerta Tres de Campo de Mayo",
+        "complement": "Estación Capitán Lozano – Ferrocarril General Urquiza",
+        "postalCode": "B1661IVB"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Carlos Cerracchio"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:30 – Viernes 20:00",
+      "page": 5,
+      "location": {
+        "lat": -34.555592,
+        "lng": -58.671351,
+        "mapName": "Bella Vista",
+        "mapAddress": "Francisco Bourel 98"
+      }
+    },
+    {
+      "id": "carlos-spegazzini",
+      "name": "Carlos Spegazzini",
+      "nameRaw": "CARLOS SPEGAZZINI",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Nicaragua, 1236",
+        "neighborhood": "Del Plata",
+        "postalCode": "B1812BJX"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Ignacio Raúl Villanueva"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Claudio Canteros"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Adrián Alcides Gonzalez"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:00/18:00 – Martes-Jueves 19:30 (RJN Domingos 15:30/16:30)",
+      "page": 5,
+      "location": {
+        "lat": -34.913997,
+        "lng": -58.574837,
+        "mapName": "Carlos Spegazzini",
+        "mapAddress": "Nicaragua 1236"
+      }
+    },
+    {
+      "id": "caseros",
+      "name": "Caseros",
+      "nameRaw": "CASEROS",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Martín de Alzaga, 2678",
+        "neighborhood": "Domingo Matheu",
+        "postalCode": "B1678IEB"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Antonio Di Marco"
+          ]
+        }
+      ],
+      "schedule": "Lunes-Jueves 19:30",
+      "page": 6,
+      "location": {
+        "lat": -34.606117,
+        "lng": -58.574573,
+        "mapName": "Caseros",
+        "mapAddress": "Martín de Alzaga 2678"
+      }
+    },
+    {
+      "id": "claypole",
+      "name": "Claypole",
+      "nameRaw": "CLAYPOLE",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Ricardo Rojas, 2966",
+        "postalCode": "B1849HLH"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Roberto Maidana"
+          ]
+        }
+      ],
+      "schedule": "Sábados 19:00",
+      "page": 6,
+      "location": {
+        "lat": -34.810986,
+        "lng": -58.36111,
+        "mapName": "Claypole",
+        "mapAddress": "Ricardo Rojas 2966"
+      }
+    },
+    {
+      "id": "domselaar",
+      "name": "Domselaar",
+      "nameRaw": "DOMSELAAR",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Laprida, 272",
+        "postalCode": "B1984BDA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Nazareno Ezequiel Romano"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:30 - Miércoles 19:30",
+      "page": 6,
+      "location": {
+        "lat": -35.068198,
+        "lng": -58.28282,
+        "mapName": "Domselaar",
+        "mapAddress": "Laprida 67"
+      }
+    },
+    {
+      "id": "general-pacheco",
+      "name": "General Pacheco",
+      "nameRaw": "GENERAL PACHECO",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Monteagudo 958",
+        "neighborhood": "El Talar",
+        "postalCode": "B1618DVJ"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "David Telmo Díaz"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:30 - Viernes 19:30",
+      "page": 6,
+      "location": {
+        "lat": -34.452874,
+        "lng": -58.611099,
+        "mapName": "General Pacheco",
+        "mapAddress": "Monteagudo 958"
+      }
+    },
+    {
+      "id": "gregorio-de-laferrere",
+      "name": "Gregorio de Laferrere",
+      "nameRaw": "GREGORIO DE LAFERRERE",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Icalma, 4463",
+        "neighborhood": "La Juanita",
+        "postalCode": "B1757GWC"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Damián Daniel Villanueva"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Levi Santos Freire"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:30 – Jueves 19:30 (RJN 1º, 3º y 5º Domingos 16:00)",
+      "page": 7,
+      "location": {
+        "lat": -34.742916,
+        "lng": -58.615798,
+        "mapName": "Gregorio Laferrere",
+        "mapAddress": "Icalma 4463"
+      }
+    },
+    {
+      "id": "guernica",
+      "name": "Guernica",
+      "nameRaw": "GUERNICA",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Entre Ríos 175",
+        "postalCode": "B1862ERC"
+      },
+      "ministry": [
+        {
+          "role": "Diáconos",
+          "names": [
+            "Pablo Andrés Benítez",
+            "Oscar Benítez"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Ramón Adrián Fleitas"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Alan Ivan Maciel"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:00/18:30 – Martes-Jueves 19:30 (RJN Domingos 15:30/17:00)",
+      "page": 7,
+      "location": {
+        "lat": -34.919241,
+        "lng": -58.38586,
+        "mapName": "Guernica",
+        "mapAddress": "Entre Ríos 175"
+      }
+    },
+    {
+      "id": "guernica-lomas",
+      "name": "Guernica Lomas",
+      "nameRaw": "GUERNICA LOMAS",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Florencio Varela, 2913",
+        "postalCode": "B1862PVE"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Pablo Jesús Attadia"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Bernardo Antelo"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Emanuel Lizarraga"
+          ]
+        }
+      ],
+      "schedule": "Miércoles-Sábados 19:30 (RJN Sábados 17:30)",
+      "page": 7,
+      "location": {
+        "lat": -34.91422,
+        "lng": -58.347643,
+        "mapName": "Lomas de Guernica",
+        "mapAddress": "Florencio Varela 2913"
+      }
+    },
+    {
+      "id": "jose-clemente-paz",
+      "name": "José Clemente Paz",
+      "nameRaw": "JOSÉ CLEMENTE PAZ",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Matheu, 4282",
+        "neighborhood": "San Fernando",
+        "postalCode": "B1666BNV"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Oscar Alfredo Antipas",
+            "Aldo Enrique Alderete"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Pedro Oscar Maciel",
+            "Diego Hernan Paz"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Ricardo de Souza Silva"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Mario Mareco"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Martes-Sábados 19:00 (RJN Domingos 17:00)",
+      "page": 8,
+      "location": {
+        "lat": -34.525055,
+        "lng": -58.78395,
+        "mapName": "José Clemente Paz",
+        "mapAddress": "Matheu 4282"
+      }
+    },
+    {
+      "id": "merlo-norte",
+      "name": "Merlo Norte",
+      "nameRaw": "MERLO NORTE",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Salguero y Cabrera, 2520",
+        "neighborhood": "Las Violetas",
+        "postalCode": "B1722BLH"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "José Cecilio Sánchez"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Marcelo Rojas"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00",
+      "page": 8,
+      "location": {
+        "lat": -34.654558,
+        "lng": -58.728374,
+        "mapName": "Merlo",
+        "mapAddress": "Salguero y Cabrera, 2520"
+      }
+    },
+    {
+      "id": "merlo-parque-san-martin",
+      "name": "Merlo Parque San Martín",
+      "nameRaw": "MERLO PARQUE SAN MARTÍN",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Ernesto de la Carcova, 2006",
+        "neighborhood": "Parque San Martín",
+        "postalCode": "B1721GPP"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Ezequiel Barragan"
+          ]
+        }
+      ],
+      "schedule": "Sábados 19:00",
+      "page": 8,
+      "location": {
+        "lat": -34.687914,
+        "lng": -58.74794,
+        "mapName": "Alto de Merlo",
+        "mapAddress": "Ernesto de la Carcova, 2006"
+      }
+    },
+    {
+      "id": "moreno",
+      "name": "Moreno",
+      "nameRaw": "MORENO",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Posadas, 6276",
+        "neighborhood": "Mi Barrio",
+        "postalCode": "B1743BGP"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Oscar Ezequiel Cantero"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Heberto Rafael Aguilera"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Armando Cantero"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:00 – Miércoles 19:30 (RJN 3º Domingos 15:45)",
+      "page": 9,
+      "location": {
+        "lat": -34.618787,
+        "lng": -58.78152,
+        "mapName": "Moreno",
+        "mapAddress": "Posadas, 6276"
+      }
+    },
+    {
+      "id": "santa-brigida",
+      "name": "Santa Brígida",
+      "nameRaw": "SANTA BRÍGIDA",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Salerno, 5567",
+        "postalCode": "B1663KAG"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Carlos Marcial Céspedes"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "José Víctor Torres"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Jueves 18:00 (RJN 2º y 4º Domingos 16:30)",
+      "page": 9,
+      "location": {
+        "lat": -34.564892,
+        "lng": -58.761117,
+        "mapName": "Santa Brigida",
+        "mapAddress": "Salerno, 5567"
+      }
+    },
+    {
+      "id": "sarandi",
+      "name": "Sarandi",
+      "nameRaw": "SARANDI",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "San Pedro, 243",
+        "neighborhood": "Sarandí",
+        "postalCode": "B1872CZE"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Silverio Saldívar Olmedo"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Miguel Romero Domínguez"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Silvio Morales Rojas"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Gabriel Ortega"
+          ]
+        }
+      ],
+      "schedule": "Martes 19:00 -Sábados 18:30 (RJN Sábados 16:00)",
+      "page": 9,
+      "location": {
+        "lat": -34.682373,
+        "lng": -58.339493,
+        "mapName": "Sarandí",
+        "mapAddress": "San Pedro 243"
+      }
+    },
+    {
+      "id": "villa-toro",
+      "name": "Villa Toro",
+      "nameRaw": "VILLA TORO",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Nicaragua, 433",
+        "complement": "Estación Derqui – Ferrocarril General San Martín",
+        "postalCode": "B1635XAA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Norberto Díaz"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Walter Daniel Balbuena"
+          ]
+        }
+      ],
+      "schedule": "Jueves 15:00 – Sábados 16:00/17:00 (RJN Sábados 14:00/15:00)",
+      "page": 10,
+      "location": {
+        "lat": -34.492651,
+        "lng": -58.852919,
+        "mapName": "Villa Toro",
+        "mapAddress": "Nicaragua, 433"
+      }
+    },
+    {
+      "id": "zarate",
+      "name": "Zárate",
+      "nameRaw": "ZÁRATE",
+      "regionId": "gran-buenos-aires",
+      "isCentral": false,
+      "address": {
+        "street": "Rawson, 1880",
+        "neighborhood": "Villa Carmencita",
+        "postalCode": "B2800CMT"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Francisco Pucheta"
+          ]
+        }
+      ],
+      "schedule": "Miércoles 17:00 – Sábados 17:00",
+      "page": 10,
+      "location": {
+        "lat": -34.114258,
+        "lng": -59.022201,
+        "mapName": "Zárate",
+        "mapAddress": "Rawson, 1880"
+      }
+    },
+    {
+      "id": "coronel-vidal",
+      "name": "Coronel Vidal",
+      "nameRaw": "CORONEL VIDAL",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Inocencio Mariani, 328",
+        "neighborhood": "África",
+        "postalCode": "B7174BFH"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Ignacio Guzmán"
+          ]
+        }
+      ],
+      "schedule": "Sábados 16:00",
+      "page": 11,
+      "location": {
+        "lat": -37.453216,
+        "lng": -57.731546,
+        "mapName": "Coronel Vidal",
+        "mapAddress": "Inocencio Mariani, 328"
+      }
+    },
+    {
+      "id": "dolores",
+      "name": "Dolores",
+      "nameRaw": "DOLORES",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Doctor Manuel Belgrano, 757",
+        "postalCode": "B7100CBO"
+      },
+      "ministry": [],
+      "schedule": "Domingos 18:00/19:00",
+      "page": 11,
+      "location": {
+        "lat": -36.314176,
+        "lng": -57.670752,
+        "mapName": "Dolores",
+        "mapAddress": "Doctor Manuel Belgrano, 757"
+      }
+    },
+    {
+      "id": "general-madariaga",
+      "name": "General Madariaga",
+      "nameRaw": "GENERAL MADARIAGA",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Calle 2, 330",
+        "neighborhood": "Quintanilla",
+        "postalCode": "B7163CDH"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Francisco Glicério Samaniego Martínez"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Pablo Javier Reina"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Rubén Oscar Gómez Espinoza"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Martes-Sábados 19:30 (RJN 2º-4º Dom 10:30)",
+      "page": 11,
+      "location": {
+        "lat": -36.99499,
+        "lng": -57.126772,
+        "mapName": "General Juan Madariaga",
+        "mapAddress": "Calle 2, 330"
+      }
+    },
+    {
+      "id": "gobernador-castro",
+      "name": "Gobernador Castro",
+      "nameRaw": "GOBERNADOR CASTRO",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Combate de Obligado, 109",
+        "postalCode": "B2946BEC"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Alfio Loguzzo"
+          ]
+        },
+        {
+          "role": "Cooperadores de Oficio Ministerial",
+          "names": [
+            "Joel Alfio Loguzzo"
+          ]
+        },
+        {
+          "role": "Cooperadores de Jóvenes y Niños",
+          "names": [
+            "Marcelo Hugo Puig",
+            "Juan Daniel Salado Puebla"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00 – Jueves 20:00 (RJN Domingos 18:00)",
+      "page": 12
+    },
+    {
+      "id": "la-emilia",
+      "name": "La Emilia",
+      "nameRaw": "LA EMILIA",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Fray Luis Beltrán, 189",
+        "neighborhood": "La Emilia",
+        "postalCode": "B2901BAC"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Alberto Coffa"
+          ]
+        }
+      ],
+      "schedule": "Sábados 20:00",
+      "page": 12,
+      "location": {
+        "lat": -33.349627,
+        "lng": -60.314928,
+        "mapName": "La Emilia",
+        "mapAddress": "Fray Luis Beltrán, 189"
+      }
+    },
+    {
+      "id": "maipu-buenos-aires-interior",
+      "name": "Maipú",
+      "nameRaw": "MAIPÚ",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Ramos Mejía, 1223",
+        "postalCode": "B7160BSY"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "David Emanuel Barrientos"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Bernardo Bernardino Barrientos"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:00/18:00 – Martes-Jueves 18:00/19:00",
+      "page": 12,
+      "location": {
+        "lat": -36.859232,
+        "lng": -57.881657,
+        "mapName": "Maipú",
+        "mapAddress": "Ramos Mejía, 1223"
+      }
+    },
+    {
+      "id": "mar-del-plata",
+      "name": "Mar del Plata",
+      "nameRaw": "MAR DEL PLATA",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Juan de Garay, 4741",
+        "neighborhood": "Bernardino Rivadavia",
+        "postalCode": "B7600FCQ"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Ramiro Gabriel Suñe Erni"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Rodrigo Leal Rabelo"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Martín Alberto Rodriguez"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 – Miércoles-Sábados 19:30 (RJN 1° y 3° Domingos 16:00)",
+      "page": 13,
+      "location": {
+        "lat": -37.997211,
+        "lng": -57.575532,
+        "mapName": "Mar del Plata",
+        "mapAddress": "Juan de Garay, 4741"
+      }
+    },
+    {
+      "id": "perez-millan",
+      "name": "Pérez Millán",
+      "nameRaw": "PÉREZ MILLÁN",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Avenida Doctor Manfredi, 1025",
+        "postalCode": "B2933AQG"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Hugo Oscar Gauna"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Ruben Diego González"
+          ]
+        }
+      ],
+      "schedule": "Domingos 20:00 - Martes-Jueves 20:00 (RJN Domingos 18:00)",
+      "page": 13
+    },
+    {
+      "id": "ramallo",
+      "name": "Ramallo",
+      "nameRaw": "RAMALLO",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Salta, 1190",
+        "neighborhood": "Avellaneda",
+        "postalCode": "B2915CBX"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Inocencio Gorosito"
+          ]
+        }
+      ],
+      "schedule": "Martes 19:00 - Sábados 18:00",
+      "page": 13
+    },
+    {
+      "id": "salto",
+      "name": "Salto",
+      "nameRaw": "SALTO",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Bombero Alberto Filippone, 955",
+        "postalCode": "B2741FNA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Martín Miguel Pierángelo"
+          ]
+        }
+      ],
+      "schedule": "Domingos 10:00",
+      "page": 14
+    },
+    {
+      "id": "san-nicolas-centro",
+      "name": "San Nicolás Centro",
+      "nameRaw": "SAN NICOLÁS CENTRO",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Avenida Doctor Mariano Moreno, 276",
+        "neighborhood": "José Ingenieros",
+        "postalCode": "B2900GPP"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Matias Hernan Codina"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Javier Mareco"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Corallo"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Abraham Hector Germano"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00/20:00 – Miércoles-Sábados 19:30/20:00 (RJN Domingos 11:00)",
+      "page": 14,
+      "location": {
+        "lat": -33.331761,
+        "lng": -60.229056,
+        "mapName": "San Nicolás de los Arroyos - Central",
+        "mapAddress": "Avenida Doctor Mariano Moreno, 276"
+      }
+    },
+    {
+      "id": "san-nicolas-plastiversal",
+      "name": "San Nicolás Plastiversal",
+      "nameRaw": "SAN NICOLÁS PLASTIVERSAL",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "7 de Septiembre, 488",
+        "neighborhood": "Plastiversal",
+        "postalCode": "B2900FXB"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Ezequiel Codina"
+          ]
+        }
+      ],
+      "schedule": "Domingos 10:00",
+      "page": 14,
+      "location": {
+        "lat": -33.366203,
+        "lng": -60.181826,
+        "mapName": "San Nicolás de los Arroyos - Plastiversal",
+        "mapAddress": "7 de Septiembre,488 - Plastiversal"
+      }
+    },
+    {
+      "id": "san-pedro-buenos-aires-interior",
+      "name": "San Pedro",
+      "nameRaw": "SAN PEDRO",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Eduardo Dipietri 743",
+        "neighborhood": "Arco de Oro",
+        "postalCode": "B2930CKO"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Domingos Marcos Albornoz"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Cristián Toledo"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Miércoles-Sábados 19:00/20:00 (RJN Sábados 17:00/18:00)",
+      "page": 15
+    },
+    {
+      "id": "villa-campi",
+      "name": "Villa Campi",
+      "nameRaw": "VILLA CAMPI",
+      "regionId": "buenos-aires-interior",
+      "isCentral": false,
+      "address": {
+        "street": "Sánchez de Loria, 1032",
+        "neighborhood": "Villa Campi",
+        "postalCode": "B2901BGB"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Nelson Omar Becce"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Hector Gustavo Ojeda"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00 - Jueves 19:30/20:00 (RJN Sábados 17:00)",
+      "page": 15,
+      "location": {
+        "lat": -33.358403,
+        "lng": -60.299793,
+        "mapName": "Villa Campi",
+        "mapAddress": "Sánchez de Loria, 1032"
+      }
+    },
+    {
+      "id": "la-clotilde",
+      "name": "La Clotilde",
+      "nameRaw": "LA CLOTILDE",
+      "regionId": "chaco",
+      "isCentral": false,
+      "address": {
+        "street": "Calle 13, 230 entre calles 2 y 4",
+        "postalCode": "H3725AFA"
+      },
+      "ministry": [],
+      "schedule": "Sábados 19:30",
+      "page": 16,
+      "location": {
+        "lat": -27.177792,
+        "lng": -60.630355,
+        "mapName": "La Clotilde",
+        "mapAddress": "Calle 13, 230"
+      }
+    },
+    {
+      "id": "resistencia",
+      "name": "Resistencia",
+      "nameRaw": "RESISTENCIA",
+      "regionId": "chaco",
+      "isCentral": false,
+      "address": {
+        "street": "Av Ushuaia 1036",
+        "postalCode": "A3500"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Roberto Anibal Vincenti"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00",
+      "page": 16
+    },
+    {
+      "id": "san-bernardo",
+      "name": "San Bernardo",
+      "nameRaw": "SAN BERNARDO",
+      "regionId": "chaco",
+      "isCentral": false,
+      "address": {
+        "street": "Calle S/N",
+        "neighborhood": "San Martín",
+        "postalCode": "H3701"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Emilio Miguel Escalante"
+          ]
+        }
+      ],
+      "schedule": "Domingos 20:00",
+      "page": 16
+    },
+    {
+      "id": "anisacate",
+      "name": "Anisacate",
+      "nameRaw": "ANISACATE",
+      "regionId": "cordoba",
+      "isCentral": false,
+      "address": {
+        "street": "Gualeguaychú, s/nº",
+        "neighborhood": "Los Chañaritos",
+        "postalCode": "5189"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Julio César Funes"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Eliseo Torres Estrada"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00/19:00 – Jueves 19:00 (RJN Domingos 16:00/17:00)",
+      "page": 17,
+      "location": {
+        "lat": -31.694119,
+        "lng": -64.387946,
+        "mapName": "Anisacate",
+        "mapAddress": "Gualeguaychú S/N"
+      }
+    },
+    {
+      "id": "cordoba",
+      "name": "Córdoba",
+      "nameRaw": "CÓRDOBA",
+      "regionId": "cordoba",
+      "isCentral": false,
+      "address": {
+        "street": "Junín, 5481",
+        "neighborhood": "1° de Mayo",
+        "postalCode": "X5006CMU"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Esteban Merele da Silva"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "David Octavio Funes"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Danny Javier Gomez Guzman"
+          ]
+        }
+      ],
+      "schedule": "Miércoles 19:30 – Sábados 18:00/19:00 (RJN 2° y 4° Sábados 16:00/17:00)",
+      "page": 17,
+      "location": {
+        "lat": -31.429495,
+        "lng": -64.116032,
+        "mapName": "Córdoba",
+        "mapAddress": "Junín, 5481"
+      }
+    },
+    {
+      "id": "monte-buey",
+      "name": "Monte Buey",
+      "nameRaw": "MONTE BUEY",
+      "regionId": "cordoba",
+      "isCentral": false,
+      "address": {
+        "street": "Almirante Brown, 820",
+        "neighborhood": "Romagnoli",
+        "postalCode": "2589"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Jose Miño"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 – Miércoles 20:30 (RJN Sábados 17:00)",
+      "page": 18,
+      "location": {
+        "lat": -32.921967,
+        "lng": -62.456396,
+        "mapName": "Monte Buey",
+        "mapAddress": "Almirante Brown, 820"
+      }
+    },
+    {
+      "id": "colonia-carlos-pellegrini",
+      "name": "Colonia Carlos Pellegrini",
+      "nameRaw": "COLONIA CARLOS PELLEGRINI",
+      "regionId": "corrientes",
+      "isCentral": false,
+      "address": {
+        "street": "Mburucuya entre Ruta Provincial 40 y Calle Panamby",
+        "postalCode": "W3471"
+      },
+      "ministry": [],
+      "schedule": "Consultar ministerio local",
+      "page": 19,
+      "location": {
+        "lat": -28.531952,
+        "lng": -57.173188,
+        "mapName": "Colonia Carlos Pellegrini",
+        "mapAddress": "Mburucuya entre Ruta Provincial 40 y Calle Panamby"
+      }
+    },
+    {
+      "id": "paso-de-los-libres",
+      "name": "Paso de los Libres",
+      "nameRaw": "PASO DE LOS LIBRES",
+      "regionId": "corrientes",
+      "isCentral": false,
+      "address": {
+        "street": "Bartolomé Mitre, 2030",
+        "postalCode": "W3230GLP"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Felipe Dionisio Mendieta"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Cristo Santo Flores"
+          ]
+        }
+      ],
+      "schedule": "Domingos – Jueves 18:00/19:00",
+      "page": 19,
+      "location": {
+        "lat": -29.719921,
+        "lng": -57.097056,
+        "mapName": "Paso de los Libres",
+        "mapAddress": "Bartolomé Mitre, 2030"
+      }
+    },
+    {
+      "id": "concordia",
+      "name": "Concordia",
+      "nameRaw": "CONCORDIA",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "Avenida General Juan Lamadrid, 1269",
+        "neighborhood": "Lesca",
+        "postalCode": "E3200BYB"
+      },
+      "ministry": [],
+      "schedule": "Domingos 18:00 (RJN Sábados 18:00)",
+      "page": 20,
+      "location": {
+        "lat": -31.387851,
+        "lng": -58.004948,
+        "mapName": "Concordia",
+        "mapAddress": "Avenida General Juan Lamadrid, 1269"
+      }
+    },
+    {
+      "id": "gualeguay",
+      "name": "Gualeguay",
+      "nameRaw": "GUALEGUAY",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "Sarmiento, 548",
+        "postalCode": "E2840FBL"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "José Raúl Albornoz"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Mario Abel Giménez"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00/20:00 Sábados/Miercoles 19:30/20:30 (RJN 2° y 4° Domingos 16:30/18:30)",
+      "page": 20,
+      "location": {
+        "lat": -33.155025,
+        "lng": -59.312352,
+        "mapName": "Gualeguay",
+        "mapAddress": "Sarmiento, 548"
+      }
+    },
+    {
+      "id": "gualeguaychu-barrio-norte",
+      "name": "Gualeguaychú Barrio Norte",
+      "nameRaw": "GUALEGUAYCHÚ BARRIO NORTE",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "Luis Clavarino, 1380",
+        "neighborhood": "Norte",
+        "postalCode": "E2820BSL"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Jonathan Vela"
+          ]
+        }
+      ],
+      "schedule": "Jueves 19:30/20:30",
+      "page": 20,
+      "location": {
+        "lat": -33.002068,
+        "lng": -58.525722,
+        "mapName": "Gualeguaychú",
+        "mapAddress": "Luis Clavarino, 1380"
+      }
+    },
+    {
+      "id": "gualeguaychu-centro",
+      "name": "Gualeguaychú Centro",
+      "nameRaw": "GUALEGUAYCHÚ CENTRO",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "Doctor Joaquín Víctor González, 721",
+        "neighborhood": "Pueblo Nuevo",
+        "postalCode": "E2822CMC"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Egidio Ramón Vera",
+            "Isaac Albornoz"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Abelardo Ramón Percara"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Héctor Daniel Bazán"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00/20:00 - Sábados 19:30/20:30 (RJN Domingos 16:30/18:30)",
+      "page": 21
+    },
+    {
+      "id": "nancay",
+      "name": "Ñancay",
+      "nameRaw": "ÑANCAY",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "A dos cuadras de la sala de 1º auxilios",
+        "postalCode": "E2823"
+      },
+      "ministry": [],
+      "schedule": "Domingos 17:00/19:00",
+      "page": 21,
+      "location": {
+        "lat": -33.457092,
+        "lng": -58.678315,
+        "mapName": "Ñancay",
+        "mapAddress": "A dos cuadras de la sala de 1º auxilios"
+      }
+    },
+    {
+      "id": "ubajay",
+      "name": "Ubajay",
+      "nameRaw": "UBAJAY",
+      "regionId": "entre-rios",
+      "isCentral": false,
+      "address": {
+        "street": "Las Calandrias, s/nº, entre Los Pinos y Algarrobal",
+        "postalCode": "E3287"
+      },
+      "ministry": [],
+      "schedule": "Sábados 18:00/19:00",
+      "page": 21,
+      "location": {
+        "lat": -31.794141,
+        "lng": -58.314233,
+        "mapName": "Ubajay",
+        "mapAddress": "Las Calandrias, s/nº, entre Los Pinos y Algarrobal"
+      }
+    },
+    {
+      "id": "colonia-primavera",
+      "name": "Colonia Primavera",
+      "nameRaw": "COLONIA PRIMAVERA",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta 86 – Escuela Provincial nº 308 – Llegando a Laguna Blanca, doblar a la izquierda por Ruta 2 a Riacho por 5 Km",
+        "neighborhood": "Reducción Indígena Toba",
+        "postalCode": "P3634"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Clemente Sanagachi"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00 - Sábados 19:00/19:30 (RJN Domingos 17:00)",
+      "page": 22,
+      "location": {
+        "lat": -23.549999,
+        "lng": -61.26667,
+        "mapName": "Colonia Primavera",
+        "mapAddress": "Ruta 86 - Escuela Provincial nº 308"
+      }
+    },
+    {
+      "id": "clorinda",
+      "name": "Clorinda",
+      "nameRaw": "CLORINDA",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Vélez Sarsfield, s/nº – A dos cuadras del Destacamento de Policía",
+        "neighborhood": "1° de Mayo",
+        "postalCode": "P3610"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Porfirio Lezcano"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:00/18:00 - Miércoles 19:00/20:00",
+      "page": 22,
+      "location": {
+        "lat": -25.289888,
+        "lng": -57.73106,
+        "mapName": "Clorinda",
+        "mapAddress": "Velez Sarsfield, s/nº"
+      }
+    },
+    {
+      "id": "espinillo",
+      "name": "Espinillo",
+      "nameRaw": "ESPINILLO",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Chaco y Ruta 40",
+        "postalCode": "P3630"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Daniel Bustamante"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Sábados 18:00/19:00",
+      "page": 22,
+      "location": {
+        "lat": -24.98238,
+        "lng": -58.560846,
+        "mapName": "Espinillo",
+        "mapAddress": "Chaco y Ruta 40"
+      }
+    },
+    {
+      "id": "formosa-centro",
+      "name": "Formosa Centro",
+      "nameRaw": "FORMOSA CENTRO",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "A 100 mts de la Avenida Néstor Kirchner y Circunvalación Gendarmería Nacional",
+        "neighborhood": "Divino Niño Jesús",
+        "postalCode": "P3600BHA"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Eusebio Amarilla"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Clementino Bordon"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Francisco Mendieta"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Juan Osorio"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Sábados 19:00/19:30 (RJN Domingos 17:00/17:30)",
+      "page": 23,
+      "location": {
+        "lat": -26.188764,
+        "lng": -58.217162,
+        "mapName": "Formosa",
+        "mapAddress": "A 100 mts de la Avenida Néstor Kirchner y Circunvalación Gendarmería Naciona"
+      }
+    },
+    {
+      "id": "formosa-el-palomar",
+      "name": "Formosa El Palomar",
+      "nameRaw": "FORMOSA EL PALOMAR",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Laureano Maradona y 3º, s/nº",
+        "neighborhood": "El Palomar",
+        "postalCode": "P3600"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Alfredo Fidel Cejas"
+          ]
+        }
+      ],
+      "schedule": "Domingos 09:30 – Viernes 19:00/19:30",
+      "page": 23,
+      "location": {
+        "lat": -26.146669,
+        "lng": -58.145831,
+        "mapName": "El Palomar",
+        "mapAddress": "Laureano Maradona y 3º, s/nº"
+      }
+    },
+    {
+      "id": "general-belgrano",
+      "name": "General Belgrano",
+      "nameRaw": "GENERAL BELGRANO",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Fortín Lugones y Abelardo Zamparo – A dos cuadras de la Plaza Juan Manuel de Rosas",
+        "neighborhood": "Obrero",
+        "postalCode": "P3615XAC"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Misael Bustamante Ojeda"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 – Miércoles-Sábados 19:00/20:00",
+      "page": 23,
+      "location": {
+        "lat": -24.938054,
+        "lng": -59.022525,
+        "mapName": "General Belgrano",
+        "mapAddress": "Fortin Lugones y Abelardo Zamparo"
+      }
+    },
+    {
+      "id": "laguna-blanca",
+      "name": "Laguna Blanca",
+      "nameRaw": "LAGUNA BLANCA",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Bernardino Rivadavia, 852",
+        "postalCode": "P3613XAH"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Alejandro José Pedro Aguiar"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Carmelo Antonio Diarte"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Miércoles-Sábados 19:30/20:00",
+      "page": 24,
+      "location": {
+        "lat": -25.128585,
+        "lng": -58.24031,
+        "mapName": "Laguna Blanca",
+        "mapAddress": "Bernardino Rivadavia, 852"
+      }
+    },
+    {
+      "id": "mision-tacaagle",
+      "name": "Misión Tacaagle",
+      "nameRaw": "MISIÓN TACAAGLE",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Granadero Baigorria, s/nº – Entre Avenida Granaderos a Caballo y Juan Bautista Cabral",
+        "neighborhood": "El Olvido",
+        "postalCode": "P3614AJA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Oscar Miño"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Patricio Valdez"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Jueves-Sábados 19:30/20:00",
+      "page": 24,
+      "location": {
+        "lat": -24.981351,
+        "lng": -58.830381,
+        "mapName": "Misión Tacaagle",
+        "mapAddress": "Granadero Baigorria, s/nº"
+      }
+    },
+    {
+      "id": "pozo-de-navagan",
+      "name": "Pozo de Navagan",
+      "nameRaw": "POZO DE NAVAGAN",
+      "regionId": "formosa",
+      "isCentral": false,
+      "address": {
+        "street": "Reducción Indígena Pilagá"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Regino Aranda"
+          ]
+        }
+      ],
+      "schedule": "Domingos 09:00",
+      "page": 24,
+      "location": {
+        "lat": -24.131944,
+        "lng": -59.873056,
+        "mapName": "Pozo de Navagan",
+        "mapAddress": "Reducción Indígena Pilagá"
+      }
+    },
+    {
+      "id": "fraile-pintado",
+      "name": "Fraile Pintado",
+      "nameRaw": "FRAILE PINTADO",
+      "regionId": "jujuy",
+      "isCentral": false,
+      "address": {
+        "street": "Joaquín Carrillo, 79",
+        "postalCode": "Y4506AWA"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "René Domingo Rodríguez"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "René Adolfo Condori"
+          ]
+        },
+        {
+          "role": "Cooperadores de Jóvenes y Niños",
+          "names": [
+            "Leandro Figueroa"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Miércoles-Viernes 20:30 (RJN Domingos 10:30)",
+      "page": 25,
+      "location": {
+        "lat": -23.940125,
+        "lng": -64.805966,
+        "mapName": "Fraile Pintado",
+        "mapAddress": "Joaquín Carrillo, 79"
+      }
+    },
+    {
+      "id": "libertador-general-san-martin",
+      "name": "Libertador General San Martín",
+      "nameRaw": "LIBERTADOR GENERAL SAN MARTÍN",
+      "regionId": "jujuy",
+      "isCentral": false,
+      "address": {
+        "street": "Manzana 389, Lote 17",
+        "neighborhood": "San Lorenzo",
+        "postalCode": "Y4512"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "José Luís Miranda"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00/20:00 – Miércoles 20:00",
+      "page": 25,
+      "location": {
+        "lat": -23.796682,
+        "lng": -64.782867,
+        "mapName": "Libertador General San Martín",
+        "mapAddress": "Manzana 389, Lote 17"
+      }
+    },
+    {
+      "id": "san-pedro-jujuy",
+      "name": "San Pedro",
+      "nameRaw": "SAN PEDRO",
+      "regionId": "jujuy",
+      "isCentral": false,
+      "address": {
+        "street": "Avenida Formosa, 530",
+        "neighborhood": "Belgrano",
+        "postalCode": "Y4500BFL"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Santiago Arturo Figueroa",
+            "Antonio Vazquez"
+          ]
+        },
+        {
+          "role": "Cooperadores de Oficio Ministerial",
+          "names": [
+            "Fernando Rodriguez"
+          ]
+        },
+        {
+          "role": "Cooperadores de Jóvenes y Niños",
+          "names": [
+            "Ubaldo Oscar Córdoba"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Jueves-Sábados 20:30 (RJN Domingos 18:00)",
+      "page": 26,
+      "location": {
+        "lat": -24.22153,
+        "lng": -64.866053,
+        "mapName": "San Pedro de Jujuy",
+        "mapAddress": "Avenida Formosa, 530"
+      }
+    },
+    {
+      "id": "jesus-nazareno",
+      "name": "Jesús Nazareno",
+      "nameRaw": "JESÚS NAZARENO",
+      "regionId": "mendoza",
+      "isCentral": false,
+      "address": {
+        "street": "Everest, 4851",
+        "neighborhood": "Guaymallén",
+        "postalCode": "M5523"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Emanuel Montoneri"
+          ]
+        }
+      ],
+      "schedule": "Martes y Viernes 20:00 (RJN 2º y 4° Domingos 11:00)",
+      "page": 27,
+      "location": {
+        "lat": -32.922796,
+        "lng": -68.788253,
+        "mapName": "Jesús Nazareno",
+        "mapAddress": "Niñas de Ayohuma, 1492"
+      }
+    },
+    {
+      "id": "maipu-mendoza",
+      "name": "Maipú",
+      "nameRaw": "MAIPÚ",
+      "regionId": "mendoza",
+      "isCentral": false,
+      "address": {
+        "street": "Barcala, 426",
+        "neighborhood": "Chacabuco",
+        "postalCode": "M5515"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Carlos Lupachini"
+          ]
+        },
+        {
+          "role": "Diáconos",
+          "names": [
+            "Héctor Benigno Bazán",
+            "Claudio Pieranni"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Aldo Eduardo Antonucci"
+          ]
+        }
+      ],
+      "schedule": "Domingos – Sábados - Jueves 18:30/20:00 (RJN Domingos 17:00/10:30)",
+      "page": 27,
+      "location": {
+        "lat": -32.980122,
+        "lng": -68.78252,
+        "mapName": "Maipú",
+        "mapAddress": "Barcala, 426"
+      }
+    },
+    {
+      "id": "alba-posse",
+      "name": "Alba Posse",
+      "nameRaw": "ALBA POSSE",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Provincia de Buenos Aires, entre Rivadavia y 25 de Mayo – A dos cuadras del Puerto",
+        "neighborhood": "Oeste",
+        "postalCode": "N3363AFA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Jorge Gabriel Cantero"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00",
+      "page": 28,
+      "location": {
+        "lat": -27.570294,
+        "lng": -54.680954,
+        "mapName": "Alba Posse",
+        "mapAddress": "Provincia de Buenos Aires, entre Rivadavia y 25 de Mayo"
+      }
+    },
+    {
+      "id": "aristobulo-del-valle",
+      "name": "Aristóbulo del Valle",
+      "nameRaw": "ARISTÓBULO DEL VALLE",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "A dos cuadras de la estación de servicio YPF Monchoclos",
+        "neighborhood": "Don Alejandro",
+        "postalCode": "N3364"
+      },
+      "ministry": [],
+      "schedule": "2º y 4º Sábados 16:00",
+      "page": 28,
+      "location": {
+        "lat": -27.097276,
+        "lng": -54.897013,
+        "mapName": "Aristóbulo del Valle",
+        "mapAddress": "A dos cuadras de la estación de servicio YPF Monchoclos"
+      }
+    },
+    {
+      "id": "campo-grande",
+      "name": "Campo Grande",
+      "nameRaw": "CAMPO GRANDE",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Sección Novena, Lote 391",
+        "neighborhood": "Yerbal Viejo",
+        "postalCode": "N3362AOH"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Felipe Rodolfo Wosniak"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Elias Natanael Wosniak"
+          ]
+        }
+      ],
+      "schedule": "Sábados 18:30 (RJN 4º Sábados 17:00)",
+      "page": 28,
+      "location": {
+        "lat": -27.297938,
+        "lng": -54.957438,
+        "mapName": "Campo Grande",
+        "mapAddress": "Sección Novena, Lote 391"
+      }
+    },
+    {
+      "id": "colonia-delicia",
+      "name": "Colonia Delicia",
+      "nameRaw": "COLONIA DELICIA",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta 12, Km 1568",
+        "neighborhood": "Colonia Nueva Delicia",
+        "postalCode": "N3382XAB"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Fidel Ríos Eriberto"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Enrique Daniel Nekri"
+          ]
+        }
+      ],
+      "schedule": "Miércoles-Sábados 19:00 - Domingos 18:00 (RJN Domingos 10:00)",
+      "page": 29,
+      "location": {
+        "lat": -26.239904,
+        "lng": -54.598858,
+        "mapName": "Delicia",
+        "mapAddress": "Ruta 12, Km 1568"
+      }
+    },
+    {
+      "id": "comandante-andresito-quintas-altas",
+      "name": "Comandante Andresito Quintas Altas",
+      "nameRaw": "COMANDANTE ANDRESITO QUINTAS ALTAS",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Colombia, entre Perú y Estados Unidos",
+        "neighborhood": "Quintas Altas",
+        "postalCode": "N3385BBA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Javier Miguel Sosa"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Bruno Fernando Durks"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Luis Cardozo"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 – Miércoles-Sábados 19:30 (RJN Domingos 10:00)",
+      "page": 29,
+      "location": {
+        "lat": -25.672465,
+        "lng": -54.049421,
+        "mapName": "Comandante Andresito",
+        "mapAddress": "Colombia, entre Perú y Estados Unidos"
+      }
+    },
+    {
+      "id": "comandante-andresito-20-de-junio",
+      "name": "Comandante Andresito 20 de Junio",
+      "nameRaw": "COMANDANTE ANDRESITO 20 DE JUNIO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Lote 2 sector B S/N",
+        "neighborhood": "20 de Junio",
+        "postalCode": "N3385BBA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Miguel Angel Gomez"
+          ]
+        }
+      ],
+      "schedule": "Viernes 19:30",
+      "page": 29
+    },
+    {
+      "id": "el-soberbio",
+      "name": "El Soberbio",
+      "nameRaw": "EL SOBERBIO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta 2, Km 6",
+        "postalCode": "N3364"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Sales Yssaias"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Carlos Fernando Católico de Oliveira"
+          ]
+        }
+      ],
+      "schedule": "Sábados 19:00 (RJN Domingos 17:00)",
+      "page": 30,
+      "location": {
+        "lat": -27.296582,
+        "lng": -54.198139,
+        "mapName": "El Soberbio",
+        "mapAddress": "Ruta 2, Km 6"
+      }
+    },
+    {
+      "id": "eldorado",
+      "name": "Eldorado",
+      "nameRaw": "ELDORADO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Calle sin nombre – Ruta 17 – Avenida San Martín Oeste – Altura 1.400 a 20 mts de la plaza",
+        "neighborhood": "Las Rosas",
+        "postalCode": "N3382"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Fernando Rodríguez"
+          ]
+        }
+      ],
+      "schedule": "Sábados 15:00",
+      "page": 30,
+      "location": {
+        "lat": -26.406242,
+        "lng": -54.612794,
+        "mapName": "Eldorado",
+        "mapAddress": "Calle sin nombre - Ruta 17 - Avenida San Martín Oeste - Altura 1.400 a 20 mts de la plaza"
+      }
+    },
+    {
+      "id": "garuhape",
+      "name": "Garuhape",
+      "nameRaw": "GARUHAPE",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Av. Andrés Guacarí E/Sgto. Cabral y Juan Bautista Alberdi A una cuadra y media de ruta 12",
+        "postalCode": "N3334"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Luis Andrés Goroñoski"
+          ]
+        }
+      ],
+      "schedule": "Domingos 17:30",
+      "page": 30
+    },
+    {
+      "id": "garupa",
+      "name": "Garupa",
+      "nameRaw": "GARUPA",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Saltos del Moconá y Guembé",
+        "neighborhood": "Ñu Porá",
+        "postalCode": "N3304BFA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "José María Márquez"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:30 - Jueves 20:00 (RJN 2° y 4° Domingos 10:00)",
+      "page": 30,
+      "location": {
+        "lat": -27.44271,
+        "lng": -55.86827,
+        "mapName": "Garupa",
+        "mapAddress": "Saltos del Moconá y Guembé"
+      }
+    },
+    {
+      "id": "leandro-niceforo-alem",
+      "name": "Leandro Nicéforo Alem",
+      "nameRaw": "LEANDRO NICÉFORO ALEM",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "José A. Ferradas, 167",
+        "neighborhood": "Escuela EPET",
+        "postalCode": "N3315DZA"
+      },
+      "ministry": [],
+      "schedule": "2° y 4° Domingos 19:30",
+      "page": 31,
+      "location": {
+        "lat": -27.598312,
+        "lng": -55.319809,
+        "mapName": "Leandro Nicéforo Alem",
+        "mapAddress": "José A. Ferradas, 167"
+      }
+    },
+    {
+      "id": "paraje-capitan-pedro-giachino",
+      "name": "Paraje Capitán Pedro Giachino",
+      "nameRaw": "PARAJE CAPITÁN PEDRO GIACHINO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta 101 – Lote 30 – Picada San Jorge",
+        "neighborhood": "Dos Hermanas",
+        "postalCode": "N3366XAJ"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Elías Gómez"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Darío Carlos Berlamino"
+          ]
+        }
+      ],
+      "schedule": "1° y 3° Sábados 15:00 (RJN 2° y 4° Domingos 10:00)",
+      "page": 31,
+      "location": {
+        "lat": -25.974719,
+        "lng": -53.89434,
+        "mapName": "Paraje Pedro Giachino",
+        "mapAddress": "Ruta 101 - Lote 30 - Picada San Jorge"
+      }
+    },
+    {
+      "id": "posadas",
+      "name": "Posadas",
+      "nameRaw": "POSADAS",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Calle 166, nº 2331",
+        "neighborhood": "Villa Poujade",
+        "postalCode": "N3303HVA"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Pablo Elías Caparrotta"
+          ]
+        },
+        {
+          "role": "Diácono",
+          "names": [
+            "Pablo Abraham Montiel"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Roberto Andrés Bley"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Miércoles-Sábados 19:30 (RJN Domingos 17:30)",
+      "page": 31,
+      "location": {
+        "lat": -27.425436,
+        "lng": -55.900422,
+        "mapName": "Posadas",
+        "mapAddress": "Calle 166, nº 2331"
+      }
+    },
+    {
+      "id": "puerto-esperanza",
+      "name": "Puerto Esperanza",
+      "nameRaw": "PUERTO ESPERANZA",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Costa Rica entre Uruguay y Haití",
+        "neighborhood": "Los Lapachos",
+        "postalCode": "N3378"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Izaque Diniz da Silva"
+          ]
+        }
+      ],
+      "schedule": "Sábados - Martes 19:00",
+      "page": 32,
+      "location": {
+        "lat": -26.016782,
+        "lng": -54.604624,
+        "mapName": "Puerto Esperanza",
+        "mapAddress": "Costa Rica entre Uruguay y Haití"
+      }
+    },
+    {
+      "id": "puerto-iguazu-1-de-mayo",
+      "name": "Puerto Iguazú 1° de Mayo",
+      "nameRaw": "PUERTO IGUAZÚ 1° DE MAYO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Almafuerte, s/nº y Victoria Ocampo",
+        "neighborhood": "1° de Mayo",
+        "postalCode": "N3370"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Francisco Alberto Ramírez"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Francisco Fagundez de Oliveira"
+          ]
+        }
+      ],
+      "schedule": "Viernes 19:30 (RJN Domingos 10:00/09:00)",
+      "page": 32,
+      "location": {
+        "lat": -25.625458,
+        "lng": -54.586784,
+        "mapName": "Puerto Iguazú - 1° de Mayo",
+        "mapAddress": "Almafuerte, s/nº y Victoria Ocampo"
+      }
+    },
+    {
+      "id": "puerto-iguazu-centro",
+      "name": "Puerto Iguazú Centro",
+      "nameRaw": "PUERTO IGUAZÚ CENTRO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Julio Silveira, 312",
+        "neighborhood": "Villa Alta",
+        "postalCode": "N3370EJH"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Nestor Ovidio Castillo Ortigoza",
+            "Ramón de Luján Cáceres"
+          ]
+        },
+        {
+          "role": "Diáconos",
+          "names": [
+            "Ramón Moreira",
+            "Luis Alberto Mendoza"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Diego González"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Ezequiel Rauber",
+            "Lucas Mesias Cordero Andrade"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Jueves-Sábados 19:30 (RJN Domingos 10:00)",
+      "page": 32,
+      "location": {
+        "lat": -25.611214,
+        "lng": -54.571469,
+        "mapName": "Puerto Iguazú - Villa Alta",
+        "mapAddress": "Julio Silveira, 312"
+      }
+    },
+    {
+      "id": "puerto-iguazu-las-orquideas",
+      "name": "Puerto Iguazú Las Orquideas",
+      "nameRaw": "PUERTO IGUAZÚ LAS ORQUIDEAS",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Flor de Lapacho, s/nº, Manzana M, Lote 14",
+        "neighborhood": "Las Orquídeas",
+        "postalCode": "N3370BLB"
+      },
+      "ministry": [],
+      "schedule": "Sábado-Martes 19:30",
+      "page": 33,
+      "location": {
+        "lat": -25.626642,
+        "lng": -54.556828,
+        "mapName": "Puerto Iguazú - Las Orquideas",
+        "mapAddress": "Flor de Lapacho, s/nº, Manzana M, Lote 14"
+      }
+    },
+    {
+      "id": "puerto-iguazu-2000-hectareas",
+      "name": "Puerto Iguazú 2000 Hectáreas",
+      "nameRaw": "PUERTO IGUAZÚ 2000 HECTÁREAS",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Manzana 01 lote 13",
+        "neighborhood": "2000 HECTAREAS",
+        "postalCode": "3370"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Bruno Nicolas Gonzalez"
+          ]
+        }
+      ],
+      "schedule": "Viernes 19:30",
+      "page": 33
+    },
+    {
+      "id": "san-antonio",
+      "name": "San Antonio",
+      "nameRaw": "SAN ANTONIO",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Juan Bautista Ambrosetti, Manzana 26 – Lote 7",
+        "neighborhood": "Villa Alta",
+        "postalCode": "N3383AJA"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Federico Bina"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Gabriel Antunes"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Cristián Correa"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00-Martes 19:30 (RJN 2° y 4° Domingos 15:00)",
+      "page": 33,
+      "location": {
+        "lat": -26.062543,
+        "lng": -53.737197,
+        "mapName": "San Antonio",
+        "mapAddress": "Juan Bautista Ambrosetti, Manzana 26 - Lote 7"
+      }
+    },
+    {
+      "id": "san-vicente",
+      "name": "San Vicente",
+      "nameRaw": "SAN VICENTE",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Enrique Stelter y Entre Ríos",
+        "neighborhood": "Lapacho",
+        "postalCode": "N3356"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Abel Rodrigues Da Silva"
+          ]
+        }
+      ],
+      "schedule": "Domingos 14:00",
+      "page": 34,
+      "location": {
+        "lat": -26.99361,
+        "lng": -54.493627,
+        "mapName": "San Vicente",
+        "mapAddress": "Enrique Stelter y Entre Ríos"
+      }
+    },
+    {
+      "id": "tobuna",
+      "name": "Tobuna",
+      "nameRaw": "TOBUNA",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta 17 Km 90",
+        "postalCode": "3364"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Vitorio Antunez"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Mariano Ademar Antunez"
+          ]
+        }
+      ],
+      "schedule": "Domingos 10:00",
+      "page": 34
+    },
+    {
+      "id": "wanda",
+      "name": "Wanda",
+      "nameRaw": "WANDA",
+      "regionId": "misiones",
+      "isCentral": false,
+      "address": {
+        "street": "Latinoamericano esquina Las Malvinas",
+        "neighborhood": "San Martín",
+        "postalCode": "N3376BVA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Marcolino Ademir Robson"
+          ]
+        }
+      ],
+      "schedule": "Domingos 16:00 - 2° y 4° Miércoles 19:30",
+      "page": 34,
+      "location": {
+        "lat": -25.96933,
+        "lng": -54.591186,
+        "mapName": "Wanda",
+        "mapAddress": "Latinoamericano esquina Las Malvinas"
+      }
+    },
+    {
+      "id": "cutral-co",
+      "name": "Cutral Co",
+      "nameRaw": "CUTRAL CO",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Presidente Roque Sáenz Peña, 599",
+        "neighborhood": "Centro",
+        "postalCode": "Q8322FYK"
+      },
+      "ministry": [
+        {
+          "role": "Ancianos",
+          "names": [
+            "Maglio Natanael Acuña",
+            "Jorge Luis Gomez"
+          ]
+        },
+        {
+          "role": "Diáconos",
+          "names": [
+            "Pedro Lucas Segura",
+            "Adrián Narciso Sebastián Cañete"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Facundo Mendez"
+          ]
+        }
+      ],
+      "schedule": "Domingos-Martes-Sábados 20:30 (RJN 1º y 4º Domingos 18:00)",
+      "page": 35,
+      "location": {
+        "lat": -38.93633,
+        "lng": -69.231869,
+        "mapName": "Cutral Co",
+        "mapAddress": "Presidente Roque Sáenz Peña, 599"
+      }
+    },
+    {
+      "id": "neuquen",
+      "name": "Neuquén",
+      "nameRaw": "NEUQUÉN",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Automóvil Club Argentino, 53",
+        "neighborhood": "Huiliches",
+        "postalCode": "Q8304KES"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Juan Domingo Godoy"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Ariel Nelson Daniel Segura"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Miguel Angel Silva Urra"
+          ]
+        }
+      ],
+      "schedule": "Domingos 19:00/20:00 – Miércoles 20:00 (RJN 1º y 3º Domingos 17:00/18:00)",
+      "page": 35,
+      "location": {
+        "lat": -38.954305,
+        "lng": -68.104496,
+        "mapName": "Neuquén",
+        "mapAddress": "Automóvil Club Argentino, 53"
+      }
+    },
+    {
+      "id": "picun-leufu",
+      "name": "Picun Leufú",
+      "nameRaw": "PICUN LEUFÚ",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Buenos Aires, s/nº – Entre Ingeniero Nicolás Salvatori y Ezequiel Ramos Mejía",
+        "neighborhood": "Progreso",
+        "postalCode": "Q8313BHA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Mario Segundo Hernández"
+          ]
+        }
+      ],
+      "schedule": "Domingos 11:00",
+      "page": 36,
+      "location": {
+        "lat": -39.515341,
+        "lng": -69.292371,
+        "mapName": "Picún Leufú",
+        "mapAddress": "Buenos Aires, s/n"
+      }
+    },
+    {
+      "id": "plaza-huincul",
+      "name": "Plaza Huincul",
+      "nameRaw": "PLAZA HUINCUL",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Francisco Adobatti, 254",
+        "postalCode": "Q8318AEF"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Amado Cañete"
+          ]
+        }
+      ],
+      "schedule": "Jueves 20:30",
+      "page": 36,
+      "location": {
+        "lat": -38.938127,
+        "lng": -69.199129,
+        "mapName": "Plaza Huincul",
+        "mapAddress": "Francisco Adobatti, 254"
+      }
+    },
+    {
+      "id": "plottier",
+      "name": "Plottier",
+      "nameRaw": "PLOTTIER",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Avenida Doctor A. Plottier, 313",
+        "neighborhood": "Los Canales",
+        "postalCode": "Q8316DXC"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Luís Héctor Espíndola"
+          ]
+        }
+      ],
+      "schedule": "Jueves-Sábados 20:00",
+      "page": 36,
+      "location": {
+        "lat": -38.959126,
+        "lng": -68.233182,
+        "mapName": "Plottier",
+        "mapAddress": "Avenida Doctor A. Plottier, 313"
+      }
+    },
+    {
+      "id": "zapala",
+      "name": "Zapala",
+      "nameRaw": "ZAPALA",
+      "regionId": "neuquen",
+      "isCentral": false,
+      "address": {
+        "street": "Almirante Brown, 1557",
+        "neighborhood": "Don Bosco",
+        "postalCode": "Q8340AEE"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Raúl Oscar Cofre"
+          ]
+        }
+      ],
+      "schedule": "Sábados 17:00",
+      "page": 36,
+      "location": {
+        "lat": -38.89703,
+        "lng": -70.055209,
+        "mapName": "Zapala",
+        "mapAddress": "Almirante Brown, 1557"
+      }
+    },
+    {
+      "id": "el-bolson",
+      "name": "El Bolsón",
+      "nameRaw": "EL BOLSÓN",
+      "regionId": "rio-negro",
+      "isCentral": false,
+      "address": {
+        "street": "Amador Inostrosa, 3840",
+        "neighborhood": "Usina",
+        "postalCode": "R8430BJC"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Yonathan Nekli"
+          ]
+        }
+      ],
+      "schedule": "Domingos 11:00 (Confirmar con Ministerio Regional)",
+      "page": 37,
+      "location": {
+        "lat": -41.955091,
+        "lng": -71.543038,
+        "mapName": "El Bolsón",
+        "mapAddress": "Amador Inostrosa, 3840"
+      }
+    },
+    {
+      "id": "general-roca",
+      "name": "General Roca",
+      "nameRaw": "GENERAL ROCA",
+      "regionId": "rio-negro",
+      "isCentral": false,
+      "address": {
+        "street": "Félix Heredia, 1200",
+        "neighborhood": "Coronel Juan José Gómez",
+        "postalCode": "R8331BBD"
+      },
+      "ministry": [],
+      "schedule": "Domingos 11:00",
+      "page": 37,
+      "location": {
+        "lat": -39.024912,
+        "lng": -67.635445,
+        "mapName": "Coronel Juan José Gómez",
+        "mapAddress": "Félix Heredia, 1200"
+      }
+    },
+    {
+      "id": "luis-beltran",
+      "name": "Luis Beltrán",
+      "nameRaw": "LUIS BELTRÁN",
+      "regionId": "rio-negro",
+      "isCentral": false,
+      "address": {
+        "street": "Cristóbal Colón, 859",
+        "postalCode": "R8361AQM"
+      },
+      "ministry": [],
+      "schedule": "Domingos 11:00 quincenal",
+      "page": 37,
+      "location": {
+        "lat": -39.311641,
+        "lng": -65.757545,
+        "mapName": "Fray Luis Beltran",
+        "mapAddress": "Cristóbal Colón, 859"
+      }
+    },
+    {
+      "id": "salta-san-jose",
+      "name": "Salta",
+      "nameRaw": "SALTA",
+      "regionId": "salta",
+      "isCentral": false,
+      "address": {
+        "street": "Teniente Benjamín Matienzo, 1405",
+        "neighborhood": "San José",
+        "postalCode": "A4404DHT"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Arturo Emilio Vonillas Lazo"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Joaquín Romano"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 - Miércoles 19:30 (RJN Domingos 16:30)",
+      "page": 38,
+      "location": {
+        "lat": -24.803088,
+        "lng": -65.43965,
+        "mapName": "Salta",
+        "mapAddress": "Teniente Benjamín Matienzo, 1405"
+      }
+    },
+    {
+      "id": "salta-ampliacion-libertad",
+      "name": "Salta",
+      "nameRaw": "SALTA",
+      "regionId": "salta",
+      "isCentral": false,
+      "address": {
+        "street": "Manzana 4 Lote 83",
+        "neighborhood": "Ampliación Libertad",
+        "postalCode": "A4400"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Juan Ramóm Isnado"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00 (RJN Domingos 16:00)",
+      "page": 38
+    },
+    {
+      "id": "concaran",
+      "name": "Concarán",
+      "nameRaw": "CONCARÁN",
+      "regionId": "san-luis",
+      "isCentral": false,
+      "address": {
+        "street": "Belgrano, 585",
+        "neighborhood": "San Roque",
+        "postalCode": "D5770AME"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Josías Galarza"
+          ]
+        }
+      ],
+      "schedule": "Miércoles-Sábados 20:30 (RJN Domingos 18:30)",
+      "page": 39
+    },
+    {
+      "id": "san-luis",
+      "name": "San Luis",
+      "nameRaw": "SAN LUIS",
+      "regionId": "san-luis",
+      "isCentral": false,
+      "address": {
+        "street": "Héroes de Malvinas, 531",
+        "neighborhood": "Puente Blanco",
+        "postalCode": "D5700"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Marcelo Moreno"
+          ]
+        }
+      ],
+      "schedule": "Domingos 18:00",
+      "page": 39,
+      "location": {
+        "lat": -33.294481,
+        "lng": -66.31212,
+        "mapName": "San Luis",
+        "mapAddress": "Belgrano, 585"
+      }
+    },
+    {
+      "id": "villa-larca",
+      "name": "Villa Larca",
+      "nameRaw": "VILLA LARCA",
+      "regionId": "san-luis",
+      "isCentral": false,
+      "address": {
+        "street": "Manzana 115",
+        "neighborhood": "Polideportivo",
+        "postalCode": "D5883"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Enrique Octavio D’Onofrio"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Luciano Teodoro Galarza"
+          ]
+        }
+      ],
+      "schedule": "Viernes 20:30",
+      "page": 39,
+      "location": {
+        "lat": -32.617878,
+        "lng": -64.98254,
+        "mapName": "Villa Larca",
+        "mapAddress": "Manzana 115"
+      }
+    },
+    {
+      "id": "arroyo-seco",
+      "name": "Arroyo Seco",
+      "nameRaw": "ARROYO SECO",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Urquiza, 206",
+        "neighborhood": "Doña Pepa",
+        "postalCode": "S2128EHD"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Sebastián Miguel Stamboni"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Ariel Darío Loguzzo"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Leandro Samuel Posadas"
+          ]
+        }
+      ],
+      "schedule": "Miércoles-Sábados 20:00 (RJN Domingos 18:30)",
+      "page": 40,
+      "location": {
+        "lat": -33.154205,
+        "lng": -60.498825,
+        "mapName": "Arroyo Seco",
+        "mapAddress": "Urquiza, 206"
+      }
+    },
+    {
+      "id": "la-carolina",
+      "name": "La Carolina",
+      "nameRaw": "LA CAROLINA",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Ruta Nacional 18 km 6 N° 4045",
+        "neighborhood": "Alvear",
+        "postalCode": "S2105XAA"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Agustín Antonio Miraglia"
+          ]
+        }
+      ],
+      "schedule": "Jueves 20:00",
+      "page": 40,
+      "location": {
+        "lat": -33.077944,
+        "lng": -60.696145,
+        "mapName": "La Carolina",
+        "mapAddress": "Ruta Nacional 18 km 6 N° 4045"
+      }
+    },
+    {
+      "id": "las-rosas",
+      "name": "Las Rosas",
+      "nameRaw": "LAS ROSAS",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Córdoba, 957",
+        "postalCode": "S2520BBS"
+      },
+      "ministry": [
+        {
+          "role": "Anciano",
+          "names": [
+            "Pablo Daniel Arce"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Miguel Ángel Silva Hernández"
+          ]
+        }
+      ],
+      "schedule": "Sábados 18:00/19:00",
+      "page": 41,
+      "location": {
+        "lat": -32.473565,
+        "lng": -61.583968,
+        "mapName": "Las Rosas",
+        "mapAddress": "Córdoba, 957"
+      }
+    },
+    {
+      "id": "rosario-matheu",
+      "name": "Rosario Matheu",
+      "nameRaw": "ROSARIO MATHEU",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Balcarce, 4350",
+        "neighborhood": "Domingo MAtheu",
+        "postalCode": "S2001NAF"
+      },
+      "ministry": [
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Luís Maesano"
+          ]
+        }
+      ],
+      "schedule": "Miércoles 20:00 – Sábados 19:00",
+      "page": 41,
+      "location": {
+        "lat": -32.968655,
+        "lng": -60.696143,
+        "mapName": "Rosario - Matheu",
+        "mapAddress": "Balcarce, 4350"
+      }
+    },
+    {
+      "id": "rosario-triangulo",
+      "name": "Rosario Triangulo",
+      "nameRaw": "ROSARIO TRIANGULO",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Juan Larrea, 3443",
+        "neighborhood": "Triánculo",
+        "postalCode": "S2010CWO"
+      },
+      "ministry": [
+        {
+          "role": "Diácono",
+          "names": [
+            "Arlindo Alves Neto"
+          ]
+        },
+        {
+          "role": "Cooperador de Oficio Ministerial",
+          "names": [
+            "Gabriel Fregenal"
+          ]
+        },
+        {
+          "role": "Cooperador de Jóvenes y Niños",
+          "names": [
+            "Marcos Andrés Nicita"
+          ]
+        }
+      ],
+      "schedule": "Martes-Viernes 20:00 (RJN Domingos 10:30)",
+      "page": 41,
+      "location": {
+        "lat": -32.968655,
+        "lng": -60.696143,
+        "mapName": "Rosario - Triángulo",
+        "mapAddress": "Juan Larrea, 344"
+      }
+    },
+    {
+      "id": "villa-constitucion",
+      "name": "Villa Constitución",
+      "nameRaw": "VILLA CONSTITUCIÓN",
+      "regionId": "santa-fe",
+      "isCentral": false,
+      "address": {
+        "street": "Luzuriaga, 1694",
+        "postalCode": "S2919EEN"
+      },
+      "ministry": [],
+      "schedule": "Martes-Viernes 20:30 (RJN 1º Domingos 10:00)",
+      "page": 42,
+      "location": {
+        "lat": -33.261259,
+        "lng": -60.307833,
+        "mapName": "Villa Constitución",
+        "mapAddress": "Luzuriaga, 1694"
+      }
+    }
+  ]
+}
